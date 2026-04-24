@@ -1,118 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Volta Express Brasil</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-    />
+    <title>Volta Express Brasil | Logística Inteligente</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="./style.css" />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./public/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./public/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./public/favicon-16x16.png"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png" />
     <link rel="manifest" href="./public/site.webmanifest" />
   </head>
   <body>
-    <!-- Header -->
+
     <header>
-      <a href="#" class="logo"
-        ><img
-          src="./assets/logo-volta-express.png"
-          alt="logo da car rental"
-          srcset=""
-      /></a>
+      <a href="#" class="logo">
+        <img src="./assets/logo-volta-express.png" alt="Logo Volta Express Brasil" />
+      </a>
+      
       <div class="bx bx-menu" id="menu-icon"></div>
-      <ul class="navbar">
-        <li>
-          <a href="./quero-carregar/index.html">tenho CAMINHÃO e busco CARGA</a>
-        </li>
-        <li>
-          <a href="./quero-transportar/index.html"
-            >tenho CARGA e busco CAMINHÃO
-          </a>
-        </li>
-      </ul>
-      <!-- Entrar -->
+      
+      <nav>
+        <ul class="navbar">
+          <li><a href="./quero-carregar/index.html">Tenho Caminhão</a></li>
+          <li><a href="./quero-transportar/index.html">Tenho Carga</a></li>
+        </ul>
+      </nav>
+
       <div class="header-btn">
-        <a href="./login-register/index.html" class="conte-nos"
-          >Conte para gente</a
-        >
+        <a href="./login-register/index.html" class="btn-login">Entrar / Cadastrar</a>
       </div>
     </header>
 
-    <!-- Home -->
-    <section class="home" id="home">
-      <div class="text">
-        <h1>
-          No <span>Volta Express</span> temos <br />
-          a <span>sua solução!</span>
-        </h1>
-      </div>
-      <div class="form-container">
-        <div class="form">
-          <div class="input-box">
-            <a href="./quero-carregar/index.html" rel="noopener noreferrer">
-              tenho CAMINHÃO e<br />busco CARGA
-            </a>
+    <main>
+      <section class="home" id="home">
+        <div class="hero-content">
+          <div class="text">
+            <h1>
+              No <span>Volta Express</span> temos <br />
+              a <span>sua solução!</span>
+            </h1>
+            <p>Conectamos motoristas a fretes de retorno com agilidade e segurança.</p>
           </div>
 
-          <div class="input-box">
-            <a href="./quero-transportar/index.html" rel="noopener noreferrer">
-              tenho CARGA e<br />busco CAMINHÃO
-            </a>
+          <div class="selection-container">
+            <div class="persona-grid">
+              <a href="./quero-carregar/index.html" class="persona-card" aria-label="Sou motorista e busco carga">
+                <div class="card-icon"><i class='bx bxs-truck'></i></div>
+                <div class="card-info">
+                  <span class="card-subtitle">Sou Motorista</span>
+                  <span class="card-title">Quero Carregar</span>
+                </div>
+                <i class='bx bx-chevron-right'></i>
+              </a>
+
+              <a href="./quero-transportar/index.html" class="persona-card" aria-label="Sou embarcador e busco caminhão">
+                <div class="card-icon"><i class='bx bxs-package'></i></div>
+                <div class="card-info">
+                  <span class="card-subtitle">Sou Embarcador</span>
+                  <span class="card-title">Quero Transportar</span>
+                </div>
+                <i class='bx bx-chevron-right'></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Copyright -->
-    <div class="copyright">
-      <p>@VoltaExpressBrasil &#169; All Right Reserved</p>
-      <div class="social">
-        <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank"
-          ><i class="bx bxl-instagram"></i
-        ></a>
-        <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank"
-          ><i class="bx bxl-facebook"></i
-        ></a>
-        <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank"
-          ><i class="bx bxl-youtube"></i
-        ></a>
+    <footer>
+      <div class="footer-container">
+        <div class="copyright">
+          <p>© 2026 Volta Express Brasil | learnTECH Ecosystem</p>
+        </div>
+        
+        <div class="social">
+          <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+        </div>
       </div>
-    </div>
+    </footer>
 
-    <a
-      href="#"
-      id="fixed-whatsapp-button"
-      target="_blank"
-      class="fixed-whatsapp-button"
-    >
-      <img
-        src="./assets/favicon-PNG-removebg.png"
-        alt="WhatsApp da Volta Express Brasil"
-      />
+    <a href="#" id="fixed-whatsapp-button" target="_blank" class="whatsapp-float" title="Fale com nosso suporte">
+      <img src="./assets/favicon-PNG-removebg.png" alt="Ícone WhatsApp" />
     </a>
-    <!-- scrollreveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
 
-    <!-- Link to JS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./script.js"></script>
   </body>
 </html>
