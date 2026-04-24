@@ -1,0 +1,136 @@
+/* =============================================================== 
+    📦 DADOS DOS CARDS (Mercadorias para Transporte)
+    =============================================================== */
+
+const allCardsData = [
+    {
+        id: 1,
+        titulo: "Caixas de Livros",
+        origem: "Juiz de Fora - MG",
+        destino: "São Caetano - SP",
+        valor: "R$1.000",
+        data: "22/05",
+        peso: "500 kg",
+        volume: "6 m³",
+        unidades: "12 un",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1.jpg",
+        whatsapp: "5532998615190"
+    },
+    {
+        id: 2,
+        titulo: "Paletes de eletrodomésticos",
+        origem: "Belo Horizonte - MG",
+        destino: "Salvador - BA",
+        valor: "R$4.500",
+        data: "15/07",
+        peso: "800 kg",
+        volume: "4 m³",
+        unidades: "10 un",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-2.jpg",
+        whatsapp: "5532999999999"
+    },
+    {
+        id: 3,
+        titulo: "Sacas de café verde",
+        origem: "Varginha - MG",
+        destino: "Porto de Santos - SP",
+        valor: "R$2.800",
+        data: "18/07",
+        peso: "1.500 kg",
+        volume: "2.5 m³",
+        unidades: "22 un",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-3.jpg",
+        whatsapp: "5532888888888"
+    },
+    {
+        id: 4,
+        titulo: "Equipamentos de informática",
+        origem: "Campinas - SP",
+        destino: "Curitiba - PR",
+        valor: "R$1.200",
+        data: "16/07",
+        peso: "350 kg",
+        volume: "3 m³",
+        unidades: "9 un",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-4.jpg",
+        whatsapp: "5532777777777"
+    },
+    {
+        id: 5,
+        titulo: "Carga seca mista",
+        origem: "Rio de Janeiro - RJ",
+        destino: "Vitória - ES",
+        valor: "R$950",
+        data: "17/05",
+        peso: "200kg",
+        volume: "1.5 m³",
+        unidades: "14 un",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-5.jpg",
+        whatsapp: "5532666666666"
+    },
+    {
+        id: 6,
+        titulo: "Materiais de construção",
+        origem: "Uberlândia - MG",
+        destino: "Brasília - DF",
+        valor: "R$3.200",
+        data: "20/07",
+        peso: "2.500 kg",
+        volume: "5m³",
+        unidades: "12 un",
+        imagem: "./assets/transportador/buscar-carga/deposito-1.jpg",
+        whatsapp: "5532555555555"
+    },
+    {
+        id: 7,
+        titulo: "Peças automotivas",
+        origem: "São Paulo - SP",
+        destino: "Betim - MG",
+        valor: "R$1.700",
+        data: "19/07",
+        peso: "600kg",
+        volume: "4m³",
+        unidades: "32 un",
+        imagem: "./assets/transportador/buscar-carga/deposito-2.jpg",
+        whatsapp: "5532444444444"
+    },
+    {
+        id: 8,
+        titulo: "Mudança residencial",
+        origem: "Florianópolis - SC",
+        destino: "Porto Alegre - RS",
+        valor: "R$6.100",
+        data: "23/07",
+        peso: "3.750kg",
+        volume: "12m³",
+        unidades: "34 un",
+        imagem: "./assets/transportador/buscar-carga/deposito-3.jpg",
+        whatsapp: "5532333333333"
+    },
+    {
+        id: 9,
+        titulo: "Alimentos não perecíveis",
+        origem: "Jundiaí - SP",
+        destino: "Ribeirão Preto - SP",
+        valor: "R$800",
+        data: "14/07",
+        peso: "400kg",
+        volume: "3m³",
+        unidades: "7 un",
+        imagem: "./assets/transportador/buscar-carga/deposito-4.jpg",
+        whatsapp: "5532222222222"
+    },
+    {
+        id: 10,
+        titulo: "Grãos agrícolas",
+        origem: "Goiânia - GO",
+        destino: "Porto de Paranaguá - PR",
+        valor: "R$9.500",
+        data: "25/07",
+        peso: "10.000 kg",
+        volume: "20 m³",
+        unidades: "50 un",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1.jpg",
+        whatsapp: "5532222222222"
+    },
+];

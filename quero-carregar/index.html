@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volta Express Brasil | Quero Carregar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./public/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./public/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./public/site.webmanifest" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <a href="#home" class="logo"
+        ><img
+          src="./assets/transportador/buscar-carga/caixas.png"
+          alt="logo da car rental"
+          srcset=""
+      />
+      </a>
+      <div class="bx bx-menu" id="menu-icon"></div>
+      <ul class="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#ride">Como Carregar</a></li>
+        <li><a href="#services">Encontrar Carga</a></li>
+        <li><a href="#reviews">Vantagens</a></li>
+        <li><a href="#about">O Volta Express</a></li>
+      </ul>
+      <div class="header-btn" id="auth-section">
+        <a href="./login-register/index.html" class="sign-in" id="sign-in-link">
+          Entrar na Volta Express
+        </a>
+        <span class="header-greeting hidden-default" id="header-greeting"
+          >Olá, [Nome]!</span
+        >
+        <a href="#" class="sign-in logout-btn hidden-default" id="logout-button"
+          >Sair</a
+        >
+      </div><button id="welcomeUser"></button>
+    </header>
+
+    <!-- Home -->
+    <section class="home" id="home">
+      <div class="text">
+        <h1>Sua <span>Próxima Carga</span> está aqui!</h1>
+        <p>
+          Encontre fretes que pagam mais. <br />
+          No Volta Express, você aproveita cada quilômetro e elimina viagens
+          vazias. <br />
+          Conecte-se a quem precisa transportar!
+        </p>
+        <div class="app-stores">
+          <a href="./../index.html">
+            Ir para Home <img src="./assets/logo-volta-express.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="form-buttons">
+          <div class="input-box">
+            <a href="#services" class="btn">Encontrar Carga</a>
+          </div>
+          <div class="input-box">
+            <a href="#advertise-truck" class="btn">Anunciar Viagem</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ride -->
+    <section class="ride" id="ride">
+      <div class="heading">
+        <span>Como Carregar</span>
+        <h1>Encontrar a sua carga em 5 passos fáceis</h1>
+      </div>
+      <div class="ride-container">
+        <div class="box">
+          <i class="bx bxs-map"></i>
+          <h2>Acesse a Área de Cargas</h2>
+          <p>Procure pela seção "Encontrar Carga" no menu do portal</p>
+        </div>
+        <div class="box">
+          <i class="bx bxs-calendar-star"></i>
+          <h2>Navegue pelos Anúncios</h2>
+          <p>Compare com a capacidade do seu caminhão e sua rota.</p>
+        </div>
+        <div class="box">
+          <i class="bx bxs-calendar-check"></i>
+          <h2>Encontre a Carga Perfeita</h2>
+          <p>
+            Quanto mais detalhes, mais fácil será encontrar o frete ideal para
+            sua rota.
+          </p>
+        </div>
+        <div class="box">
+          <i class="bx bxs-calendar-star"></i>
+          <h2>Entre em Contato</h2>
+          <p>
+            Gostou de uma carga? Fale com o remetente. Tire suas dúvidas e
+            negocie o frete.
+          </p>
+        </div>
+        <div class="box">
+          <i class="bx bxs-calendar-star"></i>
+          <h2>Feche o Negócio e Boa Viagem</h2>
+          <p>Após acertar os detalhes, confirme o frete pela plataforma.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="heading">
+        <span>Encontrar carga</span>
+        <h1>
+          Explore as Melhores Ofertas <br />
+          dos Mais Bem Avaliados
+        </h1>
+      </div>
+
+      <div class="services-container"></div>
+      
+      <!--
+      <div class="services-container">
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/caminhao-caixas-1.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Caixas de Livros</h3>
+          <h2>de Juiz de Fora - MG</h2>
+          <h2>para São Caetano - SP</h2>
+          <p>
+            <span> R$1.000</span>
+            <span> | 22/05</span>
+            <span> | 500 kg</span>
+            <span> | 6 m³</span>
+            <span> | 12 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/caminhao-caixas-2.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Paletes de eletrodomésticos</h3>
+          <h2>de Belo Horizonte - MG</h2>
+          <h2>para Salvador - BA</h2>
+          <p>
+            <span> R$4.500</span>
+            <span> | 15/07</span>
+            <span> | 800 kg</span>
+            <span> | 4 m³</span>
+            <span> | 10 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora<i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/caminhao-caixas-3.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Sacas de café verde</h3>
+          <h2>de Varginha - MG</h2>
+          <h2>para Porto de Santos - SP</h2>
+          <p>
+            <span> R$2.800</span>
+            <span> | 18/07</span>
+            <span> | 1.500 kg</span>
+            <span> | 2.5 m³</span>
+            <span> | 22 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/caminhao-caixas-4.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Equipamentos de informática</h3>
+          <h2>de Campinas - SP</h2>
+          <h2>para Curitiba - PR</h2>
+          <p>
+            <span> R$1.200</span>
+            <span> | 16/07</span>
+            <span> | 350 kg</span>
+            <span> | 3 m³</span>
+            <span> | 9 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/caminhao-caixas-5.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Carga seca mista</h3>
+          <h2>de Rio de Janeiro - RJ</h2>
+          <h2>para Vitória - ES</h2>
+          <p>
+            <span> R$950</span>
+            <span> | 17/05</span>
+            <span> | 200kg</span>
+            <span> | 1.5 m³</span>
+            <span> | 14 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/deposito-1.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Materiais de construção</h3>
+          <h2>de Uberlândia - MG</h2>
+          <h2>para Brasília - DF</h2>
+          <p>
+            <span> R$3.200</span>
+            <span> | 20/07</span>
+            <span> | 2.500 kg</span>
+            <span> | 5m³</span>
+            <span> | 12 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/deposito-2.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Peças automotivas</h3>
+          <h2>de São Paulo - SP</h2>
+          <h2>para Betim - MG</h2>
+          <p>
+            <span> R$1.700</span>
+            <span> | 19/07</span>
+            <span> | 600kg</span>
+            <span> | 4m³</span>
+            <span> | 32 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/deposito-3.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Mudança residencial</h3>
+          <h2>de Florianópolis - SC</h2>
+          <h2>para Porto Alegre - RS</h2>
+          <p>
+            <span> R$6.100</span>
+            <span> | 23/07</span>
+            <span> | 3.750kg</span>
+            <span> | 12m³</span>
+            <span> | 34 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+        <div class="box">
+          <div class="box-img">
+            <img
+              src="./assets/transportador/buscar-carga/deposito-4.jpg"
+              alt="car1"
+            />
+          </div>
+          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
+          <h3>Alimentos não perecíveis</h3>
+          <h2>de Jundiaí - SP</h2>
+          <h2>para Ribeirão Preto - SP</h2>
+          <p>
+            <span> R$800</span>
+            <span> | 14/07</span>
+            <span> | 400kg</span>
+            <span> | 3m³</span>
+            <span> | 7 un</span>
+          </p>
+          <a href="#" target="_blank" class="btn"
+            >Carregar Agora <i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+
+      </div>-->
+
+      <!-- pagination -->
+      <div
+        id="pagination-container"
+        class="pagination-container hidden-default"
+      >
+        <ul class="pagination"></ul>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews" id="reviews">
+      <div class="heading">
+        <span>Vantagens</span>
+        <h1>A opção onde e quando precisar</h1>
+      </div>
+      <div class="reviews-container">
+        <div class="box">
+          <div class="rev-img">
+            <img src="./assets/transportador/vantagem-1.png" alt="" />
+          </div>
+          <h2>Otimização de Rotas e Lucro</h2>
+          <p>
+            Reduza viagens vazias e maximize seus ganhos! Encontre cargas de
+            retorno ou complementares que otimizam cada quilômetro da sua rota,
+            transformando tempo de estrada em dinheiro.
+          </p>
+        </div>
+        <div class="box">
+          <div class="rev-img">
+            <img src="./assets/transportador/vantagem-2.png" alt="" />
+          </div>
+          <h2>Acesso a Milhares de Fretes</h2>
+          <p>
+            Conecte-se a uma vasta rede de remetentes e tenha acesso diário a
+            centenas de novas oportunidades de frete. Sua próxima carga ideal
+            está a poucos cliques, em todo o Brasil.
+          </p>
+        </div>
+        <div class="box">
+          <div class="rev-img">
+            <img src="./assets/transportador/vantagem-3.png" alt="" />
+          </div>
+          <h2>Negociação Direta e Transparência</h2>
+          <p>
+            Comunique-se diretamente com o remetente, negocie valores de forma
+            transparente e feche negócios sem intermediários. Mais autonomia e
+            controle para você e seu caminhão.
+          </p>
+        </div>
+        <div class="box">
+          <div class="rev-img">
+            <img src="./assets/transportador/vantagem-4.png" alt="" />
+          </div>
+          <h2>Segurança e Confiabilidade</h2>
+          <p>
+            Trabalhe com a confiança de uma plataforma que conecta
+            transportadores e cargas de forma segura. Nossas ferramentas
+            garantem mais tranquilidade para suas operações e seus pagamentos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="heading">
+        <span>O Volta Express Brasil</span>
+        <h1>Seu Caminho para Mais Lucro</h1>
+      </div>
+      <div class="about-container">
+        <div class="about-img">
+          <img src="./assets/transportador/buscar-carga/caixas.png" alt="" />
+        </div>
+        <div class="about-text">
+          <span>O Volta Express Brasil</span>
+          <p>
+            O <strong>Volta Express Brasil</strong> é sua plataforma definitiva
+            para otimizar cada viagem. Conectamos você, caminhoneiro, às
+            melhores e mais lucrativas cargas do Brasil. Chega de estrada vazia,
+            sua próxima oportunidade está aqui!
+          </p>
+          <p>
+            Com inteligência de rotas e milhares de fretes, você maximiza seus
+            ganhos e tem total controle. Negocie direto, planeje com precisão e
+            transforme seu tempo em faturamento real.
+          </p>
+          <p>
+            Confie no <strong>Volta Express Brasil</strong>. Oferecemos
+            segurança e eficiência para você rodar com tranquilidade, expandindo
+            seu negócio. Sua jornada para o sucesso começa agora!
+          </p>
+
+          <!-- <a href="#" class="btn">Ler Mais </a> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h2>Assine a Newsletter do Volta Express Brasil</h2>
+      <p>
+        Receba em primeira mão: dicas para a estrada, atualizações da plataforma
+        e as últimas notícias do transporte rodoviário. Mantenha-se à frente!
+      </p>
+      <div class="box">
+        <input type="text" placeholder="Insira o seu melhor E-mail ..." />
+        <a href="#" class="btn">Inscrever-se</a>
+      </div>
+    </section>
+
+    <!-- Anunciar caminhão (advertise truck) -->
+    <section class="advertise-truck" id="advertise-truck">
+      <div class="heading">
+        <span>Anuncie a sua Viagem </span>
+        <h1>Conecte-se a Remetentes e Otimize suas Rotas</h1>
+      </div>
+      <div class="advertise-truck-container">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdEERHf9DlfKV6ExlJWAqO2rkrEfiDm7j52nJ8QE3pMg809-g/viewform?embedded=true"
+          width="100%"
+          height="580"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Volta Express Brasil, carregando ...
+        </iframe>
+      </div>
+      <div class="heading google-form-hide">
+        <span>Quem anunciou com a gente</span>
+        <h1>Olha o que estão dizendo</h1>
+      </div>
+
+      <div class="advertise-truck-container">
+        <div class="box">
+          <div class="rev-img">
+            <img
+              src="./assets/transportador/persona/caminhoneiro-1.png"
+              alt=""
+            />
+          </div>
+          <h2>José Carlos Silva</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            Nunca imaginei que seria tão fácil encher o caminhão. Com o Volta
+            Express, acabo com as viagens vazias e aumento meu lucro. É game
+            changer!
+          </p>
+        </div>
+        <div class="box">
+          <div class="rev-img">
+            <img
+              src="./assets/transportador/persona/caminhoneiro-2.png"
+              alt=""
+            />
+          </div>
+          <h2>Pedro Henrique Alves</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            As cargas aparecem na tela do meu celular, no meu trecho! Economizo
+            tempo de busca e fecho fretes compatíveis. Minhas rotas nunca foram
+            tão eficientes.
+          </p>
+        </div>
+        <div class="box">
+          <div class="rev-img">
+            <img
+              src="./assets/transportador/persona/caminhoneiro-3.png"
+              alt=""
+            />
+          </div>
+          <h2>Paulo Ribeiro</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            Depois que comecei a usar, vi meu faturamento crescer. A plataforma
+            é intuitiva e oferece muitas oportunidades. É a inteligência que eu
+            precisava na estrada.
+          </p>
+        </div>
+        <div class="box">
+          <div class="rev-img">
+            <img
+              src="./assets/transportador/persona/caminhoneiro-4.png"
+              alt=""
+            />
+          </div>
+          <h2>Fernando Lima</h2>
+          <div class="stars">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+          </div>
+          <p>
+            Confiança é tudo. No Volta Express, encontro cargas com segurança e
+            transparência. Ganhos garantidos e menos dor de cabeça. Recomendo
+            para todos os colegas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq-section">
+      <div class="heading">
+        <span>A sua resposta</span>
+        <h1>Use todo o potencial do Volta Express Brasil</h1>
+      </div>
+
+      <div class="faq-section-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            Por que o Volta Express Brasil é a melhor opção para eu encontrar
+            minhas próximas cargas?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Somos a sua ponte direta para milhares de oportunidades de frete
+              em todo o Brasil. Com nossa plataforma, você acessa cargas que se
+              encaixam na sua rota e tipo de veículo, eliminando intermediários
+              e burocracias desnecessárias, e assim, garantindo mais trabalho e
+              rentabilidade para o seu caminhão.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Como o Volta Express Brasil me ajuda a evitar viagens vazias (fretes
+            de retorno)
+          </button>
+          <div class="faq-answer">
+            <p></p>
+            <p>
+              Nossa inteligência conecta você a cargas de retorno em potencial.
+              Ao anunciar sua disponibilidade ou buscar por fretes no seu
+              destino final, você encontra oportunidades para não voltar de mãos
+              abanadas, otimizando seu tempo e transformando o que seria um
+              prejuízo em lucro.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Qual o processo para encontrar e aceitar uma carga no aplicativo do
+            Volta Express Brasil?
+          </button>
+          <div class="faq-answer">
+            <p></p>
+            <p>
+              É muito simples: 1. Cadastre seu caminhão e perfil. 2. Busque por
+              cargas disponíveis usando filtros de origem, destino, peso, etc.
+              3. Encontrou uma carga? Faça sua proposta diretamente ao
+              embarcador. 4. Com a proposta aceita, você já pode combinar os
+              detalhes e seguir viagem!
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            A negociação de fretes e a garantia de pagamento são seguras no
+            Volta Express Brasil?
+          </button>
+          <div class="faq-answer">
+            <p></p>
+            <p>
+              Priorizamos um ambiente seguro. Embora a negociação e o pagamento
+              final sejam acordos diretos entre você e o embarcador, nossa
+              plataforma facilita a comunicação, e temos sistemas de avaliação e
+              histórico que promovem maior confiança e transparência nas
+              transações. Você negocia os termos diretamente, com total
+              autonomia.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Posso escolher as rotas e os tipos de carga que realmente me
+            interessam no Volta Express Brasil?
+          </button>
+          <div class="faq-answer">
+            <p></p>
+            <p>
+              Sim, totalmente! Nossa plataforma foi desenhada para lhe dar
+              controle. Você pode filtrar as buscas por rotas específicas, tipos
+              de mercadoria (seca, refrigerada, etc.), peso, volume e data de
+              embarque, garantindo que você só receba propostas que se alinham
+              perfeitamente às suas preferências e capacidades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>@VoltaExpressBrasil &#169; All Right Reserved</p>
+      <div class="social">
+        <a
+          alt="instagram"
+          href="https://www.instagram.com/voltaexpressbrasil/"
+          target="_blank"
+          ><i class="bx bxl-instagram"></i
+        ></a>
+        <a
+          alt="facebook"
+          href="https://www.facebook.com/voltaexpressbrasil"
+          target="_blank"
+          ><i class="bx bxl-facebook"></i
+        ></a>
+        <a
+          alt="youtube"
+          href="https://www.youtube.com/@voltaexpressbrasil"
+          П
+          target="_blank"
+          ><i class="bx bxl-youtube"></i
+        ></a>
+      </div>
+    </div>
+
+    <div id="route-modal" class="modal-overlay">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modal-title">Detalhes do Trajeto</h3>
+        <div id="modal-details"></div>
+        <div id="modal-map"></div>
+      </div>
+    </div>
+
+    <a
+      href="#"
+      id="fixed-whatsapp-button"
+      target="_blank"
+      class="fixed-whatsapp-button"
+    >
+      <img
+        src="./assets/favicon-PNG-removebg.png"
+        alt="WhatsApp da Volta Express Brasil"
+      />
+    </a>
+
+    <!-- scrollreveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Link to JS -->
+    <script src="./script.js"></script>
+    <script src="./cargas.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1009 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-color: #fe5b3d;
+  --second-color: #ffac38;
+  --text-color: #444;
+  --gradient: linear-gradient(#fe5b3d, #ffac38);
+}
+
+html::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 5rem;
+}
+
+section {
+  padding: 50px 100px;
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eeeff1;
+  padding: 15px 100px;
+}
+
+.logo img {
+  width: 58px;
+}
+
+#welcomeUser {
+  background: var(--main-color);
+  border: none;
+  color: #fff; 
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+#welcomeUser:hover {
+  background: #474fa0; 
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.navbar a:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: var(--gradient);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: 0.5s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+#menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+.header-btn a {
+  padding: 10px 20px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.header-btn .sign-in {
+  background: #474fa0;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.header-btn .sign-in:hover {
+  background: var(--main-color);
+}
+
+/* ======================================================= */
+/* ESTILIZAÇÃO PARA A SESSÃO LOGADA (Adicionado) */
+/* ======================================================= */
+
+/* Estilo para a mensagem de Olá, Nome! */
+.header-greeting {
+  font-size: 1rem;
+  padding: 10px 0; /* Alinha verticalmente com o botão */
+  color: var(--text-color);
+  font-weight: 500;
+  margin-right: 15px; /* Espaçamento entre a mensagem e o botão Sair */
+}
+
+/* Estilo para o contêiner de autenticação quando o usuário está logado */
+#auth-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para o botão de Logout (usando a classe .sign-in existente para o fundo azul) */
+.header-btn .logout-btn {
+  /* Mantém as propriedades de cor e fundo de .sign-in */
+  background: #474fa0;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 10px 20px;
+  font-weight: 500;
+}
+
+.header-btn .logout-btn:hover {
+  background: var(--main-color);
+  cursor: pointer;
+}
+
+/* Classes essenciais para o controle de visibilidade */
+.hidden-default {
+  display: none !important;
+}
+/* ======================================================= */
+/* CLASSE ESSENCIAL PARA O OCULTAMENTO DE CARDS */
+/* ======================================================= */
+
+/* Usada pelo JavaScript para esconder os cards de páginas não ativas */
+.hidden-card {
+  display: none !important;
+}
+
+/* ------------------------------------------- */
+/* PAGINAÇÃO (Barra Numérica)  */
+/* ------------------------------------------- */
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 4px;
+}
+
+.pagination li a {
+  display: block;
+  padding: 10px 14px; /* Ajuste o padding para o tamanho ideal */
+  text-decoration: none;
+  border: 1px solid #ccc; /* Borda cinza suave */
+  color: var(--text-color); /* Cor do texto padrão */
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.pagination li a.active {
+  background-color: #474fa0;
+  border-color: #474fa0;
+  color: #fff;
+  pointer-events: none; /* Não permite clique na página atual */
+}
+
+.pagination li a:not(.active):not(.disabled):hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: #fff;
+}
+
+.pagination li a.disabled {
+  color: #aaa;
+  background-color: #f7f7f7;
+  border-color: #ddd;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Garante que o menu hambúrguer funcione em telas pequenas quando logado */
+@media screen and (max-width: 768px) {
+  .header-greeting {
+    display: none; /* Oculta a mensagem para economizar espaço em mobile */
+  }
+  .header-btn .logout-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Home */
+.home {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: url(./assets/transportador/buscar-carga/banner-caixas.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: cover;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.text h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+}
+
+.text span {
+  color: var(--main-color);
+}
+
+.text p {
+  margin: 0.5rem 0 1rem;
+}
+/*
+.app-stores {
+  display: flex;
+  cursor: pointer;
+}
+
+.app-stores a {
+  display: flex;
+  vertical-align: text-top;
+  color: #474fa0;
+  font-weight: 500;
+}
+.app-stores a:hover {
+  font-weight: 700;
+}
+
+.app-stores img {
+  width: 100%;
+  max-width: 60px;
+  margin-right: 1rem;
+  padding-left: 8px;
+}*/
+
+.app-stores {
+  background: #fff;
+  border: 2px solid #474fa0;
+  border-radius: 50px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.app-stores:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.app-stores a {
+  display: flex;
+  align-items: center;
+  color: #474fa0;
+  font-weight: 500;
+}
+
+.app-stores a:hover {
+  font-weight: 700;
+}
+
+.app-stores img {
+  height: 40px;
+}
+
+.form-container .form-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 520px;
+  gap: 0.7rem;
+  position: absolute;
+  bottom: 4rem;
+  left: 100px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 0.5rem;
+}
+
+.form-container .form-buttons .input-box {
+  flex: 1 1 6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .form-buttons .input-box span {
+  font-weight: 500;
+}
+
+.form-container .form-buttons .input-box input {
+  padding: 7px;
+  outline: none;
+  border: none;
+  background: #eeeff1;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-container .form-buttons .btn {
+  flex: 1 1 4rem;
+  padding: 20px 24px;
+  border: none;
+  border-radius: 0.5rem;
+  background: #474fa0;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-container .form-buttons .btn:hover {
+  background: var(--main-color);
+  cursor: pointer;
+}
+
+/* Ride */
+.heading {
+  text-align: center;
+}
+
+.heading span {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.heading h1 {
+  font-size: 2rem;
+}
+
+.ride-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.ride-container .box {
+  text-align: center;
+  padding: 20px;
+}
+
+.ride-container .box .bx {
+  font-size: 34px;
+  padding: 10px;
+  background: #eeeff1;
+  border-radius: 0.5rem;
+  color: var(--main-color);
+}
+
+.ride-container .box h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 1.4rem 0 0.5rem;
+}
+
+.ride-container .box .bx:hover,
+.ride-container .box .bx .bxs-calendar-star {
+  background: var(--gradient);
+  color: #fff;
+}
+
+/* Services */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.services-container .box {
+  padding: 10px;
+  border-radius: 1rem;
+  box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+}
+
+.services-container .box .box-img {
+  width: 100%;
+  height: 200px;
+}
+
+.services-container .box .box-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+}
+/*
+.services-container .box p.infos {
+  padding: 0 10px;
+  border: 1px solid var(--text-color);
+  width: 78px;
+  border-radius: 0.5rem;
+  margin: 1rem 0 1rem;
+}*/
+
+/* Estilização para o container do Trajeto */
+.services-container .box p.infos {
+  margin: 1rem 0 1rem;
+}
+
+/* Estilização para o link Trajeto como um botão */
+.trajeto-link {
+  display: inline-block;
+  background-color: var(--main-color); /* Fundo com a cor principal */
+  color: var(--bg-color); /* Texto em cor de fundo para contraste */
+  padding: 8px 15px; /* Preenchimento interno para o botão */
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none; /* Remove o sublinhado padrão do link */
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Efeito ao passar o mouse */
+.trajeto-link:hover {
+  background-color: var(--second-color); /* Altera a cor do fundo */
+  transform: scale(1.05); /* Pequeno aumento de tamanho */
+}
+
+.services-container .box h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--main-color);
+}
+
+.services-container .box p span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.services-container .box .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #474fa0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.services-container .box .btn:hover {
+  background: var(--main-color);
+}
+
+.services-container .box .btn i {
+  padding-left: 4px;
+}
+
+/* About */
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-img img {
+  width: 100%;
+}
+
+.about-text span {
+  font-weight: 500;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.about-text p {
+  margin: 0.5rem 0 1.4rem;
+}
+
+.about-text .btn {
+  padding: 10px 20px;
+  background: #474fa0;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+.about-text .btn:hover {
+  background: var(--main-color);
+}
+
+/* Review */
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.rev-img {
+  width: 70px;
+  height: 70px;
+}
+
+.rev-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--second-color);
+}
+
+.reviews-container .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.reviews-container .box h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.reviews-container .box p {
+  font-style: italic;
+}
+
+.reviews-container .box .stars .bx {
+  color: var(--main-color);
+}
+
+/* Newsletter */
+.newsletter {
+  background: linear-gradient(to top right, #fe5b3d, #ffac38);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter h2 {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.newsletter p {
+  font-size: 1.2rem;
+  color: #fff;
+  width: 100%;
+  max-width: 920px;
+}
+
+.newsletter .box {
+  margin-top: 2rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 4px 8px;
+  width: 100%;
+  max-width: 920px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsletter .box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 680px;
+}
+
+.newsletter .box .btn {
+  background: #474fa0;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 0.5rem;
+}
+
+/* Anunciar caminhão (advertise truck) */
+.advertise-truck .heading {
+  text-align: center;
+}
+
+.google-form-hide {
+  margin-top: -80px;
+  background-color: #fff;
+  z-index: 10;
+  padding-block: 30px;
+}
+
+.advertise-truck .heading span {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.advertise-truck .heading h1 {
+  font-size: 2rem;
+}
+
+.advertise-truck-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.advertise-truck-container .rev-img {
+  width: 70px;
+  height: 70px;
+}
+
+.advertise-truck-container .rev-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid var(--second-color);
+}
+
+.advertise-truck-container .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.advertise-truck-container .box h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.5rem;
+}
+
+.advertise-truck-container .box p {
+  font-style: italic;
+}
+
+.advertise-truck-container .box .stars .bx {
+  color: var(--main-color);
+}
+
+/* FAQ */
+
+.faq-section .heading {
+  text-align: center;
+}
+
+.faq-section .heading span {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.faq-section .heading h1 {
+  font-size: 2rem;
+}
+
+.faq-section-container {
+  width: 80%;
+  margin: 0 auto;
+  padding-block-start: 16px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+  border: 1px solid #eaa498;
+  border-radius: 5px;
+}
+
+.faq-question {
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.faq-question:hover {
+  background-color: #f6c1b7;
+}
+
+.faq-answer {
+  padding: 10px;
+  display: none;
+  background-color: #fff;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+/* Copyright */
+.copyright {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social a {
+  color: #444;
+  padding: 10px;
+  font-size: 21px;
+  transition: font-size 2s;
+}
+
+.social a:hover {
+  font-size: 24px;
+  color: #fe5b3d;
+}
+
+/*
+Modal de Trajeto
+*/
+
+/* Estilo para o Overlay do Modal */
+.modal-overlay {
+  display: none; /* Oculta o modal por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para o conteúdo do Modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+/* Estilo para o botão de fechar */
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* Estilo para o iframe do mapa */
+.modal-content iframe {
+  width: 100%;
+  height: 300px; /* Altura do mapa */
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* Animação para o modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+Botao Fixed
+*/
+
+/* Botão fixo do WhatsApp */
+.fixed-whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--main-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.fixed-whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.fixed-whatsapp-button img {
+  width: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+  height: auto;
+}
+/* Responsive */
+
+@media screen and (max-width: 991px) {
+  header {
+    padding: 18px 40px;
+  }
+  section {
+    padding: 80px 40px;
+  }
+}
+
+@media screen and (max-width: 891px) {
+  .home {
+    background-position: left;
+  }
+  .form-container .form-buttons {
+    bottom: 0.2rem;
+    left: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 11px 40px;
+  }
+
+  #menu-icon {
+    display: initial;
+  }
+
+  .sign-up {
+    display: none;
+  }
+
+  .text h2 {
+    font-size: 2.5rem;
+  }
+
+  .home {
+    grid-template-columns: 1fr;
+  }
+
+  .form-container .form-buttons {
+    position: unset;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.2 ease;
+    text-align: left;
+  }
+
+  .navbar.active {
+    top: 100%;
+  }
+
+  .navbar a {
+    padding: 1rem;
+    border-left: 2px solid var(--main-color);
+    margin: 1rem;
+    display: block;
+  }
+
+  .navbar a:hover {
+    color: #fff;
+    background: var(--main-color);
+    border: none;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+
+  .heading span {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .heading h1 {
+    font-size: 1.3rem;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-img {
+    padding: 1rem;
+    order: 2;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .copyright {
+    flex-direction: column;
+  }
+
+  .newsletter .box {
+    width: 284px;
+  }
+
+  .form-container {
+    padding-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  header {
+    padding: 6px 14px;
+  }
+
+  .logo img {
+    width: 30px;
+  }
+
+  section {
+    padding: 50px 14px;
+  }
+
+  .header-btn .sign-in {
+    padding: 7px 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(254px, auto));
+  }
+}
