@@ -4,6 +4,8 @@ A plataforma de prateleiras para dar match entre os anúncios de cargas e os tra
 
 Propósito do Volta Express Brasil é criar oportunidades para a parte mais frágil da relação desse ecossistema de Logística.
 
+Nesse projeto, desenvolvemos uma Landing Page para demonstrar, explicar e atrair nossos clientes para a nossa plataforma para solucionarem suas dificuldades de logística.
+
 ## Versão 5 - developer-v5.3
 
 ### Home
