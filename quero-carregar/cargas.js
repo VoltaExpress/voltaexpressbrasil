@@ -12,7 +12,7 @@ const allCardsData = [
         data: "22/05",
         peso: "500 kg",
         volume: "6 m³",
-        unidades: "12 un",
+        unidades: "12",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1.jpg",
         whatsapp: "5532998615190"
     },
@@ -25,7 +25,7 @@ const allCardsData = [
         data: "15/07",
         peso: "800 kg",
         volume: "4 m³",
-        unidades: "10 un",
+        unidades: "10",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-2.jpg",
         whatsapp: "5532999999999"
     },
@@ -38,7 +38,7 @@ const allCardsData = [
         data: "18/07",
         peso: "1.500 kg",
         volume: "2.5 m³",
-        unidades: "22 un",
+        unidades: "22",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-3.jpg",
         whatsapp: "5532888888888"
     },
@@ -51,7 +51,7 @@ const allCardsData = [
         data: "16/07",
         peso: "350 kg",
         volume: "3 m³",
-        unidades: "9 un",
+        unidades: "9",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-4.jpg",
         whatsapp: "5532777777777"
     },
@@ -64,7 +64,7 @@ const allCardsData = [
         data: "17/05",
         peso: "200kg",
         volume: "1.5 m³",
-        unidades: "14 un",
+        unidades: "14",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-5.jpg",
         whatsapp: "5532666666666"
     },
@@ -77,7 +77,7 @@ const allCardsData = [
         data: "20/07",
         peso: "2.500 kg",
         volume: "5m³",
-        unidades: "12 un",
+        unidades: "12",
         imagem: "./assets/transportador/buscar-carga/deposito-1.jpg",
         whatsapp: "5532555555555"
     },
@@ -90,7 +90,7 @@ const allCardsData = [
         data: "19/07",
         peso: "600kg",
         volume: "4m³",
-        unidades: "32 un",
+        unidades: "32",
         imagem: "./assets/transportador/buscar-carga/deposito-2.jpg",
         whatsapp: "5532444444444"
     },
@@ -103,7 +103,7 @@ const allCardsData = [
         data: "23/07",
         peso: "3.750kg",
         volume: "12m³",
-        unidades: "34 un",
+        unidades: "34",
         imagem: "./assets/transportador/buscar-carga/deposito-3.jpg",
         whatsapp: "5532333333333"
     },
@@ -116,7 +116,7 @@ const allCardsData = [
         data: "14/07",
         peso: "400kg",
         volume: "3m³",
-        unidades: "7 un",
+        unidades: "7",
         imagem: "./assets/transportador/buscar-carga/deposito-4.jpg",
         whatsapp: "5532222222222"
     },
@@ -129,7 +129,7 @@ const allCardsData = [
         data: "25/07",
         peso: "10.000 kg",
         volume: "20 m³",
-        unidades: "50 un",
+        unidades: "50",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1.jpg",
         whatsapp: "5532222222222"
     },
