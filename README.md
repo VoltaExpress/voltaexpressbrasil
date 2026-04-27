@@ -4,6 +4,193 @@ A plataforma de prateleiras para dar match entre os anúncios de cargas e os tra
 
 Propósito do Volta Express Brasil é criar oportunidades para a parte mais frágil da relação desse ecossistema de Logística.
 
+Nesse projeto, desenvolvemos uma Landing Page para demonstrar, explicar e atrair nossos clientes para a nossa plataforma para solucionarem suas dificuldades de logística.
+
+## Versão 6 - developer-v6.0
+
+Página principal com o objetivo de apresentar informações comerciais das duas plataformas: para Embarcador e para Caminhoneiro.
+
+#### Menu
+
+- [x] Logo Personalizado
+- [x] Opção 1 - tenho caminhão e busco carga
+- [x] Opção 2 - tenho carga e busco caminhão
+- [ ] Botão Conte para gente: fazer o formulário em codigo
+
+#### Dobra Principal
+
+- [x] Imagem principal
+- [x] Lema da Startup
+- [x] CTA 1 - tenho caminhão e busco carga
+- [x] CTA 2 - tenho carga e busco caminhão
+- [x] Botão Fixed para o Suporte Whatsapp
+
+#### Footer
+
+- [x] Mensagem Copyright
+- [ ] Informações importantes e documentos de consulta
+- [ ] Redes Sociais: Instagram - Uma trilha para a Startup: criar 10 postagens para cada modelo
+- [ ] Redes Sociais: Facebook - Uma trilha para a Startup: criar 10 postagens para cada modelo
+- [ ] Redes Sociais: Youtube - Uma trilha para a Startup: criar 10 postagens para cada modelo
+
+### tenho caminhão e busco carga - DOING 
+
+Página da persona CAMINHONEIRO, onde "tenho caminhão e busco carga". 
+Aqui o objetivo é visualizar cargas e anunciar viagens.
+
+#### Menu
+
+- [x] URL: http://127.0.0.1:5500/quero-carregar/index.html
+- [x] Logo Personalizado
+- [x] Home
+- [x] Como Carregar
+- [x] Encontrar Carga
+- [x] Vantagens
+- [x] O Volta Express 
+- [x] Botão Entrar na Volta Express
+- [ ] Encontrar Carga: Inteligência de informações: Levar para a plataforma
+
+#### Dobra Home 
+
+- [x] Imagem principal
+- [x] Lema da Startup para a Personal Caminhoneiro
+- [x] CTA 1 - Encontrar Carga
+- [x] CTA 2 - Anunciar Viagem
+- [x] CTA 3 - Ir para a Home
+- [x] Botão Fixed para o Suporte Whatsapp
+
+#### Dobra Como Carregar 
+
+- [x] Os passos principais e fundamentais para realizar o objetivo principal dessa persona
+- [ ] Aperfeiçoar os passos
+- [ ] Usar imagens reais do app aqui em uma galeria
+
+#### Dobra Encontrar Carga 
+
+- [x] Visualizar as cargas para serem escolhidas
+- [x] O design de cada card deve conter as informações que constam no formulario de anunciar carga da outra persona
+- [ ] Encontrar Carga: Inteligência de informações: Levar para a plataforma
+ 
+#### Dobra Vantagens
+
+- [x] Os 4 problemas que a nossa solução resolve
+- [ ] Aperfeiçoar as vantagens
+- [ ] Usar imagens reais do app aqui em uma galeria
+
+#### Dobra O Volta Express
+
+- [x] A logo em destaque
+- [x] A história da startup para a perspectiva da persona 
+
+#### Dobra Newsletter
+
+- [x] Cadastrar para enviar conteúdos de logistica  
+
+#### Dobra Anunciar a sua Viagem
+
+- [x] Informações para o caminhoneiro anunciar viagem 
+ 
+#### Dobra Quem anunciou com a gente
+
+- [x] Depoimentos de clientes
+  
+#### Dobra FAQ
+
+- [x] Com o levantamento das perguntar nos canais de relacionamentos
+- [x] Com o resultado dos QAs da equipe
+ 
+#### Dobra Footer
+
+- [x] Mensagem Copyright
+- [ ] Informações importantes e documentos de consulta
+- [ ] Redes Sociais: Instagram - Uma trilha para Caminhoneiro: criar 10 postagens para cada modelo
+- [ ] Redes Sociais: Facebook - Uma trilha para Caminhoneiro: criar 10 postagens para cada modelo
+- [ ] Redes Sociais: Youtube - Uma trilha para Caminhoneiro: criar 10 postagens para cada modelo
+
+#### Login / Esqueci a senha / Register 
+
+- levar para a plataforma
+
+### tenho carga e busco caminhão
+
+Página da persona EMBARCADOR, onde "tenho carga e busco caminhão". 
+Aqui o objetivo é visualizar viagens e anunciar carga.
+ 
+#### Menu
+
+- [x] URL: http://127.0.0.1:5500/quero-transportar/index.html
+- [x] Logo Personalizado
+- [x] Home
+- [x] Como Transportar
+- [x] Encontrar Caminhão
+- [x] Vantagens
+- [x] O Volta Express 
+- [x] Botão Entrar na Volta Express
+- [ ] Encontrar Caminhão: Inteligência de informações: Levar para a plataforma
+
+#### Dobra Home 
+
+- [x] Imagem principal
+- [x] Lema da Startup para a Personal Caminhoneiro
+- [x] CTA 1 - Encontrar Caminhão
+- [x] CTA 2 - Anunciar Carga
+- [x] CTA 3 - Ir para a Home
+- [x] Botão Fixed para o Suporte Whatsapp
+
+#### Dobra Como Transportar 
+
+- [x] Os passos principais e fundamentais para realizar o objetivo principal dessa persona
+- [ ] Aperfeiçoar os passos
+- [ ] Usar imagens reais do app aqui em uma galeria 
+
+#### Dobra Encontrar Caminhão 
+
+- [x] Visualizar as cargas para serem escolhidas
+- [x] O design de cada card deve conter as informações que constam no formulario de anunciar carga da outra persona
+- [ ] Encontrar Caminhão: Inteligência de informações: levar para a plataforma
+
+#### Dobra Vantagens
+
+- [x] Os 4 problemas que a nossa solução resolve
+- [ ] Aperfeiçoar as vantagens
+- [ ] Usar imagens reais do app aqui em uma galeria
+ 
+#### Dobra O Volta Express
+
+- [x] A logo em destaque
+- [x] A história da startup para a perspectiva da persona
+ 
+#### Dobra Newsletter
+
+- [x] Cadastrar para enviar conteúdos de logistica 
+ 
+#### Dobra Anunciar a sua Viagem
+
+- [x] Informações para o caminhoneiro anunciar viagem
+ 
+#### Dobra Quem anunciou com a gente
+
+- [x] Depoimentos de clientes
+  
+#### Dobra FAQ
+
+- [x] Com o levantamento das perguntar nos canais de relacionamentos
+- [x] Com o resultado dos QAs da equipe
+ 
+#### Dobra Footer
+
+- [x] Mensagem Copyright
+- [ ] Informações importantes e documentos de consulta
+- [ ] Redes Sociais: Instagram - Uma trilha para Embarcador: criar 10 postagens para cada modelo
+- [ ] Redes Sociais: Facebook - Uma trilha para Embarcador: criar 10 postagens para cada modelo
+- [ ] Redes Sociais: Youtube - Uma trilha para Embarcador: criar 10 postagens para cada modelo
+ 
+#### Login / Esqueci a senha / Register 
+
+- Levar para a plataforma
+
+---
+
 ## Versão 5 - developer-v5.3
 
 ### Home
