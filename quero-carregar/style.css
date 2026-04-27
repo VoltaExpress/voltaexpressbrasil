@@ -1,42 +1,87 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Importação Única e Eficiente - Foco em Jakarta para Modernidade e Poppins para Títulos */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  /* Design Tokens - Cores */
+  --main-color: #fe5b3d; /* Laranja Vibrante */
+  --second-color: #ffac38; /* Amarelo Apoio */
+  --third-color: #104ac8; /* Azul Institucional (Confiança) */
+  --text-color: #1e1e24; /* Grafite Moderno */
+  --bg-color: #ffffff;
+  --light-bg: #f8f9fa;
+
+  /* Gradientes e Sombras */
+  --gradient: linear-gradient(135deg, #fe5b3d, #ffac38);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+
+  /* Espaçamentos Dinâmicos */
+  --section-padding: 80px 10%;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 5rem; /* Ajustado para não colapsar com o Header Fixo */
   scroll-behavior: smooth;
   list-style: none;
   text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased; /* Torna as fontes mais nítidas no Mac/Chrome */
 }
 
-:root {
-  --main-color: #fe5b3d;
-  --second-color: #ffac38;
-  --text-color: #444;
-  --gradient: linear-gradient(#fe5b3d, #ffac38);
+/* Base de Layout */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  padding: var(--section-padding);
+}
+
+/* Scrollbar Inteligente */
 html::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 8px;
 }
 
 html::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--light-bg);
 }
 
 html::-webkit-scrollbar-thumb {
   background: var(--main-color);
-  border-radius: 5rem;
+  border-radius: 10px;
+  border: 2px solid var(--light-bg); /* Cria um espaçamento elegante */
 }
 
-section {
-  padding: 50px 100px;
+/* Helpers Utilitários */
+.hidden-default {
+  display: none !important;
+}
+
+/* Controle de visibilidade do Usuário Logado */
+.hidden-default {
+  display: none !important;
+}
+
+/* Essencial para o motor do JavaScript esconder cards */
+.hidden-card {
+  display: none !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Header */
-
 header {
   position: fixed;
   width: 100%;
@@ -46,460 +91,577 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #eeeff1;
-  padding: 15px 100px;
+  background: rgba(244, 244, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* Ajuste de padding para compensar a logo vertical */
+  padding: 10px 10%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  width: 58px;
+  /* O SEGREDO ESTÁ AQUI: Limitamos a altura para não estourar o header */
+  height: 45px;
+  width: auto; /* Mantém a proporção correta das caixas */
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-#welcomeUser {
-  background: var(--main-color);
-  border: none;
-  color: #fff; 
-  font-size: 0.95rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-}
-
-#welcomeUser:hover {
-  background: #474fa0; 
+.logo img:hover {
+  transform: scale(1.1);
 }
 
 .navbar {
   display: flex;
-}
-
-.navbar li {
-  position: relative;
+  gap: 10px;
 }
 
 .navbar a {
-  font-size: 1rem;
-  padding: 10px 20px;
+  font-size: 0.95rem;
+  padding: 8px 16px;
   color: var(--text-color);
   font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
 
-.navbar a:after {
+.navbar a:hover {
+  color: var(--main-color);
+}
+
+/* Underline Inteligente: Animação suave do centro para as bordas */
+.navbar a::after {
   content: "";
   width: 0;
-  height: 3px;
-  background: var(--gradient);
+  height: 2px;
+  background: var(--main-color);
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  transition: 0.5s;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease-in-out;
 }
 
 .navbar a:hover::after {
-  width: 100%;
+  width: 60%;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Unificação de estilo para botões de ação */
+.btn-primary,
+.logout-btn {
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: 0.3s all ease;
+}
+
+.btn-primary {
+  background: var(--third-color); /* Azul Institucional */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--main-color); /* Laranja Volta */
+  box-shadow: 0 4px 15px rgba(254, 91, 61, 0.2);
+}
+
+.logout-btn {
+  background: #f1f1f1;
+  color: var(--text-color);
+}
+
+.logout-btn:hover {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+.header-greeting {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--third-color);
+  margin-right: 10px;
 }
 
 #menu-icon {
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
   z-index: 10001;
   display: none;
-}
-
-.header-btn a {
-  padding: 10px 20px;
   color: var(--text-color);
-  font-weight: 500;
 }
 
-.header-btn .sign-in {
-  background: #474fa0;
-  color: #fff;
-  border-radius: 0.5rem;
-}
-
-.header-btn .sign-in:hover {
-  background: var(--main-color);
-}
-
-/* ======================================================= */
-/* ESTILIZAÇÃO PARA A SESSÃO LOGADA (Adicionado) */
-/* ======================================================= */
-
-/* Estilo para a mensagem de Olá, Nome! */
-.header-greeting {
-  font-size: 1rem;
-  padding: 10px 0; /* Alinha verticalmente com o botão */
-  color: var(--text-color);
-  font-weight: 500;
-  margin-right: 15px; /* Espaçamento entre a mensagem e o botão Sair */
-}
-
-/* Estilo para o contêiner de autenticação quando o usuário está logado */
-#auth-section {
-  display: flex;
-  align-items: center;
-}
-
-/* Estilo para o botão de Logout (usando a classe .sign-in existente para o fundo azul) */
-.header-btn .logout-btn {
-  /* Mantém as propriedades de cor e fundo de .sign-in */
-  background: #474fa0;
-  color: #fff;
-  border-radius: 0.5rem;
-  padding: 10px 20px;
-  font-weight: 500;
-}
-
-.header-btn .logout-btn:hover {
-  background: var(--main-color);
-  cursor: pointer;
-}
-
-/* Classes essenciais para o controle de visibilidade */
-.hidden-default {
-  display: none !important;
-}
-/* ======================================================= */
-/* CLASSE ESSENCIAL PARA O OCULTAMENTO DE CARDS */
-/* ======================================================= */
-
-/* Usada pelo JavaScript para esconder os cards de páginas não ativas */
-.hidden-card {
-  display: none !important;
-}
-
-/* ------------------------------------------- */
-/* PAGINAÇÃO (Barra Numérica)  */
-/* ------------------------------------------- */
-
-.pagination-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 3rem;
-  margin-bottom: 5rem;
-  width: 100%;
-}
-
-.pagination {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 4px;
-}
-
-.pagination li a {
-  display: block;
-  padding: 10px 14px; /* Ajuste o padding para o tamanho ideal */
-  text-decoration: none;
-  border: 1px solid #ccc; /* Borda cinza suave */
-  color: var(--text-color); /* Cor do texto padrão */
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.pagination li a.active {
-  background-color: #474fa0;
-  border-color: #474fa0;
-  color: #fff;
-  pointer-events: none; /* Não permite clique na página atual */
-}
-
-.pagination li a:not(.active):not(.disabled):hover {
-  background-color: var(--main-color);
-  border-color: var(--main-color);
-  color: #fff;
-}
-
-.pagination li a.disabled {
-  color: #aaa;
-  background-color: #f7f7f7;
-  border-color: #ddd;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-/* Garante que o menu hambúrguer funcione em telas pequenas quando logado */
-@media screen and (max-width: 768px) {
-  .header-greeting {
-    display: none; /* Oculta a mensagem para economizar espaço em mobile */
-  }
-  .header-btn .logout-btn {
-    padding: 10px 15px;
-    font-size: 0.9rem;
+/* Responsividade Adaptativa */
+@media (max-width: 991px) {
+  header {
+    padding: 15px 5%;
   }
 }
 
-/* Home */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    text-align: center;
+    transition: 0.4s;
+    box-shadow: var(--shadow);
+  }
+  .navbar.active {
+    top: 100%;
+  }
+  .navbar a {
+    padding: 1.5rem;
+  }
+}
+
+/* Home - Seção Hero */
+/* --- BASE & DESKTOP --- */
 .home {
   width: 100%;
   min-height: 100vh;
-  position: relative;
+  display: flex;
+  align-items: center;
   background: url(./assets/transportador/buscar-carga/banner-caixas.png);
   background-repeat: no-repeat;
   background-position: center right;
   background-size: cover;
+  padding: 120px 10% 60px;
+  position: relative;
+}
+
+/* Camada de proteção de leitura */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
+}
+
+.home-content-wrapper {
+  position: relative;
+  z-index: 2;
   display: grid;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.2fr 1fr;
+  width: 100%;
 }
 
-.text h1 {
-  font-size: 3.5rem;
-  letter-spacing: 2px;
+.text-side h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
 }
 
-.text span {
+.text-side h1 span {
   color: var(--main-color);
 }
 
-.text p {
-  margin: 0.5rem 0 1rem;
-}
-/*
-.app-stores {
-  display: flex;
-  cursor: pointer;
+.text-side p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  color: var(--text-color);
 }
 
-.app-stores a {
-  display: flex;
-  vertical-align: text-top;
-  color: #474fa0;
-  font-weight: 500;
-}
-.app-stores a:hover {
-  font-weight: 700;
-}
-
-.app-stores img {
-  width: 100%;
-  max-width: 60px;
-  margin-right: 1rem;
-  padding-left: 8px;
-}*/
-
-.app-stores {
-  background: #fff;
-  border: 2px solid #474fa0;
-  border-radius: 50px;
-  padding: 8px 16px;
+/* Link de Retorno (Pílula) */
+.link-home-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.app-stores:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-.app-stores a {
-  display: flex;
-  align-items: center;
-  color: #474fa0;
-  font-weight: 500;
-}
-
-.app-stores a:hover {
-  font-weight: 700;
-}
-
-.app-stores img {
-  height: 40px;
-}
-
-.form-container .form-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  max-width: 520px;
-  gap: 0.7rem;
-  position: absolute;
-  bottom: 4rem;
-  left: 100px;
+  padding: 8px 18px;
   background: #fff;
-  padding: 20px;
-  border-radius: 0.5rem;
+  border: 1px solid var(--third-color);
+  border-radius: 50px;
+  color: var(--third-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.form-container .form-buttons .input-box {
-  flex: 1 1 6rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-container .form-buttons .input-box span {
-  font-weight: 500;
-}
-
-.form-container .form-buttons .input-box input {
-  padding: 7px;
-  outline: none;
-  border: none;
-  background: #eeeff1;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-}
-
-.form-container .form-buttons .btn {
-  flex: 1 1 4rem;
-  padding: 20px 24px;
-  border: none;
-  border-radius: 0.5rem;
-  background: #474fa0;
+.link-home-pill:hover {
+  background: var(--third-color);
   color: #fff;
-  font-size: 1rem;
-  font-weight: 500;
 }
 
-.form-container .form-buttons .btn:hover {
+.back-link-area {
+  margin-bottom: 2.5rem;
+}
+
+.form-tabs-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-hero-main,
+.btn-hero-sub {
+  padding: 18px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.btn-hero-main {
+  background: var(--third-color);
+  color: #fff;
+}
+.btn-hero-sub {
+  background: #fff;
+  color: var(--third-color);
+  border: 2px solid var(--third-color);
+}
+
+.btn-hero-main:hover,
+.btn-hero-sub:hover {
   background: var(--main-color);
-  cursor: pointer;
+  border-color: var(--main-color);
+  color: #fff;
+  transform: translateY(-3px);
 }
 
-/* Ride */
+/* --- MOBILE COMPLETO (VERSÃO MARAVILHOSA) --- */
+@media (max-width: 768px) {
+  .home {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+      url(./assets/transportador/buscar-carga/banner-caixas.png);
+    background-position: center; /* Centraliza as caixas de verdade */
+    background-size: 110%; /* Zoom sutil para dar destaque às caixas */
+    text-align: center;
+    padding: 120px 5% 40px;
+    min-height: 100vh;
+  }
+
+  .home::before {
+    display: none;
+  } /* Remove gradiente lateral no mobile */
+
+  .home-content-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .text-side h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-side p {
+    font-size: 1.1rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .back-link-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  /* O Card de Ação (Identidade Home Principal) */
+  .form-tabs-container {
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* Sombra suave e profunda */
+  }
+
+  .btn-hero-main,
+  .btn-hero-sub {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.05rem;
+  }
+}
+
+/* Ride - Como Carregar */
+.ride {
+  padding: 100px 10%;
+  background: var(
+    --light-bg
+  ); /* Um fundo leve para destacar os cards brancos */
+}
+
 .heading {
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .heading span {
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
+  color: var(--main-color);
+  letter-spacing: 1px;
+  font-size: 0.9rem;
 }
 
 .heading h1 {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--text-color);
+  margin-top: 0.5rem;
 }
 
 .ride-container {
   display: grid;
-  align-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
 }
 
 .ride-container .box {
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Efeito de Hover no Card - Igual a Home v5.3 */
+.ride-container .box:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(16, 74, 200, 0.1);
+  border-color: var(--third-color);
+}
+
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 15px;
+  transition: 0.4s;
 }
 
 .ride-container .box .bx {
-  font-size: 34px;
-  padding: 10px;
-  background: #eeeff1;
-  border-radius: 0.5rem;
-  color: var(--main-color);
+  font-size: 35px;
+  color: var(--third-color); /* Azul Institucional como base */
+  transition: 0.4s;
 }
 
-.ride-container .box h2 {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin: 1.4rem 0 0.5rem;
-}
-
-.ride-container .box .bx:hover,
-.ride-container .box .bx .bxs-calendar-star {
-  background: var(--gradient);
-  color: #fff;
-}
-
-/* Services */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.services-container .box {
-  padding: 10px;
-  border-radius: 1rem;
-  box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
-}
-
-.services-container .box .box-img {
-  width: 100%;
-  height: 200px;
-}
-
-.services-container .box .box-img img {
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  object-fit: cover;
-  object-position: center;
-}
-/*
-.services-container .box p.infos {
-  padding: 0 10px;
-  border: 1px solid var(--text-color);
-  width: 78px;
-  border-radius: 0.5rem;
-  margin: 1rem 0 1rem;
-}*/
-
-/* Estilização para o container do Trajeto */
-.services-container .box p.infos {
-  margin: 1rem 0 1rem;
-}
-
-/* Estilização para o link Trajeto como um botão */
-.trajeto-link {
-  display: inline-block;
-  background-color: var(--main-color); /* Fundo com a cor principal */
-  color: var(--bg-color); /* Texto em cor de fundo para contraste */
-  padding: 8px 15px; /* Preenchimento interno para o botão */
-  border: none;
-  border-radius: 0.5rem;
-  text-decoration: none; /* Remove o sublinhado padrão do link */
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-/* Efeito ao passar o mouse */
-.trajeto-link:hover {
-  background-color: var(--second-color); /* Altera a cor do fundo */
-  transform: scale(1.05); /* Pequeno aumento de tamanho */
-}
-
-.services-container .box h2 {
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--main-color);
-}
-
-.services-container .box p span {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-color);
-}
-
-.services-container .box .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #474fa0;
-  color: #fff;
-  padding: 10px;
-  border-radius: 0.5rem;
-}
-
-.services-container .box .btn:hover {
+/* Destaque no Ícone ao passar o mouse */
+.ride-container .box:hover .icon-wrapper {
   background: var(--main-color);
 }
 
-.services-container .box .btn i {
-  padding-left: 4px;
+.ride-container .box:hover .bx {
+  color: #fff;
+  transform: rotateY(360deg); /* Animação sutil de giro */
+}
+
+.ride-container .box h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+}
+
+.ride-container .box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .ride {
+    padding: 60px 5%;
+  }
+  .ride-container {
+    grid-template-columns: 1fr; /* Empilha no mobile para facilitar leitura */
+  }
+}
+
+/* Services - Encontrar Carga */
+/* Services Section */
+.services {
+  padding: 100px 10% 80px;
+  background: #fdfdfd;
+}
+
+/* Barra de Busca/Filtro */
+.filter-bar {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+}
+
+.search-box i {
+  font-size: 20px;
+  color: var(--third-color);
+  margin-right: 15px;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Grid de Cards */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+/* O Card de Carga (O Coração da UX) */
+.services-container .box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 24px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.services-container .box:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(16, 74, 200, 0.12);
+  border-color: var(--third-color);
+}
+
+.box-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 18px;
+  margin-bottom: 1.2rem;
+}
+
+.box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.box:hover .box-img img {
+  transform: scale(1.1);
+}
+
+/* Informações da Carga */
+.box h3 {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.box .route {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 1rem;
+}
+
+.box .route h2 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.box .route h2::before {
+  content: "•";
+  color: var(--main-color);
+  font-size: 1.5rem;
+}
+
+/* Grid de Atributos (Preço, Peso, Data) */
+.box .details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 15px 0;
+  border-top: 1px solid #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.box .details-grid span {
+  font-size: 0.85rem;
+  color: #777;
+  font-weight: 600;
+}
+
+.box .price {
+  font-size: 1.3rem;
+  color: var(--third-color);
+  font-weight: 800;
+}
+
+/* Botão Carregar Agora */
+.box .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: var(--third-color);
+  color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.box .btn:hover {
+  background: var(--main-color);
+  box-shadow: 0 10px 20px rgba(254, 91, 61, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 5%;
+  }
+  .services-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* About */

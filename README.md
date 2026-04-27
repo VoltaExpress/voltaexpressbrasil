@@ -33,7 +33,7 @@ Página principal com o objetivo de apresentar informações comerciais das duas
 - [ ] Redes Sociais: Facebook - Uma trilha para a Startup: criar 10 postagens para cada modelo
 - [ ] Redes Sociais: Youtube - Uma trilha para a Startup: criar 10 postagens para cada modelo
 
-### tenho caminhão e busco carga
+### tenho caminhão e busco carga - DOING 
 
 Página da persona CAMINHONEIRO, onde "tenho caminhão e busco carga". 
 Aqui o objetivo é visualizar cargas e anunciar viagens.

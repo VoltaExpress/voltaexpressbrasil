@@ -32,333 +32,127 @@
   <body>
     <!-- Header -->
     <header>
-      <a href="#home" class="logo"
-        ><img
-          src="./assets/transportador/buscar-carga/caixas.png"
-          alt="logo da car rental"
-          srcset=""
-      />
-      </a>
-      <div class="bx bx-menu" id="menu-icon"></div>
-      <ul class="navbar">
+    <a href="#home" class="logo">
+        <img src="./assets/transportador/buscar-carga/caixas.png" alt="Volta Express Brasil">
+    </a>
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+
+    <ul class="navbar">
         <li><a href="#home">Home</a></li>
         <li><a href="#ride">Como Carregar</a></li>
         <li><a href="#services">Encontrar Carga</a></li>
         <li><a href="#reviews">Vantagens</a></li>
         <li><a href="#about">O Volta Express</a></li>
-      </ul>
-      <div class="header-btn" id="auth-section">
-        <a href="./login-register/index.html" class="sign-in" id="sign-in-link">
-          Entrar na Volta Express
+    </ul>
+
+    <div class="header-btn" id="auth-section">
+        <a href="https://www.voltaexpress.com.br" class="btn-primary" id="sign-in-link">
+            Entrar/Cadastrar
         </a>
-        <span class="header-greeting hidden-default" id="header-greeting"
-          >Olá, [Nome]!</span
-        >
-        <a href="#" class="sign-in logout-btn hidden-default" id="logout-button"
-          >Sair</a
-        >
-      </div><button id="welcomeUser"></button>
+        <div id="user-logged-info" class="hidden-default">
+            <span class="header-greeting" id="header-greeting"></span>
+            <a href="#" class="logout-btn" id="logout-button">Sair</a>
+        </div>
+    </div>
     </header>
 
     <!-- Home -->
     <section class="home" id="home">
-      <div class="text">
-        <h1>Sua <span>Próxima Carga</span> está aqui!</h1>
-        <p>
-          Encontre fretes que pagam mais. <br />
-          No Volta Express, você aproveita cada quilômetro e elimina viagens
-          vazias. <br />
-          Conecte-se a quem precisa transportar!
-        </p>
-        <div class="app-stores">
-          <a href="./../index.html">
-            Ir para Home <img src="./assets/logo-volta-express.png" alt="" />
-          </a>
+    <div class="home-content-wrapper">
+        <div class="text-side">
+            <h1>Sua <span>Próxima Carga</span> <br>está aqui!</h1>
+            <p>
+                Encontre fretes que pagam mais. No Volta Express, você aproveita 
+                cada quilômetro e elimina viagens vazias.
+            </p>
+
+            <div class="back-link-area">
+                <a href="../index.html" class="link-home-pill">
+                    <i class='bx bx-left-arrow-alt'></i> Voltar para Home
+                </a>
+            </div>
+
+            <div class="form-tabs-container">
+                <a href="#services" class="btn-hero-main">
+                    <i class='bx bx-search-alt'></i> Encontrar Carga
+                </a>
+                <a href="#advertise-truck" class="btn-hero-sub">
+                    <i class='bx bxs-truck'></i> Anunciar Viagem
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="form-container">
-        <div class="form-buttons">
-          <div class="input-box">
-            <a href="#services" class="btn">Encontrar Carga</a>
-          </div>
-          <div class="input-box">
-            <a href="#advertise-truck" class="btn">Anunciar Viagem</a>
-          </div>
-        </div>
-      </div>
+        
+        <div class="image-side"></div>
+    </div>
     </section>
 
-    <!-- Ride -->
+    <!-- Ride - Como Carregar-->
     <section class="ride" id="ride">
-      <div class="heading">
+    <div class="heading">
         <span>Como Carregar</span>
         <h1>Encontrar a sua carga em 5 passos fáceis</h1>
-      </div>
-      <div class="ride-container">
+    </div>
+
+    <div class="ride-container">
         <div class="box">
-          <i class="bx bxs-map"></i>
-          <h2>Acesse a Área de Cargas</h2>
-          <p>Procure pela seção "Encontrar Carga" no menu do portal</p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-map-alt"></i>
+            </div>
+            <h2>Acesse a Área de Cargas</h2>
+            <p>Procure pela seção "Encontrar Carga" no menu do portal.</p>
         </div>
         <div class="box">
-          <i class="bx bxs-calendar-star"></i>
-          <h2>Navegue pelos Anúncios</h2>
-          <p>Compare com a capacidade do seu caminhão e sua rota.</p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-select-multiple"></i>
+            </div>
+            <h2>Navegue pelos Anúncios</h2>
+            <p>Compare com a capacidade do seu caminhão e sua rota.</p>
         </div>
         <div class="box">
-          <i class="bx bxs-calendar-check"></i>
-          <h2>Encontre a Carga Perfeita</h2>
-          <p>
-            Quanto mais detalhes, mais fácil será encontrar o frete ideal para
-            sua rota.
-          </p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-package"></i>
+            </div>
+            <h2>Encontre a Carga Perfeita</h2>
+            <p>Filtre por detalhes e encontre o frete ideal para sua rota.</p>
         </div>
         <div class="box">
-          <i class="bx bxs-calendar-star"></i>
-          <h2>Entre em Contato</h2>
-          <p>
-            Gostou de uma carga? Fale com o remetente. Tire suas dúvidas e
-            negocie o frete.
-          </p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-chat"></i>
+            </div>
+            <h2>Entre em Contato</h2>
+            <p>Fale com o remetente, tire dúvidas e negocie o frete.</p>
         </div>
         <div class="box">
-          <i class="bx bxs-calendar-star"></i>
-          <h2>Feche o Negócio e Boa Viagem</h2>
-          <p>Após acertar os detalhes, confirme o frete pela plataforma.</p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-check-circle"></i>
+            </div>
+            <h2>Feche o Negócio</h2>
+            <p>Confirme os detalhes e garanta sua viagem pela plataforma.</p>
         </div>
-      </div>
+    </div>
     </section>
 
-    <!-- Services -->
+    <!-- Services - Encontrar carga-->
     <section class="services" id="services">
       <div class="heading">
-        <span>Encontrar carga</span>
-        <h1>
-          Explore as Melhores Ofertas <br />
-          dos Mais Bem Avaliados
-        </h1>
+          <span>Encontrar Carga</span>
+          <h1>Explore as Melhores Ofertas <br /> dos Parceiros Verificados</h1>
       </div>
 
-      <div class="services-container"></div>
-      
-      <!--
-      <div class="services-container">
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/caminhao-caixas-1.jpg"
-              alt="car1"
-            />
+      <div class="filter-bar">
+          <div class="search-box">
+              <i class='bx bx-search'></i>
+              <input type="text" id="searchCarga" placeholder="Cidade de origem ou destino...">
           </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Caixas de Livros</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para São Caetano - SP</h2>
-          <p>
-            <span> R$1.000</span>
-            <span> | 22/05</span>
-            <span> | 500 kg</span>
-            <span> | 6 m³</span>
-            <span> | 12 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
+      </div>
 
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/caminhao-caixas-2.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Paletes de eletrodomésticos</h3>
-          <h2>de Belo Horizonte - MG</h2>
-          <h2>para Salvador - BA</h2>
-          <p>
-            <span> R$4.500</span>
-            <span> | 15/07</span>
-            <span> | 800 kg</span>
-            <span> | 4 m³</span>
-            <span> | 10 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora<i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
+      <div class="services-container" id="cargas-list">
+          <div class="loader">Carregando ofertas exclusivas...</div>
+      </div>
 
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/caminhao-caixas-3.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Sacas de café verde</h3>
-          <h2>de Varginha - MG</h2>
-          <h2>para Porto de Santos - SP</h2>
-          <p>
-            <span> R$2.800</span>
-            <span> | 18/07</span>
-            <span> | 1.500 kg</span>
-            <span> | 2.5 m³</span>
-            <span> | 22 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/caminhao-caixas-4.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Equipamentos de informática</h3>
-          <h2>de Campinas - SP</h2>
-          <h2>para Curitiba - PR</h2>
-          <p>
-            <span> R$1.200</span>
-            <span> | 16/07</span>
-            <span> | 350 kg</span>
-            <span> | 3 m³</span>
-            <span> | 9 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/caminhao-caixas-5.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Carga seca mista</h3>
-          <h2>de Rio de Janeiro - RJ</h2>
-          <h2>para Vitória - ES</h2>
-          <p>
-            <span> R$950</span>
-            <span> | 17/05</span>
-            <span> | 200kg</span>
-            <span> | 1.5 m³</span>
-            <span> | 14 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/deposito-1.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Materiais de construção</h3>
-          <h2>de Uberlândia - MG</h2>
-          <h2>para Brasília - DF</h2>
-          <p>
-            <span> R$3.200</span>
-            <span> | 20/07</span>
-            <span> | 2.500 kg</span>
-            <span> | 5m³</span>
-            <span> | 12 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/deposito-2.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Peças automotivas</h3>
-          <h2>de São Paulo - SP</h2>
-          <h2>para Betim - MG</h2>
-          <p>
-            <span> R$1.700</span>
-            <span> | 19/07</span>
-            <span> | 600kg</span>
-            <span> | 4m³</span>
-            <span> | 32 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/deposito-3.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Mudança residencial</h3>
-          <h2>de Florianópolis - SC</h2>
-          <h2>para Porto Alegre - RS</h2>
-          <p>
-            <span> R$6.100</span>
-            <span> | 23/07</span>
-            <span> | 3.750kg</span>
-            <span> | 12m³</span>
-            <span> | 34 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/transportador/buscar-carga/deposito-4.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Alimentos não perecíveis</h3>
-          <h2>de Jundiaí - SP</h2>
-          <h2>para Ribeirão Preto - SP</h2>
-          <p>
-            <span> R$800</span>
-            <span> | 14/07</span>
-            <span> | 400kg</span>
-            <span> | 3m³</span>
-            <span> | 7 un</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Carregar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-      </div>-->
-
-      <!-- pagination -->
-      <div
-        id="pagination-container"
-        class="pagination-container hidden-default"
-      >
-        <ul class="pagination"></ul>
+      <div id="pagination-container" class="pagination-wrapper hidden-default">
+          <ul class="pagination"></ul>
       </div>
     </section>
 
