@@ -146,6 +146,28 @@ function initModalEvents() {
   };
 }
 
+
+    /* FAQ */
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+        // Verifica se o item já está ativo
+        const isActive = item.classList.contains('active');
+        
+        // Fecha todos os outros itens (Opcional - UX de foco)
+        faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+        
+        // Se não estava ativo, abre. Se estava, ele fechou no loop acima.
+        if (!isActive) {
+            item.classList.add('active');
+        }
+    });
+});
+
+
 /* --- 🚀 START --- */
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof allCardsData !== "undefined") {
