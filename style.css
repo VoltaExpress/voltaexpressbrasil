@@ -47,6 +47,34 @@ section {
   padding: 80px 10%;
 }
 
+/* ajustes de flash */
+
+/* Previne o flash de conteúdo antes do ScrollReveal carregar */
+.text h1,
+.text p,
+.persona-card,
+header {
+  visibility: hidden;
+}
+
+/* Garante que o ScrollReveal tenha o controle da visibilidade */
+.sr .text h1,
+.sr .text p,
+.sr .persona-card,
+.sr header {
+  visibility: visible;
+}
+
+/* IMPORTANTE: Ajuste a transição do card */
+.persona-card {
+  /* Mantenha o transition apenas para o HOVER */
+  /* Se houver um transition global de 2s aqui, o script vai bugar */
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
 /* --- HEADER & NAV --- */
 header {
   position: fixed;
