@@ -30,302 +30,153 @@
     <link rel="manifest" href="./public/site.webmanifest" />
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header - (EMBARCADOR)-->
     <header>
-      <a href="#" class="logo"
-        ><img
-          src="./assets/embarcador/buscar-caminhao/caminhao.png"
-          alt="logo da car rental"
-          srcset=""
-      /></a>
-      <div class="bx bx-menu" id="menu-icon"></div>
-      <ul class="navbar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#ride">Como Transportar</a></li>
-        <li><a href="#services">Encontrar Caminhão</a></li>
-        <li><a href="#reviews">Vantagens</a></li>
-        <li><a href="#about">O Volta Express</a></li>
-      </ul>
-      <div class="header-btn">
-        <a href="./login-register/index.html" class="sign-in"
-          >Entrar na Volta Express</a
-        >
-      </div>
+    <a href="#" class="logo">
+        <img src="./assets/embarcador/buscar-caminhao/caminhao.png" alt="Volta Express Brasil">
+    </a>
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+
+    <nav>
+        <ul class="navbar">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#ride">Como Transportar</a></li>
+            <li><a href="#services">Encontrar Caminhão</a></li>
+            <li><a href="#reviews">Vantagens</a></li>
+            <li><a href="#about">O Volta Express</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-btn">
+        <a href="www.voltaexpress.com.br" class="sign-in">
+            <span>Entrar / Cadastrar</span>
+            <i class='bx bx-right-arrow-alt'></i>
+        </a>
+    </div>
     </header>
 
-    <!-- Home -->
+    <!-- home - (EMBARCADOR) -->
     <section class="home" id="home">
-      <div class="text">
-        <h1>
-          Sua <span>Carga</span><br />
-          no <span>Caminhão</span>
-        </h1>
-        <p>
-          Sua carga no caminho certo.<br />
-          Com o Volta Express Brasil, encontre o transporte ideal.<br />
-          Conecte-se ao caminhoneiro certo!
-        </p>
-        <div class="app-stores">
-          <a href="./../index.html">
-            Ir para Home <img src="./assets/logo-volta-express.png" alt="" />
-          </a>
+        <div class="home-text">
+            <h1>Sua <span>Carga</span> no<br> <span>Caminhão</span> Certo</h1>
+            <p>
+                Conecte sua mercadoria a uma rede de motoristas qualificados em todo o Brasil. 
+                Segurança, agilidade e o melhor custo-benefício para sua logística.
+            </p>
+            
+            <div class="home-buttons">
+                <a href="#advertise-cargo" class="btn-primary">Anunciar Carga</a>
+                <a href="#services" class="btn-secondary">Encontrar Caminhão</a>
+            </div>
+
+            <div class="back-home">
+                <a href="./../index.html">
+                    <img src="./assets/logo-volta-express.png" alt="Volta Express">
+                    <span>Voltar para o Início</span>
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="form-container">
-        <div class="form-buttons">
-          <div class="input-box">
-            <a href="#services" class="btn">Encontrar Caminhão</a>
-          </div>
-          <div class="input-box">
-            <a href="#advertise-cargo" class="btn">Anunciar Carga</a>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- Ride -->
+    <!-- Ride - Como Transportar -->
     <section class="ride" id="ride">
-      <div class="heading">
-        <span>Como Transportar</span>
-        <h1>Encontrar o seu caminhão em 5 passos fáceis</h1>
-      </div>
-      <div class="ride-container">
+    <div class="heading">
+        <span>Processo Inteligente</span>
+        <h1>Contrate o seu transporte em 5 passos fáceis</h1>
+    </div>
+
+    <div class="ride-container">
         <div class="box">
-          <i class="bx bxs-map"></i>
-          <h2>Acesse a Área de Cargas</h2>
-          <p>Procure pela seção "Encontrar Carga" no menu do portal</p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-edit-location"></i>
+                <span class="step-number">01</span>
+            </div>
+            <h2>Anuncie sua Carga</h2>
+            <p>Insira os detalhes da mercadoria, origem, destino e o tipo de veículo necessário.</p>
         </div>
+
         <div class="box">
-          <i class="bx bxs-calendar-star"></i>
-          <h2>Navegue pelos Anúncios</h2>
-          <p>Compare com a capacidade do seu caminhão e sua rota.</p>
+            <div class="icon-wrapper">
+                <i class="bx bxs- megaphone"></i>
+                <span class="step-number">02</span>
+            </div>
+            <h2>Receba Propostas</h2>
+            <p>Motoristas qualificados visualizarão seu anúncio e enviarão propostas de frete.</p>
         </div>
+
         <div class="box">
-          <i class="bx bxs-calendar-check"></i>
-          <h2>Encontre a Carga Perfeita</h2>
-          <p>
-            Quanto mais detalhes, mais fácil será encontrar o frete ideal para
-            sua rota.
-          </p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-user-check"></i>
+                <span class="step-number">03</span>
+            </div>
+            <h2>Analise Perfis</h2>
+            <p>Verifique avaliações, histórico de entregas e documentos dos motoristas interessados.</p>
         </div>
+
         <div class="box">
-          <i class="bx bxs-calendar-star"></i>
-          <h2>Entre em Contato</h2>
-          <p>
-            Gostou de uma carga? Fale com o remetente. Tire suas dúvidas e
-            negocie o frete.
-          </p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-chat"></i>
+                <span class="step-number">04</span>
+            </div>
+            <h2>Combine os Detalhes</h2>
+            <p>Use nosso chat direto para alinhar prazos, valores e detalhes específicos da carga.</p>
         </div>
+
         <div class="box">
-          <i class="bx bxs-calendar-star"></i>
-          <h2>Feche o Negócio e Boa Viagem</h2>
-          <p>Após acertar os detalhes, confirme o frete pela plataforma.</p>
+            <div class="icon-wrapper">
+                <i class="bx bxs-truck"></i>
+                <span class="step-number">05</span>
+            </div>
+            <h2>Carga em Trânsito</h2>
+            <p>Confirme a contratação e acompanhe o sucesso da sua entrega com tranquilidade.</p>
         </div>
-      </div>
+    </div>
     </section>
 
-    <!-- Services -->
+    <!-- services - Econcontrar viagens -->
     <section class="services" id="services">
-      <div class="heading">
-        <span>Encontrar caminhão</span>
-        <h1>
-          Explore as Melhores Ofertas <br />
-          dos Mais Bem Avaliados
-        </h1>
-      </div>
-      <div class="services-container">
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-azul-1.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Caminhão do João</h3>
-          <h2>de São Paulo - SP</h2>
-          <h2>para Campinas - SP</h2>
-          <p>
-            <span>R$120</span>
-            <span> | 10/07</span>
-            <span> | 1.200kg</span>
-            <span> | até 1.5T</span>
-            <span> | 6m³</span>
-          </p>
-          <p>
-            <span>Vans</span>
-            <span> | Ideal para entregas rápidas e urbanas</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
+        <div class="heading">
+            <span>Oportunidades Disponíveis</span>
+            <h1>Explore as melhores ofertas<br>dos motoristas bem avaliados</h1>
         </div>
 
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Caminhão da Ana</h3>
-          <h2>de Belo Horizonte - MG</h2>
-          <h2>para Rio de Janeiro - RJ</h2>
-          <p>
-            <span>R$280</span>
-            <span> | 12/07</span>
-            <span> | 10.000kg</span>
-            <span> | até 14T</span>
-            <span> | 40m³</span>
-          </p>
-          <p>
-            <span>Truck</span>
-            <span> | Rota frequente, garantia de agilidade</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
+        <section class="search-section">
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+                <input type="text" id="search-input" placeholder="Para onde você quer transportar? (Ex: São Paulo, Sider, Van...)">
+            </div>
+        </section>
 
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-laranja-3.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Transportes Sul</h3>
-          <h2>de Curitiba - PR</h2>
-          <h2>para Porto Alegre - RS</h2>
-          <p>
-            <span>R$350</span>
-            <span> | 11/07</span>
-            <span> | 24.000kg</span>
-            <span> | até 26T</span>
-            <span> | 90m³</span>
-          </p>
-          <p>
-            <span>Carreta Sider</span>
-            <span> | Grande capacidade de volume</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
+        <div class="services-container" id="services-content">
+            </div>
 
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-frota-4.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Rápido Fretes</h3>
-          <h2>de Salvador - BA</h2>
-          <h2>para Recife - PE</h2>
-          <p>
-            <span>R$200</span>
-            <span> | 13/07</span>
-            <span> | 5.500kg</span>
-            <span> | até 6T</span>
-            <span> | 25m³</span>
-          </p>
-          <p>
-            <span>Toco</span>
-            <span> | Para cargas secas</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
+        <div class="pagination-container">
+            <button id="load-more-btn" class="btn-load-more">Ver mais viagens</button>
+            <p id="all-loaded-msg" style="display: none;">
+                🚛 Isso é tudo pessoal! Todas as viagens foram exibidas.
+            </p>
         </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-preto-5.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Expedição Brasil</h3>
-          <h2>de Cuiabá - MT</h2>
-          <h2>para Santos - SP</h2>
-          <p>
-            <span>R$450</span>
-            <span> | 15/07</span>
-            <span> | 28.000kg</span>
-            <span> | até 30T</span>
-            <span> | 120m³</span>
-          </p>
-          <p>
-            <span>Bitrem</span>
-            <span> | Grandes volumes e longas distâncias</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-azul-6.png"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Caminhão do Beto</h3>
-          <h2>de Ribeirão Preto - SP</h2>
-          <h2>para São Paulo - SP</h2>
-          <p>
-            <span>R$130</span>
-            <span> | 10/07</span>
-            <span> | 2.800kg</span>
-            <span> | até 3T</span>
-            <span> | 15m³</span>
-          </p>
-          <p>
-            <span>3/4</span>
-            <span> | Retorno programado </span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-
-        <div class="box">
-          <div class="box-img">
-            <img
-              src="./assets/embarcador/buscar-caminhao/caminhao-amarelo-8.jpg"
-              alt="car1"
-            />
-          </div>
-          <p class="infos"><a href="#" class="trajeto-link">Trajeto</a></p>
-          <h3>Logística Segura</h3>
-          <h2>de Juiz de Fora - MG</h2>
-          <h2>para Vitória - ES</h2>
-          <p>
-            <span>R$300</span>
-            <span> | 14/07</span>
-            <span> | 9.000kg</span>
-            <span> | até 10T</span>
-            <span> | 30m³</span>
-          </p>
-          <p>
-            <span>Refrigerado</span>
-            <span> | Ideal para cargas sensíveis</span>
-          </p>
-          <a href="#" target="_blank" class="btn"
-            >Transportar Agora <i class="bx bxl-whatsapp"></i
-          ></a>
-        </div>
-      </div>
     </section>
+    <div id="route-modal" class="modal-overlay">
+        <div class="modal-content"> <div class="modal-header">
+                <div id="modal-details"></div> 
+                <button class="close-button" onclick="fecharModal()">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            
+            <div class="modal-body">
+                <div id="modal-map"></div>
+            </div>
 
-    <!-- Reviews -->
+            <div class="modal-footer">
+                <p><i class='bx bx-info-circle'></i> O trajeto exibido é uma estimativa baseada nas cidades de origem e destino.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews - Vantagens -->
     <section class="reviews" id="reviews">
       <div class="heading">
         <span>Vantagens</span>
@@ -380,7 +231,7 @@
       </div>
     </section>
 
-    <!-- About -->
+    <!-- About - Volta Express-->
     <section class="about" id="about">
       <div class="heading">
         <span>O Volta Express Brasil</span>
@@ -424,7 +275,7 @@
       </div>
     </section>
 
-    <!-- Newsletter -->
+    <!-- Newsletter - será depoimentos -->
     <section class="newsletter">
       <h2>Assine a Newsletter do Volta Express Brasil</h2>
       <p>
@@ -438,7 +289,7 @@
       </div>
     </section>
 
-    <!-- Anunciar carga (advertise cargo) -->
+    <!-- Anunciar carga - será depoimentos -->
     <section class="advertise-cargo" id="advertise-cargo">
       <div class="heading">
         <span>Anuncie a sua Carga</span>
@@ -647,7 +498,7 @@
       </div>
     </section>
 
-    <!-- Copyright -->
+    <!-- Copyright - será o footer -->
     <div class="copyright">
       <p>@VoltaExpressBrasil &#169; All Right Reserved</p>
       <div class="social">
@@ -673,21 +524,13 @@
         src="./assets/favicon-PNG-removebg.png"
         alt="WhatsApp da Volta Express Brasil"
       />
-    </a>
-
-    <div id="route-modal" class="modal-overlay">
-      <div class="modal-content">
-        <span class="close-button">×</span>
-        <h3 id="modal-title">Detalhes do Trajeto</h3>
-        <div id="modal-details"></div>
-        <div id="modal-map"></div>
-      </div>
-    </div>
+    </a> 
 
     <!-- scrollreveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Link to JS -->
+    <script src="./viagens.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
