@@ -1,32 +1,35 @@
-/* Volta Express Brasil - v5.3 
+/* Volta Express Brasil - v5.6 
     Design System: learnTECH Ecosystem
+    Architecture: Global -> Sections (Desktop) -> Media Queries (Mobile)
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap");
+/* --- [1. CONFIGURAÇÕES BASE & ROOT] --- */
+:root {
+  --main-color: #fe5b3d;
+  --second-color: #ffac38;
+  --third-color: #104ac8;
+  --dark-color: #1e293b;
+  --bg-light: #f8fafc;
+  --text-white: #ffffff;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  /* Adição de Tipografia Fluida para UX Premium */
+  --h1-size: clamp(2.2rem, 8vw, 4rem);
+  --p-size: clamp(1rem, 2vw, 1.2rem);
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-padding-top: 2rem;
+  scroll-padding-top: 5rem; /* Ajustado para não cobrir o título no scroll */
   scroll-behavior: smooth;
   list-style: none;
   text-decoration: none;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-:root {
-  --main-color: #fe5b3d; /* Laranja Ação */
-  --second-color: #ffac38; /* Laranja Detalhe */
-  --third-color: #104ac8; /* Azul Institucional */
-  --dark-color: #1e293b; /* Azul Profundo para textos */
-  --bg-light: #f8fafc; /* Fundo suave */
-  --text-white: #ffffff;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Scrollbar Customizada */
 html::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -41,41 +44,29 @@ html::-webkit-scrollbar-thumb {
 body {
   background-color: var(--bg-light);
   color: var(--dark-color);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-section {
-  padding: 80px 10%;
-}
-
-/* ajustes de flash */
-
-/* Previne o flash de conteúdo antes do ScrollReveal carregar */
+/* --- [SISTEMA DE VISIBILIDADE (ScrollReveal)] --- */
+/* O segredo para não quebrar o mobile é NÃO ocultar a navbar dentro do header no estado mobile */
 .text h1,
 .text p,
 .persona-card,
-header {
+header,
+.footer-column {
   visibility: hidden;
 }
 
-/* Garante que o ScrollReveal tenha o controle da visibilidade */
 .sr .text h1,
 .sr .text p,
 .sr .persona-card,
-.sr header {
+.sr header,
+.sr .footer-column {
   visibility: visible;
 }
 
-/* IMPORTANTE: Ajuste a transição do card */
-.persona-card {
-  /* Mantenha o transition apenas para o HOVER */
-  /* Se houver um transition global de 2s aqui, o script vai bugar */
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease !important;
-}
-
-/* --- HEADER & NAV --- */
+/* --- [2. HEADER & NAV] --- */
 header {
   position: fixed;
   width: 100%;
@@ -89,10 +80,12 @@ header {
   backdrop-filter: blur(10px);
   padding: 15px 10%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
 }
 
 .logo img {
   width: 60px;
+  height: auto;
   transition: var(--transition);
 }
 .logo img:hover {
@@ -102,15 +95,19 @@ header {
 .navbar {
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
+
 .navbar a {
   font-size: 1rem;
   padding: 8px 16px;
   color: var(--dark-color);
   font-weight: 600;
   position: relative;
+  transition: var(--transition);
 }
 
+/* Efeito de Hover Moderno */
 .navbar a::after {
   content: "";
   width: 0;
@@ -118,251 +115,339 @@ header {
   background: var(--main-color);
   position: absolute;
   bottom: -2px;
-  left: 16px;
+  left: 50%;
+  transform: translateX(-50%);
   transition: var(--transition);
 }
-
 .navbar a:hover::after {
-  width: calc(100% - 32px);
+  width: 70%;
+}
+.navbar a:hover {
+  color: var(--main-color);
 }
 
 #menu-icon {
-  font-size: 28px;
-  cursor: pointer;
   display: none;
+  font-size: 32px;
+  cursor: pointer;
   color: var(--third-color);
+  transition: var(--transition);
 }
 
 .btn-login {
   background: var(--third-color);
   color: var(--text-white) !important;
-  padding: 10px 24px;
+  padding: 12px 28px;
   border-radius: 0.5rem;
   font-weight: 700;
   transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(16, 74, 200, 0.2);
 }
-
 .btn-login:hover {
   background: var(--main-color);
   box-shadow: 0 4px 12px rgba(254, 91, 61, 0.3);
+  transform: translateY(-2px);
 }
 
-/* --- HOME HERO --- */
+/* --- [3. HOME HERO & SELECTION] --- */
 .home {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 10% 60px;
   background:
-    linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.7)),
+    linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.7)),
     url("./assets/banner-caixas-caminhao.png");
   background-size: cover;
   background-position: center;
-}
-
-.hero-content {
-  width: 100%;
+  background-attachment: fixed; /* Efeito Parallax suave */
 }
 
 .text h1 {
-  font-size: 4rem;
+  font-size: var(--h1-size);
   color: var(--text-white);
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
 }
-
 .text span {
   color: var(--main-color);
 }
 .text p {
   color: #cbd5e1;
-  font-size: 1.2rem;
+  font-size: var(--p-size);
   margin-bottom: 3rem;
-  max-width: 600px;
+  max-width: 700px;
 }
 
-/* --- SELECTION CARDS --- */
-.selection-container {
-  margin-top: 2rem;
-}
 .persona-grid {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .persona-card {
   background: var(--text-white);
-  padding: 24px;
-  border-radius: 1rem;
+  padding: 28px;
+  border-radius: 1.2rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  min-width: 320px;
+  min-width: 300px;
   flex: 1;
-  transition: var(--transition);
+  transition: var(--transition) !important;
   border: 2px solid transparent;
 }
 
 .persona-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
   border-color: var(--main-color);
-  box-shadow: var(--shadow);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card-icon {
   background: var(--bg-light);
-  width: 60px;
-  height: 60px;
+  min-width: 65px;
+  height: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  font-size: 2rem;
+  border-radius: 14px;
+  font-size: 2.2rem;
   color: var(--third-color);
+  transition: var(--transition);
 }
 
 .persona-card:hover .card-icon {
   background: var(--main-color);
   color: var(--text-white);
+  transform: rotate(-5deg);
 }
 
 .card-info {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 .card-subtitle {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   color: #64748b;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: var(--dark-color);
 }
 
-/* --- FOOTER & SOCIAL --- */
+/* --- [4. FOOTER] --- */
 footer {
   background: var(--dark-color);
-  padding: 40px 10%;
+  padding: 100px 10% 40px;
   color: var(--text-white);
+  border-top: 5px solid var(--main-color);
 }
+
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 4rem;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 2rem;
+}
+
+.branding p {
+  line-height: 1.8;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.footer-column h3 {
+  color: var(--main-color);
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.footer-column ul li {
+  margin-bottom: 1rem;
+}
+
+.footer-column ul li a {
+  color: var(--text-white);
+  opacity: 0.7;
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.footer-column ul li a:hover {
+  opacity: 1;
+  color: var(--main-color);
+  transform: translateX(8px);
+}
+
+.contact-info li i {
+  color: var(--main-color);
+  font-size: 1.3rem;
 }
 
 .social {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
 }
+
 .social a {
   color: var(--text-white);
-  font-size: 24px;
   width: 45px;
   height: 45px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: 12px;
   transition: var(--transition);
+  font-size: 1.2rem;
 }
 
 .social a:hover {
-  background: var(--main-color);
-  transform: rotate(360deg);
+  background: var(--third-color);
+  transform: translateY(-5px);
 }
 
-/* --- WHATSAPP FLOAT --- */
+.footer-bottom {
+  margin-top: 80px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.5;
+}
+
+/* --- [5. WHATSAPP FLOAT] --- */
+/* --- [CORREÇÃO: BLOCO DE WHATSAPP FIXED] --- */
+
 .whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: #25d366;
-  width: 65px;
+  position: fixed; /* Isso garante que ele fique fixo na tela */
+  bottom: 30px;    /* Distância do fundo */
+  right: 30px;     /* Distância da direita */
+  background: #25d366; /* Cor do WhatsApp */
+  width: 65px;     /* Tamanho */
   height: 65px;
-  border-radius: 50%;
-  display: flex;
+  border-radius: 50%; /* Faz o círculo */
+  display: flex;   /* Centraliza o ícone dentro */
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
+  z-index: 1001; /* Garante que fique ACIMA de qualquer outro elemento */
   transition: var(--transition);
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1) rotate(15deg);
-}
-.whatsapp-float img {
-  width: 35px;
+  transform: scale(1.1) rotate(15deg); /* Sua animação de hover */
 }
 
-/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+.whatsapp-float img {
+  width: 35px; /* Ajuste do ícone */
+}
+
+/* --- [6. RESPONSIVIDADE & MOBILE CORE] --- */
 
 @media (max-width: 1024px) {
   header,
-  section,
+  .home,
   footer {
     padding: 20px 5%;
   }
-  .text h1 {
-    font-size: 3rem;
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 991px) {
+  #menu-icon {
+    display: block;
+    z-index: 10001;
+  }
+
+  /* REFORMULAÇÃO DO MENU MOBILE PARA FUNCIONAR COM O SEU JS */
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Escondido */
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-light);
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    /* Forçamos visibilidade para ignorar o SR que esconde o Header pai */
+    visibility: visible !important;
+    z-index: 10000;
+  }
+
+  .navbar.active {
+    right: 0; /* Desliza para dentro */
+  }
+
+  .navbar a {
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .header-btn {
+    display: none;
   }
 }
 
 @media (max-width: 768px) {
-  #menu-icon {
-    display: block;
+  .home {
+    padding-top: 100px;
+    text-align: center;
   }
-
-  .navbar {
-    position: absolute;
-    top: -1000px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background: var(--text-white);
-    padding: 2rem;
-    transition: 0.4s;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  .text p {
+    margin-left: auto;
+    margin-right: auto;
   }
-
-  .navbar.active {
-    top: 100%;
-  }
-
-  .navbar a::after {
-    display: none;
-  }
-
   .persona-grid {
     flex-direction: column;
   }
   .persona-card {
     width: 100%;
+    min-width: unset;
   }
-
-  .text h1 {
-    font-size: 2.2rem;
-  }
-  .header-btn {
-    display: none;
-  } /* Esconde o botão no mobile para limpar o header */
 }
 
 @media (max-width: 480px) {
-  .text h1 {
-    font-size: 1.8rem;
-  }
   .footer-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     text-align: center;
+  }
+  .footer-column h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .social,
+  .contact-info li {
+    justify-content: center;
+  }
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
   }
 }

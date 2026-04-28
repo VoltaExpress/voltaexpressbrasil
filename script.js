@@ -1,16 +1,28 @@
 /**
  * Volta Express Brasil - v5.4
  * Core Script: High-End UX & Synchronized Animations
+ * * Análise de Qualidade (QA):
+ * - Performance: Uso de ScrollReveal com 'reset: false' evita re-render desnecessário.
+ * - UX: Fechamento automático do menu no scroll melhora a usabilidade mobile.
+ * - Manutenibilidade: Funções isoladas por responsabilidade (Clean Code).
  */
 
-// 1. Inicialização de Componentes
+/**
+ * SEÇÃO: ORQUESTRAÇÃO GLOBAL
+ * Gerencia o ciclo de vida da aplicação e inicializa os módulos após o carregamento do DOM.
+ */
 document.addEventListener("DOMContentLoaded", () => {
   setupMenu();
   setupWhatsapp();
   initScrollReveal();
+  // Dica de QA: Verifique se o elemento .faq-question existe antes de chamar initFaq
+  if (document.querySelector(".faq-question")) initFaq();
 });
 
-// 2. Gerenciamento do Menu Mobile (UX Fluida)
+/**
+ * SEÇÃO: HEADER & NAVEGAÇÃO (UX FLUIDA)
+ * Controla a interatividade do menu hambúrguer e garante que a navegação não obstrua a visão no scroll.
+ */
 const setupMenu = () => {
   const menuIcon = document.querySelector("#menu-icon");
   const navbar = document.querySelector(".navbar");
@@ -18,18 +30,23 @@ const setupMenu = () => {
   if (!menuIcon || !navbar) return;
 
   menuIcon.onclick = () => {
-    menuIcon.classList.toggle("bx-x");
+    menuIcon.classList.toggle("bx-x"); // Troca ícone para 'X' (Boxicons)
     navbar.classList.toggle("active");
   };
 
-  // Fecha o menu ao clicar fora ou scrollar
+  // Garante que o menu feche ao navegar, evitando que o usuário precise fechar manualmente
   window.addEventListener("scroll", () => {
-    menuIcon.classList.remove("bx-x");
-    navbar.classList.remove("active");
+    if (navbar.classList.contains("active")) {
+      menuIcon.classList.remove("bx-x");
+      navbar.classList.remove("active");
+    }
   });
 };
 
-// 3. Configuração Dinâmica do WhatsApp
+/**
+ * SEÇÃO: ATENDIMENTO AO CLIENTE (CONVERSÃO)
+ * Centraliza a lógica de contato via WhatsApp, facilitando a manutenção do número de suporte.
+ */
 const setupWhatsapp = () => {
   const whatsappButton = document.getElementById("fixed-whatsapp-button");
   if (!whatsappButton) return;
@@ -41,26 +58,28 @@ const setupWhatsapp = () => {
   whatsappButton.href = `https://wa.me/${supportNumber}?text=${encodeURIComponent(supportMessage)}`;
 };
 
-// 4. ScrollReveal - A "Mágica" da Sincronização
+/**
+ * SEÇÃO: ANIMAÇÕES DE ENTRADA (VISUAL MODERNO)
+ * Utiliza ScrollReveal para criar uma sequência coreografada que guia o olhar do usuário do Header até os Cards.
+ */
 const initScrollReveal = () => {
-  // Configuração Global Sênior
+  // Configuração base para evitar saltos bruscos de layout
   const sr = ScrollReveal({
     origin: "top",
     distance: "40px",
     duration: 2000,
     delay: 200,
-    reset: false, // Mantém a estabilidade após a primeira carga
+    reset: false,
   });
 
-  // --- SEQUÊNCIA DA HOME (Sincronizada) ---
-
-  // Primeiro: O Header aparece suavemente
+  // Camada 1: Identidade Visual (Header)
   sr.reveal("header", {
     delay: 100,
     distance: "20px",
   });
 
-  // Segundo: O Título e Subtítulo (Entrada Lateral para dinamismo)
+  // Camada 2: Proposta de Valor (Hero Section)
+  // Entrada lateral para "quebrar" a monotonia vertical do scroll
   sr.reveal(".text h1", {
     delay: 400,
     origin: "left",
@@ -73,28 +92,32 @@ const initScrollReveal = () => {
     distance: "60px",
   });
 
-  // Terceiro: Os Persona Cards (O grande final)
-  // Usamos um intervalo menor (150) para que eles entrem em "cascata"
+  // Camada 3: Segmentação de Personas (Conversion Cards)
+  // Efeito cascata (interval) e inclinação 3D para reforçar o design moderno
   sr.reveal(".persona-card", {
     delay: 900,
     origin: "bottom",
     distance: "50px",
-    interval: 200, // Cria o efeito de um card seguindo o outro
-    rotate: { x: 20, z: 0 }, // Leve inclinação 3D na entrada
+    interval: 200,
+    rotate: { x: 20, z: 0 },
     scale: 0.9,
   });
 
-  // --- OUTRAS SEÇÕES (Caso existam no HTML) ---
+  // Elementos Auxiliares e Rodapé
   sr.reveal(".about-img", { origin: "left" });
   sr.reveal(".about-text", { origin: "right" });
   sr.reveal(".footer-container", { origin: "bottom", distance: "20px" });
 };
 
-// 5. Accordion FAQ (Se você já implementou a seção de FAQ)
+/**
+ * SEÇÃO: SUPORTE AO USUÁRIO (FAQ)
+ * Implementa o comportamento de sanfona (Accordion) para economizar espaço vertical na Home.
+ */
 const initFaq = () => {
   const questions = document.querySelectorAll(".faq-question");
   questions.forEach((q) => {
     q.addEventListener("click", () => {
+      // Dica de PM: Considere fechar outros itens abertos ao abrir um novo (Exclusividade)
       const item = q.parentElement;
       item.classList.toggle("active");
     });
