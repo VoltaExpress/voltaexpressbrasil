@@ -6,7 +6,7 @@ Propósito do Volta Express Brasil é criar oportunidades para a parte mais frá
 
 Nesse projeto, desenvolvemos uma Landing Page para demonstrar, explicar e atrair nossos clientes para a nossa plataforma para solucionarem suas dificuldades de logística.
 
-## Versão 6 - developer-v6.0
+# Volta Express V6 - developer-v6.0
 
 ### HOME 
 
@@ -36,7 +36,7 @@ Página principal com o objetivo de apresentar informações comerciais das duas
 - [ ] Redes Sociais: Facebook - Uma trilha para a Startup: criar 10 postagens para cada modelo
 - [ ] Redes Sociais: Youtube - Uma trilha para a Startup: criar 10 postagens para cada modelo
 
-### tenho caminhão e busco carga - DOING 
+### SOU MOTORISTA QUERO CARREGAR / tenho caminhão e busco carga  
 
 Página da persona CAMINHONEIRO, onde "tenho caminhão e busco carga". 
 Aqui o objetivo é visualizar cargas e anunciar viagens.
@@ -50,8 +50,9 @@ Aqui o objetivo é visualizar cargas e anunciar viagens.
 - [x] Encontrar Carga
 - [x] Vantagens
 - [x] O Volta Express 
-- [x] Botão Entrar na Volta Express
-- [ ] Encontrar Carga: Inteligência de informações: Levar para a plataforma
+- [ ] Botão Entrar / Cadastrar na Volta Express : levar para plataforma
+- [x] Encontrar Carga 
+- [ ] CTAs no Encontrar Carga: Levar para a plataforma
 
 #### Dobra Home 
 
@@ -59,7 +60,7 @@ Aqui o objetivo é visualizar cargas e anunciar viagens.
 - [x] Lema da Startup para a Personal Caminhoneiro
 - [x] CTA 1 - Encontrar Carga
 - [x] CTA 2 - Anunciar Viagem
-- [x] CTA 3 - Ir para a Home
+- [x] CTA 3 - Ir para o Início
 - [x] Botão Fixed para o Suporte Whatsapp
 
 #### Dobra Como Carregar 
@@ -72,7 +73,9 @@ Aqui o objetivo é visualizar cargas e anunciar viagens.
 
 - [x] Visualizar as cargas para serem escolhidas
 - [x] O design de cada card deve conter as informações que constam no formulario de anunciar carga da outra persona
-- [ ] Encontrar Carga: Inteligência de informações: Levar para a plataforma
+- [x] Encontrar Carga
+- [x] Card com botão ver trajeto Modernos
+- [ ] CTAs no Encontrar Carga: Levar para a plataforma
  
 #### Dobra Vantagens
 
@@ -84,14 +87,6 @@ Aqui o objetivo é visualizar cargas e anunciar viagens.
 
 - [x] A logo em destaque
 - [x] A história da startup para a perspectiva da persona 
-
-#### Dobra Newsletter
-
-- [x] Cadastrar para enviar conteúdos de logistica  
-
-#### Dobra Anunciar a sua Viagem
-
-- [x] Informações para o caminhoneiro anunciar viagem 
  
 #### Dobra Quem anunciou com a gente
 
@@ -114,7 +109,7 @@ Aqui o objetivo é visualizar cargas e anunciar viagens.
 
 - levar para a plataforma
 
-### tenho carga e busco caminhão
+### SOU EMBARCADOR QUERO TRANSPORTAR / tenho carga e busco caminhão
 
 Página da persona EMBARCADOR, onde "tenho carga e busco caminhão". 
 Aqui o objetivo é visualizar viagens e anunciar carga.
@@ -128,8 +123,9 @@ Aqui o objetivo é visualizar viagens e anunciar carga.
 - [x] Encontrar Caminhão
 - [x] Vantagens
 - [x] O Volta Express 
-- [x] Botão Entrar na Volta Express
-- [ ] Encontrar Caminhão: Inteligência de informações: Levar para a plataforma
+- [ ] Botão Entrar / Cadastrar na Volta Express : levar para plataforma
+- [x] Encontrar Caminhão 
+- [ ] CTAs no Encontrar Caminhão: Levar para a plataforma
 
 #### Dobra Home 
 
@@ -150,7 +146,9 @@ Aqui o objetivo é visualizar viagens e anunciar carga.
 
 - [x] Visualizar as cargas para serem escolhidas
 - [x] O design de cada card deve conter as informações que constam no formulario de anunciar carga da outra persona
-- [ ] Encontrar Caminhão: Inteligência de informações: levar para a plataforma
+- [x] Encontrar Caminhão
+- [x] Card com botão ver trajeto Modernos
+- [ ] CTAs no Encontrar Caminhão: Levar para a plataforma
 
 #### Dobra Vantagens
 
@@ -162,15 +160,7 @@ Aqui o objetivo é visualizar viagens e anunciar carga.
 
 - [x] A logo em destaque
 - [x] A história da startup para a perspectiva da persona
- 
-#### Dobra Newsletter
-
-- [x] Cadastrar para enviar conteúdos de logistica 
- 
-#### Dobra Anunciar a sua Viagem
-
-- [x] Informações para o caminhoneiro anunciar viagem
- 
+  
 #### Dobra Quem anunciou com a gente
 
 - [x] Depoimentos de clientes
@@ -194,7 +184,7 @@ Aqui o objetivo é visualizar viagens e anunciar carga.
 
 ---
 
-## Versão 5 - developer-v5.3
+# Volta Express V5 - developer-v5.3
 
 ### Home
 
@@ -471,9 +461,9 @@ Aqui o objetivo é visualizar viagens e anunciar carga.
 
 - [ ] fazer a exibição dessas informações de forma automática e sincronizada com a outra persona
 
-## Versão 5 - developer-v5.2
+# Volta Express V5 - developer-v5.2
 
-## Personas
+### Personas
 
 Apresentaremos as informações de forma seguimentada 
 
@@ -626,7 +616,7 @@ VOLTA-EXPRESS-BRASIL/
 └── README.md
 ````
 
-## ROADMAP
+### ROADMAP
 
 ### google meu negócio
 
@@ -669,7 +659,7 @@ VOLTA-EXPRESS-BRASIL/
 
 Treinar o agente de IA, Claudinei, para interagir com os usuários e aperfeiçoar as informações do cenário de logística.
 
-## QA
+### QA
 
 Desenhar os testes
 
