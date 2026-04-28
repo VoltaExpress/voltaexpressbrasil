@@ -8,22 +8,25 @@ Nesse projeto, desenvolvemos uma Landing Page para demonstrar, explicar e atrair
 
 ## Versão 6 - developer-v6.0
 
+### HOME 
+
 Página principal com o objetivo de apresentar informações comerciais das duas plataformas: para Embarcador e para Caminhoneiro.
 
 #### Menu
 
 - [x] Logo Personalizado
-- [x] Opção 1 - tenho caminhão e busco carga
-- [x] Opção 2 - tenho carga e busco caminhão
-- [ ] Botão Conte para gente: fazer o formulário em codigo
+- [x] Opção 1 - tenho caminhão (busco carga)
+- [x] Opção 2 - tenho carga (busco caminhão)
+- [x] Botão Entrar / Cadastrar: levar para a plataforma
+- [ ] Botão Conte para gente: fazer um formulário em codigo para ouvirmos feedbacks
 
 #### Dobra Principal
 
 - [x] Imagem principal
 - [x] Lema da Startup
-- [x] CTA 1 - tenho caminhão e busco carga
-- [x] CTA 2 - tenho carga e busco caminhão
-- [x] Botão Fixed para o Suporte Whatsapp
+- [x] CTA 1 - Sou motorista / Quero carregar
+- [x] CTA 2 - Sou embarcador / quero transportar
+- [x] Botão Fixed via Whatsapp para o suporte do cliente
 
 #### Footer
 
