@@ -76,7 +76,7 @@ Neste repositório, mantemos a **Landing Page oficial** da startup. O objetivo p
 ![Rodapé Institucional](./.github/home-5-footer-mobile.jpg)
 
 #### Rodapé Institucional Responsivo
-![Rodapé Institucional](./.github/home-5-footer-mobile-2.jpg)
+![Rodapé Institucional](./.github/home-6-footer-mobile-2.jpg)
 
 ---
 
