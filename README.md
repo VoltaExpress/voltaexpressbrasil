@@ -39,7 +39,9 @@ Neste repositório, mantemos a **Landing Page oficial** da startup. O objetivo p
 - [x] **Guia Passo a Passo:** Seção demonstrando como é simples encontrar cargas na plataforma.
 - [x] **Mural de Cargas:** Cards ilustrativos com os detalhes dos anúncios e visualização de trajetos.
 - [x] **Grid de Vantagens:** Apresentação das 4 principais dores logísticas que a solução resolve.
+- [x] **O Volta Express:** Apresentação sobre o O Volta Express para o Caminhoneiro / Transportador.
 - [x] **Depoimentos & FAQ:** Prova social com histórias reais e respostas para as principais dúvidas dos caminhoneiros.
+- [x] **Rodapé Institucional:** Direitos autorais e estrutura para documentação oficial.
 
 ### 📦 Persona: Quero Transportar (Embarcador / Remetente)
 - [x] **Módulo Dedicado:** Rota própria em `/quero-transportar/index.html`.
@@ -47,7 +49,87 @@ Neste repositório, mantemos a **Landing Page oficial** da startup. O objetivo p
 - [x] **Dobra Hero Dedicada:** Mensagem focada no dono da carga com 3 CTAs de conversão.
 - [x] **Mural de Veículos:** Cards ilustrativos com caminhões disponíveis e informações de rota.
 - [x] **Grid de Vantagens:** Foco em agilidade na contratação, redução de custos e segurança no frete.
+- [x] **O Volta Express:** Apresentação sobre o O Volta Express para o Embarcador / Remetente.
 - [x] **Depoimentos & FAQ:** Central de esclarecimentos para superar objeções comerciais de embarcadores.
+- [x] **Rodapé Institucional:** Direitos autorais e estrutura para documentação oficial.
+
+
+---
+
+## 📱 Interfaces da Aplicação
+
+### 🌐 Core & Institucional (Home)
+
+#### Header & Dobra Hero Principal & Atendimento  
+![Header & Dobra Hero Principal & Atendimento](./.github/home-1-header-hero.jpg)
+
+#### Header & Dobra Hero Principal & Atendimento Responsivo
+![Dobra Hero Principal e Atendimento Ativo](./.github/home-2-header-hero-mobile.jpg)
+
+#### Header & Dobra Hero Principal & Atendimento Responsivo Menu
+![Dobra Hero Principal e Atendimento Ativo](./.github/home-3-header-hero-mobile-menu.jpg)
+
+#### Rodapé Institucional
+![Rodapé Institucional](./.github/home-4-footer.jpg)
+
+#### Rodapé Institucional Responsivo
+![Rodapé Institucional](./.github/home-5-footer-mobile.jpg)
+
+#### Rodapé Institucional Responsivo
+![Rodapé Institucional](./.github/home-5-footer-mobile-2.jpg)
+
+---
+
+### 🚛 Persona: Quero Carregar (Caminhoneiro / Transportador)
+
+#### Menu de Navegação & Dobra Hero Dedicada
+![Menu e Dobra Hero - Quero Carregar](./.github/carregar-hero.jpg)
+
+#### Guia Passo a Passo
+![Guia Passo a Passo - Quero Carregar](./.github/carregar-passo-a-passo.jpg)
+
+#### Mural de Cargas
+![Mural de Cargas](./.github/carregar-mural-cargas.jpg)
+
+#### Grid de Vantagens
+![Grid de Vantagens - Quero Carregar](./.github/carregar-vantagens.jpg)
+
+#### O Volta Express
+![O Volta Express - Transportador](./.github/carregar-sobre.jpg)
+
+#### Depoimentos & FAQ
+![Depoimentos e FAQ - Quero Carregar](./.github/carregar-faq.jpg)
+
+#### Rodapé Institucional
+![Rodapé Institucional](./.github/home-footer.jpg)
+
+#### Rodapé Institucional Responsivo
+![Rodapé Institucional](./.github/home-footer.jpg)
+
+---
+
+### 📦 Persona: Quero Transportar (Embarcador / Remetente)
+
+#### Menu de Navegação & Dobra Hero Dedicada
+![Menu e Dobra Hero - Quero Transportar](./.github/transportar-hero.jpg)
+
+#### Mural de Veículos
+![Mural de Veículos](./.github/transportar-mural-veiculos.jpg)
+
+#### Grid de Vantagens
+![Grid de Vantagens - Quero Transportar](./.github/transportar-vantagens.jpg)
+
+#### O Volta Express
+![O Volta Express - Embarcador](./.github/transportar-sobre.jpg)
+
+#### Depoimentos & FAQ
+![Depoimentos e FAQ - Quero Transportar](./.github/transportar-faq.jpg)
+
+#### Rodapé Institucional
+![Rodapé Institucional](./.github/home-footer.jpg)
+
+#### Rodapé Institucional Responsivo
+![Rodapé Institucional](./.github/home-footer.jpg)
 
 ---
 
@@ -115,7 +197,6 @@ voltaexpressbrasil/
     │       └── volta-express/
     └── public/
 ```
-
 ---
 
 <p align="center">
