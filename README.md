@@ -60,76 +60,72 @@ Neste repositório, mantemos a **Landing Page oficial** da startup. O objetivo p
 
 ### 🌐 Core & Institucional (Home)
 
-#### Header & Dobra Hero Principal & Atendimento  
-![Header & Dobra Hero Principal & Atendimento](./.github/home-1-header-hero.jpg)
+#### Header Responsivo & Hero
+![Header Responsivo e Hero](./.github/home-1-header-hero.png)
 
-#### Header & Dobra Hero Principal & Atendimento Responsivo
-![Dobra Hero Principal e Atendimento Ativo](./.github/home-2-header-hero-mobile.jpg)
+#### Header Responsivo & Hero (Mobile)
+![Header Responsivo e Hero Mobile](./.github/home-2-header-hero-mobile.png)
 
-#### Header & Dobra Hero Principal & Atendimento Responsivo Menu
-![Dobra Hero Principal e Atendimento Ativo](./.github/home-3-header-hero-mobile-menu.jpg)
+#### Menu Mobile
+![Menu Mobile](./.github/home-3-header-hero-mobile-menu.png)
 
 #### Rodapé Institucional
-![Rodapé Institucional](./.github/home-4-footer.jpg)
+![Rodapé Institucional](./.github/home-4-footer.png)
 
-#### Rodapé Institucional Responsivo
-![Rodapé Institucional](./.github/home-5-footer-mobile.jpg)
-
-#### Rodapé Institucional Responsivo
-![Rodapé Institucional](./.github/home-6-footer-mobile-2.jpg)
+#### Rodapé Institucional (Mobile)
+![Rodapé Institucional Mobile](./.github/home-5-footer-mobile.png)
+![Rodapé Institucional Mobile 2](./.github/home-6-footer-mobile-2.png)
 
 ---
 
 ### 🚛 Persona: Quero Carregar (Caminhoneiro / Transportador)
 
-#### Menu de Navegação & Dobra Hero Dedicada
-![Menu e Dobra Hero - Quero Carregar](./.github/carregar-hero.jpg)
+#### Menu de Navegação, Hero & Atendimento
+![Header, Hero e Atendimento - Quero Carregar](./.github/quero-carregar-1-header-hero-atendimento.png)
 
 #### Guia Passo a Passo
-![Guia Passo a Passo - Quero Carregar](./.github/carregar-passo-a-passo.jpg)
+![Guia Como Carregar](./.github/quero-carregar-2-como-carregar.png)
 
 #### Mural de Cargas
-![Mural de Cargas](./.github/carregar-mural-cargas.jpg)
+![Mural Encontrar Carga](./.github/quero-carregar-3-encontrar-carga.png)
+![Ver Trajeto](./.github/quero-carregar-2-2-ver-trajeto.png)
 
 #### Grid de Vantagens
-![Grid de Vantagens - Quero Carregar](./.github/carregar-vantagens.jpg)
+![Grid de Vantagens - Quero Carregar](./.github/quero-carregar-4-vantagens.png)
 
 #### O Volta Express
-![O Volta Express - Transportador](./.github/carregar-sobre.jpg)
+![O Volta Express - Transportador](./.github/quero-carregar-5-o-volta-express.png)
 
-#### Depoimentos & FAQ
-![Depoimentos e FAQ - Quero Carregar](./.github/carregar-faq.jpg)
-
-#### Rodapé Institucional
-![Rodapé Institucional](./.github/home-footer.jpg)
-
-#### Rodapé Institucional Responsivo
-![Rodapé Institucional](./.github/home-footer.jpg)
+#### Depoimentos & FAQ & Footer
+![Depoimentos - Quero Carregar](./.github/quero-carregar-6-depoimentos.png)
+![FAQ e Footer - Quero Carregar](./.github/quero-carregar-6-faq-footer.png)
 
 ---
 
 ### 📦 Persona: Quero Transportar (Embarcador / Remetente)
 
-#### Menu de Navegação & Dobra Hero Dedicada
-![Menu e Dobra Hero - Quero Transportar](./.github/transportar-hero.jpg)
+#### Menu de Navegação, Hero & Atendimento
+![Header, Hero e Atendimento - Quero Transportar](./.github/quero-transportar-1-header-hero-atendimento.png)
+![Header, Hero e Atendimento Mobile](./.github/quero-transportar-9-header-hero-atendimento-mobile.png)
+
+#### Guia Passo a Passo
+![Guia Como Transportar](./.github/quero-transportar-2-como-transportar.png)
 
 #### Mural de Veículos
-![Mural de Veículos](./.github/transportar-mural-veiculos.jpg)
+![Mural Encontrar Caminhão](./.github/quero-transportar-3-encontrar-caminhao.png)
+![Ver Trajeto - Embarcador](./.github/quero-transportar-3-2-ver-trajeto.png)
+![Encontrar Caminhão Mobile Menu](./.github/quero-transportar-10-encontrar-caminhao-mobile-menu.png)
 
 #### Grid de Vantagens
-![Grid de Vantagens - Quero Transportar](./.github/transportar-vantagens.jpg)
+![Grid de Vantagens - Quero Transportar](./.github/quero-transportar-4-vantagens.png)
 
 #### O Volta Express
-![O Volta Express - Embarcador](./.github/transportar-sobre.jpg)
+![O Volta Express - Embarcador](./.github/quero-transportar-5-o-volta-express.png)
 
-#### Depoimentos & FAQ
-![Depoimentos e FAQ - Quero Transportar](./.github/transportar-faq.jpg)
-
-#### Rodapé Institucional
-![Rodapé Institucional](./.github/home-footer.jpg)
-
-#### Rodapé Institucional Responsivo
-![Rodapé Institucional](./.github/home-footer.jpg)
+#### Depoimentos, FAQ & Rodapé
+![Depoimentos - Quero Transportar](./.github/quero-transportar-6-depoimentos.png)
+![FAQ - Quero Transportar](./.github/quero-transportar-7-faq.png)
+![Rodapé - Quero Transportar](./.github/quero-transportar-8-footer.png)
 
 ---
 
