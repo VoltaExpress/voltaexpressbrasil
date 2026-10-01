@@ -13,7 +13,7 @@ const allCardsData = [
         peso: "500 kg",
         volume: "6 m³",
         unidades: "12",
-        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1.jpg",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1-400.webp",
         whatsapp: "5532998615190"
     },
     {
@@ -26,7 +26,7 @@ const allCardsData = [
         peso: "800 kg",
         volume: "4 m³",
         unidades: "10",
-        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-2.jpg",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-2-400.webp",
         whatsapp: "5532999999999"
     },
     {
@@ -39,7 +39,7 @@ const allCardsData = [
         peso: "1.500 kg",
         volume: "2.5 m³",
         unidades: "22",
-        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-3.jpg",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-3-400.webp",
         whatsapp: "5532888888888"
     },
     {
@@ -52,7 +52,7 @@ const allCardsData = [
         peso: "350 kg",
         volume: "3 m³",
         unidades: "9",
-        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-4.jpg",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-4-400.webp",
         whatsapp: "5532777777777"
     },
     {
@@ -65,7 +65,7 @@ const allCardsData = [
         peso: "200kg",
         volume: "1.5 m³",
         unidades: "14",
-        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-5.jpg",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-5-400.webp",
         whatsapp: "5532666666666"
     },
     {
@@ -78,7 +78,7 @@ const allCardsData = [
         peso: "2.500 kg",
         volume: "5m³",
         unidades: "12",
-        imagem: "./assets/transportador/buscar-carga/deposito-1.jpg",
+        imagem: "./assets/transportador/buscar-carga/deposito-1-400.webp",
         whatsapp: "5532555555555"
     },
     {
@@ -91,7 +91,7 @@ const allCardsData = [
         peso: "600kg",
         volume: "4m³",
         unidades: "32",
-        imagem: "./assets/transportador/buscar-carga/deposito-2.jpg",
+        imagem: "./assets/transportador/buscar-carga/deposito-2-400.webp",
         whatsapp: "5532444444444"
     },
     {
@@ -104,7 +104,7 @@ const allCardsData = [
         peso: "3.750kg",
         volume: "12m³",
         unidades: "34",
-        imagem: "./assets/transportador/buscar-carga/deposito-3.jpg",
+        imagem: "./assets/transportador/buscar-carga/deposito-3-400.webp",
         whatsapp: "5532333333333"
     },
     {
@@ -117,7 +117,7 @@ const allCardsData = [
         peso: "400kg",
         volume: "3m³",
         unidades: "7",
-        imagem: "./assets/transportador/buscar-carga/deposito-4.jpg",
+        imagem: "./assets/transportador/buscar-carga/deposito-4-400.webp",
         whatsapp: "5532222222222"
     },
     {
@@ -130,7 +130,7 @@ const allCardsData = [
         peso: "10.000 kg",
         volume: "20 m³",
         unidades: "50",
-        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1.jpg",
+        imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1-400.webp",
         whatsapp: "5532222222222"
     },
 ];

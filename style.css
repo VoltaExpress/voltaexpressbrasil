@@ -159,7 +159,7 @@ header {
   padding: 120px 10% 60px;
   background:
     linear-gradient(rgba(30, 41, 59, 0.8), rgba(30, 41, 59, 0.7)),
-    url("./assets/banner-caixas-caminhao.png");
+    url("./assets/banner-caixas-caminhao-1536.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Efeito Parallax suave */

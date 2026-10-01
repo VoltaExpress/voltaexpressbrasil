@@ -17,7 +17,7 @@ const viagensDisponiveis = [
     volume: "6m³",
     categoria: "Vans",
     descricao: "Ideal para entregas rápidas e percursos urbanos.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -33,7 +33,7 @@ const viagensDisponiveis = [
     categoria: "Truck",
     descricao: "Rota frequente, garantia de agilidade e segurança.",
     imagem:
-      "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2.jpg",
+      "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -48,7 +48,7 @@ const viagensDisponiveis = [
     volume: "90m³",
     categoria: "Carreta Sider",
     descricao: "Grande capacidade de volume e carga protegida.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -63,7 +63,7 @@ const viagensDisponiveis = [
     volume: "25m³",
     categoria: "Toco",
     descricao: "Especialista em logística regional e carga seca.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -78,7 +78,7 @@ const viagensDisponiveis = [
     volume: "120m³",
     categoria: "Bitrem",
     descricao: "Longas distâncias com máxima capacidade.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -93,7 +93,7 @@ const viagensDisponiveis = [
     volume: "15m³",
     categoria: "3/4",
     descricao: "Retorno programado com custo reduzido.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6.png",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -108,7 +108,7 @@ const viagensDisponiveis = [
     volume: "30m³",
     categoria: "Refrigerado",
     descricao: "Ideal para alimentos e cargas sensíveis.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -123,7 +123,7 @@ const viagensDisponiveis = [
     volume: "18m³",
     categoria: "VUC",
     descricao: "Acesso livre em zonas urbanas restritas.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -139,7 +139,7 @@ const viagensDisponiveis = [
     categoria: "Truck Baú",
     descricao: "Transporte fluvial e rodoviário integrado.",
     imagem:
-      "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2.jpg",
+      "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -154,7 +154,7 @@ const viagensDisponiveis = [
     volume: "20m³",
     categoria: "Toco",
     descricao: "Agilidade no eixo central do país.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -169,7 +169,7 @@ const viagensDisponiveis = [
     volume: "35m³",
     categoria: "Truck",
     descricao: "Atendimento diário no litoral sudeste.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -184,7 +184,7 @@ const viagensDisponiveis = [
     volume: "100m³",
     categoria: "Granelero",
     descricao: "Especialista em escoamento de safra.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -199,7 +199,7 @@ const viagensDisponiveis = [
     volume: "12m³",
     categoria: "3/4",
     descricao: "Transporte fracionado com segurança.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6.png",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -214,7 +214,7 @@ const viagensDisponiveis = [
     volume: "22m³",
     categoria: "Toco",
     descricao: "Conexão rápida entre capitais do nordeste.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -229,7 +229,7 @@ const viagensDisponiveis = [
     volume: "85m³",
     categoria: "Carreta",
     descricao: "Transporte interestadual de longa distância.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -245,7 +245,7 @@ const viagensDisponiveis = [
     categoria: "VUC",
     descricao: "Distribuição regional eficiente.",
     imagem:
-      "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2.jpg",
+      "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -260,7 +260,7 @@ const viagensDisponiveis = [
     volume: "45m³",
     categoria: "Truck Sider",
     descricao: "Ideal para paletizados e carga seca.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -275,7 +275,7 @@ const viagensDisponiveis = [
     volume: "28m³",
     categoria: "Toco",
     descricao: "Conexão rápida no Triângulo Mineiro.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -290,7 +290,7 @@ const viagensDisponiveis = [
     volume: "24m³",
     categoria: "VUC",
     descricao: "Entregas pontuais no litoral nordestino.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -305,7 +305,7 @@ const viagensDisponiveis = [
     volume: "70m³",
     categoria: "Truck",
     descricao: "Rota consolidada no coração do Brasil.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6.png",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -320,7 +320,7 @@ const viagensDisponiveis = [
     volume: "10m³",
     categoria: "Vans",
     descricao: "Fretes curtos e urgentes.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8-400.webp",
     whatsapp: "5532998615190",
   },
   {
@@ -335,7 +335,7 @@ const viagensDisponiveis = [
     volume: "110m³",
     categoria: "Bitrem Sider",
     descricao: "Logística industrial de alta performance.",
-    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1.jpg",
+    imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
     whatsapp: "5532998615190",
   },
 ];
@@ -361,7 +361,7 @@ function renderizarCards(lista) {
     card.className = "box";
     card.innerHTML = `
             <div class="box-img">
-                <img src="${viagem.imagem}" alt="${viagem.nome}">
+                <img src="${viagem.imagem}" alt="${viagem.nome}" width="400" height="300" loading="lazy" decoding="async">
                 <span class="type-badge">${viagem.categoria}</span>
             </div>
             <div class="content">

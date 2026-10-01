@@ -32,7 +32,7 @@ function createCardHTML(carga, index) {
   return `
         <div class="box" data-index="${index}">
             <div class="box-img">
-                <img src="${carga.imagem}" alt="${carga.titulo}" loading="lazy" />
+                <img src="${carga.imagem}" alt="${carga.titulo}" width="400" height="300" loading="lazy" decoding="async" />
             </div>
             <div class="card-content">
                 <p class="infos">

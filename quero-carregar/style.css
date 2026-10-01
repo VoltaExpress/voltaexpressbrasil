@@ -241,7 +241,7 @@ header {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(./assets/transportador/buscar-carga/banner-caixas.png);
+  background: url(./assets/transportador/buscar-carga/banner-caixas-1536.webp);
   background-repeat: no-repeat;
   background-position: center right;
   background-size: cover;
@@ -354,7 +354,7 @@ header {
   .home {
     background-image:
       linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-      url(./assets/transportador/buscar-carga/banner-caixas.png);
+      url(./assets/transportador/buscar-carga/banner-caixas-1536.webp);
     background-position: center; /* Centraliza as caixas de verdade */
     background-size: 110%; /* Zoom sutil para dar destaque às caixas */
     text-align: center;

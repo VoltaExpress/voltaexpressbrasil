@@ -199,7 +199,7 @@ header {
   right: 0;
   width: 50%; /* Limita a imagem para não atropelar o texto */
   height: 100%;
-  background: url(./assets/embarcador/buscar-caminhao/banner-caminhao.png);
+  background: url(./assets/embarcador/buscar-caminhao/banner-caminhao-1536.webp);
   background-repeat: no-repeat;
   background-position: center right;
   background-size: contain; /* Ajusta a imagem sem cortar o caminhão */
