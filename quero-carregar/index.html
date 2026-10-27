@@ -1,508 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Volta Express Brasil | Quero Carregar</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volta Express Brasil | Quero Carregar</title>
+  <meta name="description" content="Encontre fretes que pagam mais. No Volta Express, você aproveita cada quilômetro e elimina viagens vazias." />
+  <meta name="theme-color" content="#104ac8" />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./public/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./public/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./public/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./public/site.webmanifest" />
-    <link rel="preload" as="image" href="./assets/transportador/buscar-carga/banner-caixas-1536.webp" type="image/webp" fetchpriority="high" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-    <a href="#home" class="logo">
-        <img src="./assets/transportador/buscar-carga/caixas-120.webp" srcset="./assets/transportador/buscar-carga/caixas-120.webp 120w, ./assets/transportador/buscar-carga/caixas-240.webp 240w" sizes="56px" alt="Volta Express Brasil" width="56" height="45" decoding="async" />
-    </a>
+  <script>document.documentElement.classList.add("js");</script>
 
-    <div class="bx bx-menu" id="menu-icon"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
 
-    <ul class="navbar">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#ride">Como Carregar</a></li>
-        <li><a href="#services">Encontrar Carga</a></li>
-        <li><a href="#vantagens">Vantagens</a></li>
-        <li><a href="#about">O Volta Express</a></li>
-    </ul>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" /></noscript>
 
-    <div class="header-btn" id="auth-section">
-        <a href="https://www.voltaexpress.com.br" class="btn-primary" id="sign-in-link">
-            Entrar/Cadastrar
-        </a>
-        <div id="user-logged-info" class="hidden-default">
-            <span class="header-greeting" id="header-greeting"></span>
-            <a href="#" class="logout-btn" id="logout-button">Sair</a>
-        </div>
+  <link rel="stylesheet" href="../shared/tokens.css?v=7.0.0" />
+  <link rel="stylesheet" href="../shared/components.css?v=7.0.0" />
+  <link rel="stylesheet" href="./style.css?v=7.0.0" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png" />
+  <link rel="manifest" href="./public/site.webmanifest" />
+
+  <script src="../shared/site.js?v=7.0.0" defer></script>
+  <script src="./cargas.js?v=7.0.0" defer></script>
+  <script src="./script.js?v=7.0.0" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="Volta Express Brasil — início">
+        <img src="../assets/logo-volta-express-120.webp" srcset="../assets/logo-volta-express-120.webp 120w, ../assets/logo-volta-express-240.webp 240w" sizes="60px" alt="Volta Express Brasil" width="60" height="40" decoding="async" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#ride">Como Carregar</a></li>
+          <li><a href="#services">Encontrar Carga</a></li>
+          <li><a href="#vantagens">Vantagens</a></li>
+          <li><a href="#about">O Volta Express</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-sm">Entrar / Cadastrar</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    </header>
+  </header>
 
-    <!-- Home -->
-    <section class="home" id="home">
-    <div class="home-content-wrapper">
-        <div class="text-side">
-            <h1>Sua <span>Próxima Carga</span> <br>está aqui!</h1>
-            <p>
-                Encontre fretes que pagam mais. No Volta Express, você aproveita 
-                cada quilômetro e elimina viagens vazias.
-            </p>
-
-            <div class="form-tabs-container">
-                <a href="#services" class="btn-hero-main">
-                    <i class='bx bx-search-alt'></i> Encontrar Carga
-                </a>
-                <a href="#advertise-truck" class="btn-hero-sub">
-                    <i class='bx bxs-truck'></i> Anunciar Viagem
-                </a>
-            </div>
-
-            <div class="back-link-area" style="padding-top: 24px;">
-                <a href="../index.html" class="link-home-pill">
-                    <i class='bx bx-left-arrow-alt'></i> Voltar para o Início
-                </a>
-            </div>
-            
+  <main id="conteudo">
+    <!-- 1. Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Sou Motorista</p>
+          <h1>Sua <span class="hl">Próxima Carga</span> está aqui!</h1>
+          <p class="lead">Encontre fretes que pagam mais. No Volta Express, você aproveita cada quilômetro e elimina viagens vazias.</p>
+          
+                    <a href="../index.html" class="hero-home" aria-label="Voltar para a página inicial do Volta Express Brasil">
+            <span class="hero-home-arrow" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+            <span class="hero-home-logo" aria-hidden="true">
+              <img src="../assets/logo-volta-express-120.webp" srcset="../assets/logo-volta-express-120.webp 120w, ../assets/logo-volta-express-240.webp 240w" sizes="48px" alt="" width="48" height="32" decoding="async" />
+            </span>
+            <span class="hero-home-text">
+              <small>Volta Express Brasil</small>
+            </span>
+          </a>
+          <div class="hero-actions">
+            <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-lg"><i class="bx bx-search-alt" aria-hidden="true"></i> Encontrar Carga</a>
+            <a href="https://wa.me/5532988367667" data-wa="Olá! Sou motorista e vim pela página Quero Carregar do Volta Express." class="btn btn-whatsapp-outline btn-lg" target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
+          </div>
         </div>
-        
-        <div class="image-side"></div>
-    </div>
+        <div class="hero-media">
+          <img src="./assets/transportador/buscar-carga/banner-caixas-800.webp" srcset="./assets/transportador/buscar-carga/banner-caixas-800.webp 800w, ./assets/transportador/buscar-carga/banner-caixas-1536.webp 1536w" sizes="(max-width: 960px) 92vw, 46vw" alt="Caixas empilhadas prontas para o frete" width="1536" height="1024" fetchpriority="high" decoding="async" />
+        </div>
+      </div>
     </section>
 
-    <!-- Ride - Como Carregar-->
-    <section class="ride" id="ride">
-    <div class="heading">
-        <span>Como Carregar</span>
-        <h1>Encontrar a sua carga em 5 passos fáceis</h1>
-    </div>
-
-    <div class="ride-container">
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-map-alt"></i>
-            </div>
-            <h2>Acesse a Área de Cargas</h2>
+    <!-- 2. Como funciona -->
+    <section class="section section--soft" id="ride">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Como Carregar</p>
+          <h2>Encontrar a sua carga em 5 passos fáceis</h2>
+        </div>
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-map-alt" aria-hidden="true"></i></span>
+            <h3>Acesse a Área de Cargas</h3>
             <p>Procure pela seção "Encontrar Carga" no menu do portal.</p>
-        </div>
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-select-multiple"></i>
-            </div>
-            <h2>Navegue pelos Anúncios</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-select-multiple" aria-hidden="true"></i></span>
+            <h3>Navegue pelos Anúncios</h3>
             <p>Compare com a capacidade do seu caminhão e sua rota.</p>
-        </div>
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-package"></i>
-            </div>
-            <h2>Encontre a Carga Perfeita</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-package" aria-hidden="true"></i></span>
+            <h3>Encontre a Carga Perfeita</h3>
             <p>Filtre por detalhes e encontre o frete ideal para sua rota.</p>
-        </div>
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-chat"></i>
-            </div>
-            <h2>Entre em Contato</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-chat" aria-hidden="true"></i></span>
+            <h3>Entre em Contato</h3>
             <p>Fale com o remetente, tire dúvidas e negocie o frete.</p>
-        </div>
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-check-circle"></i>
-            </div>
-            <h2>Feche o Negócio</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-check-circle" aria-hidden="true"></i></span>
+            <h3>Feche o Negócio</h3>
             <p>Confirme os detalhes e garanta sua viagem pela plataforma.</p>
-        </div>
-    </div>
-    </section>
-
-    <!-- Services - Encontrar carga-->
-    <section class="services" id="services">
-      <div class="heading">
-          <span>Encontrar Carga</span>
-          <h1>Explore as Melhores Ofertas <br /> dos Parceiros Verificados</h1>
-      </div>
-
-      <div class="filter-bar">
-          <div class="search-box">
-              <i class='bx bx-search'></i>
-              <input type="text" id="searchCarga" placeholder="Cidade de origem ou destino...">
-          </div>
-      </div>
-
-      <div class="services-container" id="cargas-list">
-          <div class="loader">Carregando ofertas exclusivas...</div>
-      </div>
-
-      <div class="load-more-container">
-          <button id="load-more-btn" class="btn-load-more">Ver Mais Cargas</button>
-          <p id="end-message" class="end-message hidden-default">🚛 Isso é tudo, pessoal!</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Services - Encontrar carga - modal -->
-    <div id="route-modal" class="modal-wrapper hidden-default">
-        <div class="modal-container">
-            
-            <div class="modal-header">
-                <div class="header-info">
-                    <h3>Detalhes do Trajeto</h3>
-                    <p>Paletes de eletrodomésticos</p>
-                </div>
-                <span class="close-button" id="closeModal">&times;</span>
-            </div>
-
-            <div class="modal-body-cards">
-                <div class="route-timeline">
-                    <div class="route-item is-origin">
-                        <i class='bx bxs-map-pin'></i>
-                        <span>Belo Horizonte - MG</span>
-                    </div>
-                    <div class="route-item is-destination">
-                        <i class='bx bxs-truck'></i>
-                        <span>Salvador - BA</span>
-                    </div>
-                </div>
-
-                <div class="modal-data-grid">
-                    <div class="data-item price">
-                        <span class="data-label">Valor do Frete</span>
-                        <span class="data-value">R$ 4.500</span>
-                    </div>
-                    <div class="data-item">
-                        <i class='bx bx-calendar'></i>
-                        <span class="data-value">15/07</span>
-                    </div>
-                    <div class="data-item">
-                        <i class='bx bx-weight'></i>
-                        <span class="data-value">800 kg</span>
-                    </div>
-                    <div class="data-item">
-                        <i class='bx bx-package'></i>
-                        <span class="data-value">10 un</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="modal-map" class="map-container">
-                <div class="map-loader">
-                    <div class="spinner"></div>
-                    <p>Calculando a melhor rota para você...</p>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <a href="#" target="_blank" class="btn-whatsapp">
-                    Carregar Agora <i class="bx bxl-whatsapp"></i>
-                </a>
-            </div>
-
+    <!-- 3. Mural de exemplos -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Encontrar Carga</p>
+          <h2>Explore as Melhores Ofertas dos Parceiros Verificados</h2>
         </div>
-    </div>
+        <p class="notice">
+          <span><i class="bx bx-info-circle" aria-hidden="true"></i> Exemplos ilustrativos. As ofertas reais estão na plataforma.</span>
+          <a href="https://voltaexpress.com.br/">Ver ofertas na plataforma</a>
+        </p>
 
-    <!-- Reviews - Vantagens -->
-    <section class="vantagens" id="vantagens">
-      <div class="heading">
-          <span>Vantagens</span>
-          <h1>A opção ideal onde e quando você precisar</h1>
-      </div>
+        <div class="search">
+          <i class="bx bx-search" aria-hidden="true"></i>
+          <label class="sr-only" for="searchCarga">Buscar carga por cidade ou tipo</label>
+          <input type="search" id="searchCarga" placeholder="Cidade de origem ou destino..." autocomplete="off" />
+        </div>
 
-      <div class="vantagens-container">
-          <div class="vantagem-box">
-              <div class="v-img-wrapper">
-                  <img src="./assets/transportador/vantagem-1-400.webp" srcset="./assets/transportador/vantagem-1-400.webp 400w" sizes="50px" alt="Lucro e Otimização" width="50" height="50" loading="lazy" decoding="async" />
-              </div>
-              <h2>Otimização e Lucro</h2>
-              <p>
-                  Reduza viagens vazias e maximize seus ganhos! Encontre cargas de retorno que otimizam cada quilômetro e transformam tempo em dinheiro.
-              </p>
-          </div>
+        <div class="offers" id="cargas-list" aria-live="polite">
+          <p class="offers-empty">Carregando ofertas...</p>
+        </div>
 
-          <div class="vantagem-box">
-              <div class="v-img-wrapper">
-                  <img src="./assets/transportador/vantagem-2-400.webp" srcset="./assets/transportador/vantagem-2-400.webp 400w" sizes="50px" alt="Acesso a Fretes" width="50" height="50" loading="lazy" decoding="async" />
-              </div>
-              <h2>Milhares de Fretes</h2>
-              <p>
-                  Conecte-se a uma vasta rede de remetentes e tenha acesso diário a centenas de novas oportunidades em todo o Brasil a poucos cliques.
-              </p>
-          </div>
-
-          <div class="vantagem-box">
-              <div class="v-img-wrapper">
-                  <img src="./assets/transportador/vantagem-3-400.webp" srcset="./assets/transportador/vantagem-3-400.webp 400w" sizes="50px" alt="Negociação Direta" width="50" height="50" loading="lazy" decoding="async" />
-              </div>
-              <h2>Negociação Direta</h2>
-              <p>
-                  Comunique-se diretamente com o remetente, negocie valores de forma transparente e feche negócios sem intermediários chatos.
-              </p>
-          </div>
-
-          <div class="vantagem-box">
-              <div class="v-img-wrapper">
-                  <img src="./assets/transportador/vantagem-4-400.webp" srcset="./assets/transportador/vantagem-4-400.webp 400w" sizes="50px" alt="Segurança" width="50" height="50" loading="lazy" decoding="async" />
-              </div>
-              <h2>Segurança e Confiança</h2>
-              <p>
-                  Trabalhe com a tranquilidade de uma plataforma que valida parceiros e garante transparência total em todas as suas operações.
-              </p>
-          </div>
+        <div class="offers-more">
+          <button id="load-more-btn" class="btn btn-outline" type="button">Ver Mais Cargas</button>
+          <p id="end-message" class="offers-end" hidden>Isso é tudo! Veja mais ofertas na plataforma.</p>
+        </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="about" id="about">
-    <div class="about-container">
-        <div class="about-img">
-            <img src="./assets/transportador/buscar-carga/caixas-480.webp" srcset="./assets/transportador/buscar-carga/caixas-240.webp 240w, ./assets/transportador/buscar-carga/caixas-480.webp 480w, ./assets/transportador/buscar-carga/caixas-800.webp 800w" sizes="(max-width: 768px) 90vw, 480px" alt="Logística Volta Express" class="main-img" width="480" height="384" loading="lazy" decoding="async" />
-            <div class="trust-badge">
-                <i class='bx bxs-shield-check'></i>
-                <div>
-                    <span>100% Seguro</span>
-                    <p>Parceiros Verificados</p>
-                </div>
-            </div>
+    <!-- Modal de trajeto (preenchido pelo script.js) -->
+    <div class="modal" id="route-modal" role="dialog" aria-modal="true" aria-labelledby="route-modal-title" hidden>
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Detalhes do Trajeto</p>
+            <h2 id="route-modal-title">Carga</h2>
+            <p class="modal-route" id="route-modal-route"></p>
+          </div>
+          <button class="modal-close" type="button" aria-label="Fechar detalhes do trajeto">&times;</button>
         </div>
-
-        <div class="about-text">
-            <span class="sub-title">Por que o Volta Express?</span>
-            <h1>Sua Jornada para o Sucesso <br> Começa com Tecnologia</h1>
-            
-            <p>
-                O <strong>Volta Express Brasil</strong> não é apenas uma plataforma de fretes; é o braço direito do motorista moderno. Nossa missão é acabar com a "viagem morta", conectando você às cargas mais lucrativas em tempo real.
-            </p>
-            
-            <p>
-                Utilizamos <strong>inteligência de rotas</strong> para garantir que você tenha total controle do seu faturamento, eliminando intermediários e burocracias desnecessárias.
-            </p>
-
-            <div class="about-stats">
-                <div class="stat-item">
-                    <h3>+10k</h3>
-                    <p>Cargas Mensais</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24h</h3>
-                    <p>Suporte Ativo</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Brasil</h3>
-                    <p>Cobertura Total</p>
-                </div>
-            </div>
-
-            <a href="#services" class="btn-about">Explorar Oportunidades <i class='bx bx-right-arrow-alt'></i></a>
+        <div class="modal-body">
+          <dl class="modal-data">
+            <div><dt>Valor do Frete</dt><dd id="route-modal-valor"></dd></div>
+            <div><dt>Data</dt><dd id="route-modal-data"></dd></div>
+            <div><dt>Peso</dt><dd id="route-modal-peso"></dd></div>
+            <div><dt>Unidades</dt><dd id="route-modal-unidades"></dd></div>
+          </dl>
+          <div class="modal-map" id="modal-map"></div>
         </div>
-    </div>
-</section>
-
-    <!-- COMUNIDADE & DEPOIMENTOS  -->
-    <section class="community" id="community">
-    <div class="heading">
-        <span>Quem Anuncia com a Gente</span>
-        <h1>Satisfação de quem vive na estrada</h1>
+        <div class="modal-footer">
+          <a href="https://wa.me/5532988367667" class="btn btn-whatsapp btn-lg" id="route-modal-cta" target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> Carregar Agora</a>
+          <p class="modal-note">O trajeto exibido é uma estimativa baseada nas cidades de origem e destino.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="testimonials-grid">
-        <div class="testi-card">
-            <div class="testi-header">
-                <img src="./assets/transportador/persona/caminhoneiro-1-160.webp" srcset="./assets/transportador/persona/caminhoneiro-1-160.webp 160w, ./assets/transportador/persona/caminhoneiro-1-320.webp 320w" sizes="60px" alt="José Carlos" width="60" height="60" loading="lazy" decoding="async" />
-                <div class="user-meta">
-                    <h3>José Carlos Silva</h3>
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
-                    </div>
-                </div>
-            </div>
-            <p>"Nunca imaginei que seria tão fácil encher o caminhão. Com o Volta Express, acabo com as viagens vazias e aumento meu lucro."</p>
+    <!-- 4. Vantagens -->
+    <section class="section section--soft" id="vantagens">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Vantagens</p>
+          <h2>A opção ideal onde e quando você precisar</h2>
         </div>
-
-        <div class="testi-card">
-            <div class="testi-header">
-                <img src="./assets/transportador/persona/caminhoneiro-2-160.webp" srcset="./assets/transportador/persona/caminhoneiro-2-160.webp 160w, ./assets/transportador/persona/caminhoneiro-2-320.webp 320w" sizes="60px" alt="Pedro Henrique" width="60" height="60" loading="lazy" decoding="async" />
-                <div class="user-meta">
-                    <h3>Pedro Henrique Alves</h3>
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
-                    </div>
-                </div>
-            </div>
-            <p>"As cargas aparecem na tela do meu celular, no meu trecho! Economizo tempo de busca e fecho fretes compatíveis diariamente."</p>
+        <div class="benefits">
+          <article class="benefit" data-reveal>
+            <img src="./assets/transportador/vantagem-1-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Otimização e Lucro</h3>
+            <p>Reduza viagens vazias e maximize seus ganhos! Encontre cargas de retorno que otimizam cada quilômetro e transformam tempo em dinheiro.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <img src="./assets/transportador/vantagem-2-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Milhares de Fretes</h3>
+            <p>Conecte-se a uma vasta rede de remetentes e tenha acesso diário a centenas de novas oportunidades em todo o Brasil a poucos cliques.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <img src="./assets/transportador/vantagem-3-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Negociação Direta</h3>
+            <p>Comunique-se diretamente com o remetente, negocie valores de forma transparente e feche negócios sem intermediários chatos.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <img src="./assets/transportador/vantagem-4-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Segurança e Confiança</h3>
+            <p>Trabalhe com a tranquilidade de uma plataforma que valida parceiros e garante transparência total em todas as suas operações.</p>
+          </article>
         </div>
-    </div>
-
-    <div class="testimonials-highlight-grid">
-        <div class="testi-card-premium featured-orange">
-            <i class='bx bxs-quote-left quote-top'></i><p>
-    "Antes do Volta Express, minha rotina era exaustiva. Eu perdia horas valiosas parado em postos, dependendo da sorte e de conversas de pátio para encontrar uma carga que valesse a pena. Era um tempo desperdiçado que nunca voltava."
-</p>
-<p>
-    "Agora, a tecnologia trabalha para mim. Planejo minhas rotas com antecedência e já saio de casa com o frete de retorno fechado e garantido. A plataforma é intuitiva e elimina toda aquela incerteza de rodar vazio pela estrada."
-</p>
-<p>
-    "O resultado apareceu rápido no bolso: meu lucro mensal saltou quase 40%. Hoje tenho mais segurança financeira e, o mais importante, mais tempo de qualidade com a minha família quando volto para casa."
-</p>
-            <div class="user-info-light">
-                <img src="./assets/transportador/persona/caminhoneiro-1-160.webp" srcset="./assets/transportador/persona/caminhoneiro-1-160.webp 160w, ./assets/transportador/persona/caminhoneiro-1-320.webp 320w" sizes="60px" alt="Ricardo Souza" width="60" height="60" loading="lazy" decoding="async" />
-                <div>
-                    <h4>Ricardo Souza</h4>
-                    <span>Motorista Autônomo - Truck</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="testi-card-premium featured-blue">
-            <p>"Plataforma intuitiva e segura. O diferencial é a transparência na negociação direta com quem tem a carga. Recomendo para todo mundo."</p>
-            <div class="user-info-light">
-                <img src="./assets/transportador/persona/caminhoneiro-3-160.webp" srcset="./assets/transportador/persona/caminhoneiro-3-160.webp 160w, ./assets/transportador/persona/caminhoneiro-3-320.webp 320w" sizes="60px" alt="Marcos Oliveira" width="60" height="60" loading="lazy" decoding="async" />
-                <div>
-                    <h4>Marcos Oliveira</h4>
-                    <span>Transportadora Oliveira</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="testi-card-premium featured-clean">
-            <p>"A inteligência de rotas me ajuda a não rodar nem um quilômetro vazio. É a tecnologia que faltava na estrada!"</p>
-            <div class="user-info-light">
-                <img src="./assets/transportador/persona/caminhoneiro-4-160.webp" srcset="./assets/transportador/persona/caminhoneiro-4-160.webp 160w, ./assets/transportador/persona/caminhoneiro-4-320.webp 320w" sizes="60px" alt="Carlos Eduardo" width="60" height="60" loading="lazy" decoding="async" />
-                <div>
-                    <h4>Carlos Eduardo</h4>
-                    <span>Caminhoneiro Baú</span>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
     </section>
 
-    <!-- FAQ -->
-     <section class="faq-section" id="faq">
-    <div class="heading">
-        <span>Tire suas dúvidas</span>
-        <h1>Use todo o potencial do Volta Express Brasil</h1>
-    </div>
-
-    <div class="faq-section-container">
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Por que o Volta Express Brasil é a melhor opção para encontrar cargas?</span>
-                <i class='bx bx-chevron-down'></i>
-            </button>
-            <div class="faq-answer">
-                <div class="faq-content">
-                    <p>Somos a sua ponte direta para milhares de oportunidades de frete em todo o Brasil. Com nossa plataforma, você acessa cargas que se encaixam na sua rota e tipo de veículo, eliminando intermediários e burocracias desnecessárias.</p>
-                </div>
+    <!-- 5. Sobre -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-media" data-reveal>
+          <img src="./assets/transportador/buscar-carga/caixas-480.webp" srcset="./assets/transportador/buscar-carga/caixas-240.webp 240w, ./assets/transportador/buscar-carga/caixas-480.webp 480w, ./assets/transportador/buscar-carga/caixas-800.webp 800w" sizes="(max-width: 960px) 90vw, 480px" alt="Logística Volta Express" width="480" height="384" loading="lazy" decoding="async" />
+          <div class="about-badge">
+            <i class="bx bxs-shield-check" aria-hidden="true"></i>
+            <div>
+              <strong>100% Seguro</strong>
+              <span>Parceiros Verificados</span>
             </div>
+          </div>
         </div>
 
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Como evitar viagens vazias (fretes de retorno)?</span>
-                <i class='bx bx-chevron-down'></i>
-            </button>
-            <div class="faq-answer">
-                <div class="faq-content">
-                    <p>Nossa inteligência conecta você a cargas de retorno em potencial. Ao anunciar sua disponibilidade, você encontra oportunidades para não voltar de mãos abanadas, transformando o que seria prejuízo em lucro real.</p>
-                </div>
-            </div>
+        <div class="about-text" data-reveal>
+          <p class="eyebrow">Por que o Volta Express?</p>
+          <h2>Sua Jornada para o Sucesso Começa com Tecnologia</h2>
+          <p>O <strong>Volta Express Brasil</strong> não é apenas uma plataforma de fretes; é o braço direito do motorista moderno. Nossa missão é acabar com a "viagem morta", conectando você às cargas mais lucrativas em tempo real.</p>
+          <p>Utilizamos <strong>inteligência de rotas</strong> para garantir que você tenha total controle do seu faturamento, eliminando intermediários e burocracias desnecessárias.</p>
+          <dl class="stats">
+            <div><dt>Cargas Mensais</dt><dd>+10k</dd></div>
+            <div><dt>Suporte Ativo</dt><dd>24h</dd></div>
+            <div><dt>Cobertura Total</dt><dd>Brasil</dd></div>
+          </dl>
+          <a href="#services" class="btn btn-primary">Explorar Oportunidades <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
         </div>
-
-        <div class="faq-item">
-            <button class="faq-question">
-                <span>Qual o processo para aceitar uma carga no aplicativo?</span>
-                <i class='bx bx-chevron-down'></i>
-            </button>
-            <div class="faq-answer">
-                <div class="faq-content">
-                    <p>É muito simples: 1. Cadastre seu caminhão. 2. Filtre cargas por origem e destino. 3. Faça sua proposta direta ao embarcador. 4. Com a proposta aceita, combine os detalhes e siga viagem!</p>
-                </div>
-            </div>
-        </div>
-
-        </div>
+      </div>
     </section>
 
-    <!-- Copyright -->
-<footer class="footer">
-        <div class="footer-container">
-            <div class="footer-box">
-                <a href="#" class="logo-footer">
-                    Volta<span>Express</span>
-                </a>
-                <p>Conectando quem produz a quem transporta com inteligência, segurança e rentabilidade máxima na estrada.</p>
-                <div class="social">
-                    <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank"><i class="bx bxl-instagram"></i></a>
-                    <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank"><i class="bx bxl-facebook"></i></a>
-                    <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank"><i class="bx bxl-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-box">
-                <h3>Links Úteis</h3>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Sobre Nós</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#community">Depoimentos</a></li>
-            </div>
-
-            <div class="footer-box">
-                <h3>Legal</h3>
-                <li><a href="#">Privacidade</a></li>
-                <li><a href="#">Termos de Uso</a></li>
-                <li><a href="#">CNAE / MEI</a></li>
-                <li><a href="#faq">Dúvidas Frequentes</a></li>
-            </div>
-
-            <div class="footer-box">
-                <h3>Contato</h3>
-                <p><i class='bx bxs-map'></i> Juiz de Fora, MG</p>
-                <p><i class='bx bxs-envelope'></i> contato@voltaexpress.com.br</p>
-                <p><i class='bx bxs-phone'></i> (32) 9XXXX-XXXX</p>
-            </div>
+    <!-- 6. Depoimentos -->
+    <section class="section section--soft" id="community">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Quem Anuncia com a Gente</p>
+          <h2>Satisfação de quem vive na estrada</h2>
         </div>
-    </footer>
+        <div class="testimonials">
+          <figure class="testimonial testimonial--featured" data-reveal>
+            <blockquote>
+              <p>"Antes do Volta Express, minha rotina era exaustiva. Eu perdia horas valiosas parado em postos, dependendo da sorte e de conversas de pátio para encontrar uma carga que valesse a pena. Era um tempo desperdiçado que nunca voltava."</p>
+              <p>"Agora, a tecnologia trabalha para mim. Planejo minhas rotas com antecedência e já saio de casa com o frete de retorno fechado e garantido. A plataforma é intuitiva e elimina toda aquela incerteza de rodar vazio pela estrada."</p>
+              <p>"O resultado apareceu rápido no bolso: meu lucro mensal saltou quase 40%. Hoje tenho mais segurança financeira e, o mais importante, mais tempo de qualidade com a minha família quando volto para casa."</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/transportador/persona/caminhoneiro-1-160.webp" srcset="./assets/transportador/persona/caminhoneiro-1-160.webp 160w, ./assets/transportador/persona/caminhoneiro-1-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Ricardo Souza</span><br /><span class="testimonial-role">Motorista Autônomo - Truck</span></span>
+            </figcaption>
+          </figure>
 
-    <div class="copyright-bar">
-        <p>@VoltaExpressBrasil 2026 &#169; Todos os direitos reservados. Orgulhosamente desenvolvido para a estrada.</p>
+          <figure class="testimonial" data-reveal>
+            <blockquote>
+              <p class="stars" aria-label="Avaliação 5 de 5"><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i></p>
+              <p>"Nunca imaginei que seria tão fácil encher o caminhão. Com o Volta Express, acabo com as viagens vazias e aumento meu lucro."</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/transportador/persona/caminhoneiro-1-160.webp" srcset="./assets/transportador/persona/caminhoneiro-1-160.webp 160w, ./assets/transportador/persona/caminhoneiro-1-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span class="testimonial-name">José Carlos Silva</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial" data-reveal>
+            <blockquote>
+              <p class="stars" aria-label="Avaliação 4,5 de 5"><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star" aria-hidden="true"></i><i class="bx bxs-star-half" aria-hidden="true"></i></p>
+              <p>"As cargas aparecem na tela do meu celular, no meu trecho! Economizo tempo de busca e fecho fretes compatíveis diariamente."</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/transportador/persona/caminhoneiro-2-160.webp" srcset="./assets/transportador/persona/caminhoneiro-2-160.webp 160w, ./assets/transportador/persona/caminhoneiro-2-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span class="testimonial-name">Pedro Henrique Alves</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial" data-reveal>
+            <blockquote>
+              <p>"Plataforma intuitiva e segura. O diferencial é a transparência na negociação direta com quem tem a carga. Recomendo para todo mundo."</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/transportador/persona/caminhoneiro-3-160.webp" srcset="./assets/transportador/persona/caminhoneiro-3-160.webp 160w, ./assets/transportador/persona/caminhoneiro-3-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Marcos Oliveira</span><br /><span class="testimonial-role">Transportadora Oliveira</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial" data-reveal>
+            <blockquote>
+              <p>"A inteligência de rotas me ajuda a não rodar nem um quilômetro vazio. É a tecnologia que faltava na estrada!"</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/transportador/persona/caminhoneiro-4-160.webp" srcset="./assets/transportador/persona/caminhoneiro-4-160.webp 160w, ./assets/transportador/persona/caminhoneiro-4-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Carlos Eduardo</span><br /><span class="testimonial-role">Caminhoneiro Baú</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Perguntas frequentes -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Tire suas dúvidas</p>
+          <h2>Use todo o potencial do Volta Express Brasil</h2>
+        </div>
+        <div class="faq">
+          <details class="faq-item" name="faq">
+            <summary>Por que o Volta Express Brasil é a melhor opção para encontrar cargas?</summary>
+            <p>Somos a sua ponte direta para milhares de oportunidades de frete em todo o Brasil. Com nossa plataforma, você acessa cargas que se encaixam na sua rota e tipo de veículo, eliminando intermediários e burocracias desnecessárias.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Como evitar viagens vazias (fretes de retorno)?</summary>
+            <p>Nossa inteligência conecta você a cargas de retorno em potencial. Ao anunciar sua disponibilidade, você encontra oportunidades para não voltar de mãos abanadas, transformando o que seria prejuízo em lucro real.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Qual o processo para aceitar uma carga no aplicativo?</summary>
+            <p>É muito simples: 1. Cadastre seu caminhão. 2. Filtre cargas por origem e destino. 3. Faça sua proposta direta ao embarcador. 4. Com a proposta aceita, combine os detalhes e siga viagem!</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Chamada final -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <h2>Sua próxima carga está na plataforma</h2>
+          <p>Acesse o Volta Express, encontre fretes na sua rota e negocie direto com quem tem a carga.</p>
+          <div class="hero-actions">
+            <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-lg">Encontrar Carga</a>
+            <a href="https://wa.me/5532988367667" data-wa="Olá! Sou motorista e quero saber mais sobre o Volta Express." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo-volta-express-120.webp" srcset="../assets/logo-volta-express-120.webp 120w, ../assets/logo-volta-express-240.webp 240w" sizes="80px" alt="Volta Express Brasil" width="80" height="53" loading="lazy" decoding="async" />
+        <p>Conectando cargas e caminhões com inteligência, segurança e rentabilidade máxima na estrada. O seu parceiro estratégico.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank" rel="noopener" aria-label="Instagram da Volta Express"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank" rel="noopener" aria-label="Facebook da Volta Express"><i class="bx bxl-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank" rel="noopener" aria-label="YouTube da Volta Express"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Navegação</h2>
+        <ul class="footer-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../quero-carregar/index.html">Tenho Caminhão</a></li>
+          <li><a href="../quero-transportar/index.html">Tenho Carga</a></li>
+          <li><a href="https://voltaexpress.com.br/">Entrar / Cadastrar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer-title">Contato</h2>
+        <ul class="footer-contact">
+          <li><span><i class="bx bxs-map" aria-hidden="true"></i> Juiz de Fora, MG</span></li>
+          <li><a href="mailto:contato@voltaexpress.com.br"><i class="bx bxs-envelope" aria-hidden="true"></i> contato@voltaexpress.com.br</a></li>
+          <li><a href="https://wa.me/5532988367667" data-wa="Olá! Vim pelo site do Volta Express e gostaria de suporte." target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div id="modal-trajeto" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Trajeto da Carga</h2>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?..." allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
+    <div class="footer-bottom">
+      <p>© 2026 Volta Express Brasil. Todos os direitos reservados.</p>
     </div>
+  </footer>
 
-    <a href="https://wa.me/seu_numero" id="fixed-whatsapp-button" target="_blank" class="fixed-whatsapp-button">
-        <img src="./assets/favicon-png-removebg-64.webp" srcset="./assets/favicon-png-removebg-64.webp 64w, ./assets/favicon-png-removebg-128.webp 128w" sizes="35px" alt="WhatsApp" width="35" height="41" decoding="async" />
-        <span class="pulse"></span>
-    </a>
-
-    <script src="https://unpkg.com/scrollreveal"></script> 
-    <!-- Link to JS -->
-    <script src="./cargas.js"></script>
-    <script src="./script.js"></script>
-  </body>
+  <a href="https://wa.me/5532988367667" data-wa="Olá! Sou motorista e vim pela página Quero Carregar do Volta Express." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="bx bxl-whatsapp" aria-hidden="true"></i>
+  </a>
+</body>
 </html>

@@ -1,5 +1,6 @@
 /**
- * viagens.js - Banco de Dados e Renderização Dinâmica
+ * viagens.js - Dados ilustrativos do mural (a renderização fica em script.js)
+ * O contato de todos os cards usa o número central em ../shared/site.js (VEB.whatsapp).
  * Projeto: Volta Express Brasil - Persona: Embarcador (Quero Transportar)
  */
 
@@ -18,7 +19,6 @@ const viagensDisponiveis = [
     categoria: "Vans",
     descricao: "Ideal para entregas rápidas e percursos urbanos.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 2,
@@ -34,7 +34,6 @@ const viagensDisponiveis = [
     descricao: "Rota frequente, garantia de agilidade e segurança.",
     imagem:
       "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 3,
@@ -49,7 +48,6 @@ const viagensDisponiveis = [
     categoria: "Carreta Sider",
     descricao: "Grande capacidade de volume e carga protegida.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 4,
@@ -64,7 +62,6 @@ const viagensDisponiveis = [
     categoria: "Toco",
     descricao: "Especialista em logística regional e carga seca.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 5,
@@ -79,7 +76,6 @@ const viagensDisponiveis = [
     categoria: "Bitrem",
     descricao: "Longas distâncias com máxima capacidade.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 6,
@@ -94,7 +90,6 @@ const viagensDisponiveis = [
     categoria: "3/4",
     descricao: "Retorno programado com custo reduzido.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 7,
@@ -109,7 +104,6 @@ const viagensDisponiveis = [
     categoria: "Refrigerado",
     descricao: "Ideal para alimentos e cargas sensíveis.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 8,
@@ -124,7 +118,6 @@ const viagensDisponiveis = [
     categoria: "VUC",
     descricao: "Acesso livre em zonas urbanas restritas.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 9,
@@ -140,7 +133,6 @@ const viagensDisponiveis = [
     descricao: "Transporte fluvial e rodoviário integrado.",
     imagem:
       "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 10,
@@ -155,7 +147,6 @@ const viagensDisponiveis = [
     categoria: "Toco",
     descricao: "Agilidade no eixo central do país.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 11,
@@ -170,7 +161,6 @@ const viagensDisponiveis = [
     categoria: "Truck",
     descricao: "Atendimento diário no litoral sudeste.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 12,
@@ -185,7 +175,6 @@ const viagensDisponiveis = [
     categoria: "Granelero",
     descricao: "Especialista em escoamento de safra.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 13,
@@ -200,7 +189,6 @@ const viagensDisponiveis = [
     categoria: "3/4",
     descricao: "Transporte fracionado com segurança.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 14,
@@ -215,7 +203,6 @@ const viagensDisponiveis = [
     categoria: "Toco",
     descricao: "Conexão rápida entre capitais do nordeste.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 15,
@@ -230,7 +217,6 @@ const viagensDisponiveis = [
     categoria: "Carreta",
     descricao: "Transporte interestadual de longa distância.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 16,
@@ -246,7 +232,6 @@ const viagensDisponiveis = [
     descricao: "Distribuição regional eficiente.",
     imagem:
       "./assets/embarcador/buscar-caminhao/caminhao-frota-frigorifico-2-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 17,
@@ -261,7 +246,6 @@ const viagensDisponiveis = [
     categoria: "Truck Sider",
     descricao: "Ideal para paletizados e carga seca.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-laranja-3-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 18,
@@ -276,7 +260,6 @@ const viagensDisponiveis = [
     categoria: "Toco",
     descricao: "Conexão rápida no Triângulo Mineiro.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-frota-4-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 19,
@@ -291,7 +274,6 @@ const viagensDisponiveis = [
     categoria: "VUC",
     descricao: "Entregas pontuais no litoral nordestino.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-preto-5-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 20,
@@ -306,7 +288,6 @@ const viagensDisponiveis = [
     categoria: "Truck",
     descricao: "Rota consolidada no coração do Brasil.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-6-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 21,
@@ -321,7 +302,6 @@ const viagensDisponiveis = [
     categoria: "Vans",
     descricao: "Fretes curtos e urgentes.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-amarelo-8-400.webp",
-    whatsapp: "5532998615190",
   },
   {
     id: 22,
@@ -336,76 +316,5 @@ const viagensDisponiveis = [
     categoria: "Bitrem Sider",
     descricao: "Logística industrial de alta performance.",
     imagem: "./assets/embarcador/buscar-caminhao/caminhao-azul-1-400.webp",
-    whatsapp: "5532998615190",
   },
 ];
-
-let viagensExibidas = 0;
-const viagensPorVez = 6;
-const incremento = 4;
-
-function renderizarCards(lista) {
-  const container = document.getElementById("services-content");
-  const loadMoreBtn = document.getElementById("load-more-btn");
-  const msgFinal = document.getElementById("all-loaded-msg");
-
-  const fragmento = document.createDocumentFragment();
-  const limite = Math.min(
-    viagensExibidas + (viagensExibidas === 0 ? viagensPorVez : incremento),
-    lista.length,
-  );
-
-  for (let i = viagensExibidas; i < limite; i++) {
-    const viagem = lista[i];
-    const card = document.createElement("div");
-    card.className = "box";
-    card.innerHTML = `
-            <div class="box-img">
-                <img src="${viagem.imagem}" alt="${viagem.nome}" width="400" height="300" loading="lazy" decoding="async">
-                <span class="type-badge">${viagem.categoria}</span>
-            </div>
-            <div class="content">
-                <div class="card-header">
-                    <h3>${viagem.nome}</h3>
-                    <a href="javascript:void(0)" onclick="abrirModal(${viagem.id})" class="trajeto-link">
-                        <i class='bx bx-map-alt'></i> Ver Trajeto
-                    </a>
-                </div>
-                <div class="route-info">
-                    <div class="route-item">
-                        <i class='bx bxs-circle' style="color: var(--main-color); font-size: 8px;"></i>
-                        <span><strong>De:</strong> ${viagem.origem}</span>
-                    </div>
-                    <div class="route-line"></div>
-                    <div class="route-item">
-                        <i class='bx bxs-map' style="color: var(--dark-color); font-size: 12px;"></i>
-                        <span><strong>Para:</strong> ${viagem.destino}</span>
-                    </div>
-                </div>
-                <div class="card-specs">
-                    <div class="spec"><i class='bx bx-calendar'></i> <span>${viagem.data}</span></div>
-                    <div class="spec"><i class='bx bx-weight'></i> <span>${viagem.capacidade}</span></div>
-                    <div class="spec"><i class='bx bx-package'></i> <span>${viagem.volume}</span></div>
-                    <div class="spec"><i class='bx bx-check-shield'></i> <span>Verificado</span></div>
-                </div>
-                <p class="description">${viagem.descricao}</p>
-                <a href="https://wa.me/${viagem.whatsapp}" target="_blank" class="btn-whatsapp">
-                    Transportar Agora <i class='bx bxl-whatsapp'></i>
-                </a>
-            </div>
-        `;
-    fragmento.appendChild(card);
-  }
-
-  container.appendChild(fragmento);
-  viagensExibidas = limite;
-
-  // Controle de visibilidade do botão
-  if (viagensExibidas >= lista.length) {
-    loadMoreBtn.style.display = "none";
-    msgFinal.style.display = "block";
-  } else {
-    loadMoreBtn.style.display = "inline-block";
-    msgFinal.style.display = "none";
-  }
-}

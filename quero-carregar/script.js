@@ -1,182 +1,113 @@
-/* ===============================================================
-    VOLTA EXPRESS BRASIL - LÓGICA DE CARGAS E BUSCA
-   =============================================================== */
+/* ==========================================================================
+   Quero Carregar — mural de exemplos de cargas (busca, "ver mais" e trajeto)
+   Dados: cargas.js (allCardsData). Comum às páginas: ../shared/site.js (VEB).
+   Menu, WhatsApp flutuante e animações ficam no shared/site.js.
+   ========================================================================== */
 
-const CARDS_PER_STEP = 4;
-let visibleCount = CARDS_PER_STEP;
+const PRIMEIRA_CARGA = 6; // múltiplo de 3 e 2: completa as linhas da grade no desktop e no tablet
+const CARDS_PER_STEP = 3;
+let visibleCount = PRIMEIRA_CARGA;
 let filteredData = [];
-const GOOGLE_API_KEY = "AIzaSyBmtlBWyTjYX_C3FfPrKFgL-YHyyA3mfDY";
 
-/* --- 🔍 BUSCA --- */
-function initSearch() {
-  const searchInput = document.getElementById("searchCarga");
-  if (!searchInput) return;
+/** Mensagem de WhatsApp que identifica a carga para o atendimento. */
+const mensagemCarga = (carga) =>
+  `Olá! Vi no site do Volta Express a carga "${carga.titulo}" de ${carga.origem} para ${carga.destino} e tenho interesse.`;
 
-  filteredData = [...allCardsData];
-
-  searchInput.addEventListener("input", (e) => {
-    const term = e.target.value.toLowerCase();
-    filteredData = allCardsData.filter(
-      (carga) =>
-        carga.origem.toLowerCase().includes(term) ||
-        carga.destino.toLowerCase().includes(term) ||
-        carga.titulo.toLowerCase().includes(term),
-    );
-    visibleCount = CARDS_PER_STEP;
-    renderCargas();
-  });
-}
-
-/* --- 📦 RENDERIZAÇÃO --- */
-function createCardHTML(carga, index) {
+/* --- Card de carga (dados escapados; sem onclick inline) --- */
+function createCardHTML(carga) {
+  const e = VEB.esc;
   return `
-        <div class="box" data-index="${index}">
-            <div class="box-img">
-                <img src="${carga.imagem}" alt="${carga.titulo}" width="400" height="300" loading="lazy" decoding="async" />
-            </div>
-            <div class="card-content">
-                <p class="infos">
-                    <a href="javascript:void(0)" class="trajeto-link" onclick="handleOpenModal(${index})">
-                        Ver Trajeto
-                    </a>
-                </p>
-                <h3>${carga.titulo}</h3>
-                <div class="route">
-                    <h2>de ${carga.origem}</h2>
-                    <h2>para ${carga.destino}</h2>
-                </div>
-                <div class="details-grid">
-                    <span class="price">${carga.valor}</span>
-                    <span>| ${carga.data}</span>
-                    <span>| ${carga.peso}</span>
-                    <span>| ${carga.unidades} un</span>
-                </div>
-                <a href="https://wa.me/${carga.whatsapp}" target="_blank" class="btn">
-                    Carregar Agora <i class="bx bxl-whatsapp"></i>
-                </a>
-            </div>
+    <article class="offer-card">
+      <div class="offer-media">
+        <img src="${e(carga.imagem)}" alt="" width="400" height="300" loading="lazy" decoding="async" />
+      </div>
+      <div class="offer-body">
+        <h3>${e(carga.titulo)}</h3>
+        <p class="offer-route">
+          <span><i class="bx bxs-circle" aria-hidden="true"></i> De: ${e(carga.origem)}</span>
+          <span><i class="bx bxs-map" aria-hidden="true"></i> Para: ${e(carga.destino)}</span>
+        </p>
+        <ul class="offer-specs">
+          <li><i class="bx bx-calendar" aria-hidden="true"></i> ${e(carga.data)}</li>
+          <li><i class="bx bx-package" aria-hidden="true"></i> ${e(carga.peso)}</li>
+          <li><i class="bx bx-cube" aria-hidden="true"></i> ${e(carga.volume)}</li>
+          <li><i class="bx bx-layer" aria-hidden="true"></i> ${e(carga.unidades)} un</li>
+        </ul>
+        <p class="offer-price">${e(carga.valor)}</p>
+        <div class="offer-actions">
+          <button type="button" class="btn btn-ghost" data-route="${e(carga.id)}">
+            <i class="bx bx-map-alt" aria-hidden="true"></i> Ver Trajeto
+          </button>
+          <a href="${VEB.waLink(mensagemCarga(carga))}" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <i class="bx bxl-whatsapp" aria-hidden="true"></i> Carregar Agora
+          </a>
         </div>
-    `;
+      </div>
+    </article>`;
 }
 
 function renderCargas() {
   const container = document.getElementById("cargas-list");
   const loadMoreBtn = document.getElementById("load-more-btn");
   const endMessage = document.getElementById("end-message");
-
   if (!container) return;
 
-  // CORREÇÃO AQUI: Passando o index para a função de criação do HTML
   const toRender = filteredData.slice(0, visibleCount);
-  container.innerHTML = toRender
-    .map((carga, index) => createCardHTML(carga, index))
-    .join("");
+  container.innerHTML = toRender.length
+    ? toRender.map(createCardHTML).join("")
+    : '<p class="offers-empty">Nenhuma carga encontrada para essa busca.</p>';
 
-  if (visibleCount >= filteredData.length) {
-    loadMoreBtn.classList.add("hidden-default");
-    if (filteredData.length > 0) endMessage.classList.remove("hidden-default");
-  } else {
-    loadMoreBtn.classList.remove("hidden-default");
-    endMessage.classList.add("hidden-default");
-  }
+  const acabou = visibleCount >= filteredData.length;
+  loadMoreBtn.hidden = acabou;
+  endMessage.hidden = !(acabou && filteredData.length > 0);
 }
 
-function handleLoadMore() {
-  visibleCount += CARDS_PER_STEP;
-  renderCargas();
+/* --- Busca por origem, destino ou tipo de carga --- */
+function initSearch() {
+  const input = document.getElementById("searchCarga");
+  if (!input) return;
+  input.addEventListener("input", (e) => {
+    const termo = e.target.value.trim().toLowerCase();
+    filteredData = allCardsData.filter((carga) =>
+      [carga.origem, carga.destino, carga.titulo].some((campo) => campo.toLowerCase().includes(termo)),
+    );
+    visibleCount = PRIMEIRA_CARGA;
+    renderCargas();
+  });
 }
 
-/* --- 🗺️ MODAL MARAVILHOSO --- */
-function handleOpenModal(index) {
-  // Buscamos nos dados filtrados para garantir que o index bata com o que está na tela
-  const carga = filteredData[index];
+/* --- Modal de trajeto --- */
+function openRoute(id, trigger) {
+  const carga = allCardsData.find((c) => String(c.id) === String(id));
   const modal = document.getElementById("route-modal");
-
   if (!carga || !modal) return;
 
-  // Injetar dados
-  modal.querySelector(".header-info p").innerText = carga.titulo;
-  modal.querySelector(".is-origin span").innerText = carga.origem;
-  modal.querySelector(".is-destination span").innerText = carga.destino;
-  modal.querySelector(".price .data-value").innerText = carga.valor;
+  document.getElementById("route-modal-title").textContent = carga.titulo;
+  document.getElementById("route-modal-route").textContent = `${carga.origem} → ${carga.destino}`;
+  document.getElementById("route-modal-valor").textContent = carga.valor;
+  document.getElementById("route-modal-data").textContent = carga.data;
+  document.getElementById("route-modal-peso").textContent = carga.peso;
+  document.getElementById("route-modal-unidades").textContent = `${carga.unidades} un`;
+  document.getElementById("route-modal-cta").href = VEB.waLink(mensagemCarga(carga));
+  document.getElementById("modal-map").innerHTML = VEB.mapEmbed(carga.origem, carga.destino);
 
-  const detailValues = modal.querySelectorAll(".data-item .data-value");
-  detailValues[1].innerText = carga.data;
-  detailValues[2].innerText = carga.peso;
-  detailValues[3].innerText = `${carga.unidades} un`;
-
-  // WhatsApp
-  const whatsappMsg = encodeURIComponent(
-    `Olá! Vi o trajeto de ${carga.origem} para ${carga.destino} no Volta Express.`,
-  );
-  modal.querySelector(".btn-whatsapp").href =
-    `https://wa.me/${carga.whatsapp}?text=${whatsappMsg}`;
-
-  // Mapa
-  const modalMap = document.getElementById("modal-map");
-  const encodedOrigin = encodeURIComponent(carga.origem.replace("de ", ""));
-  const encodedDest = encodeURIComponent(carga.destino.replace("para ", ""));
-
-  // CORREÇÃO NA URL: Template string correta
-  const mapUrl = `https://www.google.com/maps/embed/v1/directions?key=${GOOGLE_API_KEY}&origin=${encodedOrigin}&destination=${encodedDest}&mode=driving`;
-
-  modalMap.innerHTML = `<iframe src="${mapUrl}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
-
-  modal.classList.remove("hidden-default");
-  document.body.style.overflow = "hidden";
+  VEB.modal.open(modal, trigger);
 }
 
-/* --- 🧹 EVENTOS --- */
-function initModalEvents() {
-  const modal = document.getElementById("route-modal");
-  const closeBtn = document.getElementById("closeModal");
-
-  if (closeBtn) {
-    closeBtn.onclick = () => {
-      modal.classList.add("hidden-default");
-      document.body.style.overflow = "auto";
-    };
-  }
-
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.classList.add("hidden-default");
-      document.body.style.overflow = "auto";
-    }
-  };
-}
-
-
-    /* FAQ */
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    
-    question.addEventListener('click', () => {
-        // Verifica se o item já está ativo
-        const isActive = item.classList.contains('active');
-        
-        // Fecha todos os outros itens (Opcional - UX de foco)
-        faqItems.forEach(otherItem => otherItem.classList.remove('active'));
-        
-        // Se não estava ativo, abre. Se estava, ele fechou no loop acima.
-        if (!isActive) {
-            item.classList.add('active');
-        }
-    });
-});
-
-
-/* --- 🚀 START --- */
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof allCardsData !== "undefined") {
-    filteredData = [...allCardsData];
-    renderCargas();
-    initSearch();
-    initModalEvents();
+  if (typeof allCardsData === "undefined") return;
+  filteredData = [...allCardsData];
+  renderCargas();
+  initSearch();
 
-    const loadBtn = document.getElementById("load-more-btn");
-    if (loadBtn) loadBtn.onclick = handleLoadMore;
-  }
+  document.getElementById("load-more-btn")?.addEventListener("click", () => {
+    visibleCount += CARDS_PER_STEP;
+    renderCargas();
+  });
+
+  // Um único listener para todos os botões "Ver Trajeto" (delegação de eventos)
+  document.getElementById("cargas-list")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-route]");
+    if (btn) openRoute(btn.dataset.route, btn);
+  });
 });

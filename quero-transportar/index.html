@@ -1,466 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Volta Express Brasil | Quero Transportar</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Volta Express Brasil | Quero Transportar</title>
+  <meta name="description" content="Conecte sua mercadoria a uma rede de motoristas qualificados em todo o Brasil. Segurança, agilidade e o melhor custo-benefício para sua logística." />
+  <meta name="theme-color" content="#104ac8" />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./public/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./public/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./public/favicon-16x16.png"
-    />
-    <link rel="manifest" href="./public/site.webmanifest" />
-    <link rel="preload" as="image" href="./assets/embarcador/buscar-caminhao/banner-caminhao-1536.webp" type="image/webp" fetchpriority="high" />
-  </head>
-  <body>
-    <!-- Header - (EMBARCADOR)-->
-    <header>
-    <a href="#" class="logo">
-        <img src="./assets/embarcador/buscar-caminhao/caminhao-120.webp" srcset="./assets/embarcador/buscar-caminhao/caminhao-120.webp 120w, ./assets/embarcador/buscar-caminhao/caminhao-240.webp 240w" sizes="60px" alt="Volta Express Brasil" width="60" height="34" decoding="async" />
-    </a>
+  <script>document.documentElement.classList.add("js");</script>
 
-    <div class="bx bx-menu" id="menu-icon"></div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
 
-    <nav>
-        <ul class="navbar">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#ride">Como Transportar</a></li>
-            <li><a href="#services">Encontrar Caminhão</a></li>
-            <li><a href="#reviews">Vantagens</a></li>
-            <li><a href="#about">O Volta Express</a></li>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" /></noscript>
+
+  <link rel="stylesheet" href="../shared/tokens.css?v=7.0.0" />
+  <link rel="stylesheet" href="../shared/components.css?v=7.0.0" />
+  <link rel="stylesheet" href="./style.css?v=7.0.0" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png" />
+  <link rel="manifest" href="./public/site.webmanifest" />
+
+  <script src="../shared/site.js?v=7.0.0" defer></script>
+  <script src="./viagens.js?v=7.0.0" defer></script>
+  <script src="./script.js?v=7.0.0" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="Volta Express Brasil — início">
+        <img src="../assets/logo-volta-express-120.webp" srcset="../assets/logo-volta-express-120.webp 120w, ../assets/logo-volta-express-240.webp 240w" sizes="60px" alt="Volta Express Brasil" width="60" height="40" decoding="async" />
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul>
+          <li><a href="#home">Início</a></li>
+          <li><a href="#ride">Como Transportar</a></li>
+          <li><a href="#services">Encontrar Caminhão</a></li>
+          <li><a href="#reviews">Vantagens</a></li>
+          <li><a href="#about">O Volta Express</a></li>
         </ul>
-    </nav>
+      </nav>
 
-    <div class="header-btn">
-        <a href="www.voltaexpress.com.br" class="sign-in">
-            <span>Entrar / Cadastrar</span>
-            <i class='bx bx-right-arrow-alt'></i>
-        </a>
+      <div class="header-actions">
+        <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-sm">Entrar / Cadastrar</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    </header>
+  </header>
 
-    <!-- home - (EMBARCADOR) -->
-    <section class="home" id="home">
-        <div class="home-text">
-            <h1>Sua <span>Carga</span> no<br> <span>Caminhão</span> Certo</h1>
-            <p>
-                Conecte sua mercadoria a uma rede de motoristas qualificados em todo o Brasil. 
-                Segurança, agilidade e o melhor custo-benefício para sua logística.
-            </p>
-            
-            <div class="home-buttons">
-                <a href="#advertise-cargo" class="btn-primary">Anunciar Carga</a>
-                <a href="#services" class="btn-secondary">Encontrar Caminhão</a>
-            </div>
-
-            <div class="back-home">
-                <a href="./../index.html">
-                    <img src="./assets/logo-volta-express-120.webp" srcset="./assets/logo-volta-express-120.webp 120w, ./assets/logo-volta-express-240.webp 240w" sizes="36px" alt="Volta Express" width="36" height="24" decoding="async" />
-                    <span>Voltar para o Início</span>
-                </a>
-            </div>
+  <main id="conteudo">
+    <!-- 1. Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Sou Embarcador</p>
+          <h1>Sua <span class="hl">Carga</span> no <span class="hl">Caminhão</span> Certo</h1>
+          <p class="lead">Conecte sua mercadoria a uma rede de motoristas qualificados em todo o Brasil. Segurança, agilidade e o melhor custo-benefício para sua logística.</p>
+                    <a href="../index.html" class="hero-home" aria-label="Voltar para a página inicial do Volta Express Brasil">
+            <span class="hero-home-arrow" aria-hidden="true"><i class="bx bx-left-arrow-alt"></i></span>
+            <span class="hero-home-logo" aria-hidden="true">
+              <img src="../assets/logo-volta-express-120.webp" srcset="../assets/logo-volta-express-120.webp 120w, ../assets/logo-volta-express-240.webp 240w" sizes="48px" alt="" width="48" height="32" decoding="async" />
+            </span>
+            <span class="hero-home-text">
+              <small>Volta Express Brasil</small>
+            </span>
+          </a>
+          <div class="hero-actions">
+            <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-lg"><i class="bx bxs-package" aria-hidden="true"></i> Encontrar Caminhão</a>
+            <a href="https://wa.me/5532988367667" data-wa="Olá! Tenho uma carga e vim pela página Quero Transportar do Volta Express." class="btn btn-whatsapp-outline btn-lg" target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
+          </div>
         </div>
+        <div class="hero-media">
+          <img src="./assets/embarcador/buscar-caminhao/banner-caminhao-800.webp" srcset="./assets/embarcador/buscar-caminhao/banner-caminhao-800.webp 800w, ./assets/embarcador/buscar-caminhao/banner-caminhao-1536.webp 1536w" sizes="(max-width: 960px) 92vw, 46vw" alt="Caminhão baú pronto para transportar a sua carga" width="1536" height="1024" fetchpriority="high" decoding="async" />
+        </div>
+      </div>
     </section>
 
-    <!-- Ride - Como Transportar -->
-    <section class="ride" id="ride">
-    <div class="heading">
-        <span>Processo Inteligente</span>
-        <h1>Contrate o seu transporte em 5 passos fáceis</h1>
-    </div>
-
-    <div class="ride-container">
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-edit-location"></i>
-                <span class="step-number">01</span>
-            </div>
-            <h2>Anuncie sua Carga</h2>
+    <!-- 2. Como funciona -->
+    <section class="section section--soft" id="ride">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Processo Inteligente</p>
+          <h2>Contrate o seu transporte em 5 passos fáceis</h2>
+        </div>
+        <ol class="steps">
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-edit-location" aria-hidden="true"></i></span>
+            <h3>Anuncie sua Carga</h3>
             <p>Insira os detalhes da mercadoria, origem, destino e o tipo de veículo necessário.</p>
-        </div>
-
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs- megaphone"></i>
-                <span class="step-number">02</span>
-            </div>
-            <h2>Receba Propostas</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-megaphone" aria-hidden="true"></i></span>
+            <h3>Receba Propostas</h3>
             <p>Motoristas qualificados visualizarão seu anúncio e enviarão propostas de frete.</p>
-        </div>
-
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-user-check"></i>
-                <span class="step-number">03</span>
-            </div>
-            <h2>Analise Perfis</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-user-check" aria-hidden="true"></i></span>
+            <h3>Analise Perfis</h3>
             <p>Verifique avaliações, histórico de entregas e documentos dos motoristas interessados.</p>
-        </div>
-
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-chat"></i>
-                <span class="step-number">04</span>
-            </div>
-            <h2>Combine os Detalhes</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-chat" aria-hidden="true"></i></span>
+            <h3>Combine os Detalhes</h3>
             <p>Use nosso chat direto para alinhar prazos, valores e detalhes específicos da carga.</p>
-        </div>
-
-        <div class="box">
-            <div class="icon-wrapper">
-                <i class="bx bxs-truck"></i>
-                <span class="step-number">05</span>
-            </div>
-            <h2>Carga em Trânsito</h2>
+          </li>
+          <li class="step" data-reveal>
+            <span class="step-icon"><i class="bx bxs-truck" aria-hidden="true"></i></span>
+            <h3>Carga em Trânsito</h3>
             <p>Confirme a contratação e acompanhe o sucesso da sua entrega com tranquilidade.</p>
-        </div>
-    </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <!-- services - Econcontrar viagens -->
-    <section class="services" id="services">
-        <div class="heading">
-            <span>Oportunidades Disponíveis</span>
-            <h1>Explore as melhores ofertas<br>dos motoristas bem avaliados</h1>
+    <!-- 3. Mural de exemplos -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Oportunidades Disponíveis</p>
+          <h2>Explore as melhores ofertas dos motoristas bem avaliados</h2>
+        </div>
+        <p class="notice">
+          <span><i class="bx bx-info-circle" aria-hidden="true"></i> Exemplos ilustrativos. As ofertas reais estão na plataforma.</span>
+          <a href="https://voltaexpress.com.br/">Ver ofertas na plataforma</a>
+        </p>
+
+        <div class="search">
+          <i class="bx bx-search" aria-hidden="true"></i>
+          <label class="sr-only" for="search-input">Buscar caminhão por cidade ou tipo de veículo</label>
+          <input type="search" id="search-input" placeholder="Para onde você quer transportar? (Ex: São Paulo, Sider, Van...)" autocomplete="off" />
         </div>
 
-        <section class="search-section">
-            <div class="search-box">
-                <i class='bx bx-search'></i>
-                <input type="text" id="search-input" placeholder="Para onde você quer transportar? (Ex: São Paulo, Sider, Van...)">
-            </div>
-        </section>
-
-        <div class="services-container" id="services-content">
-            </div>
-
-        <div class="pagination-container">
-            <button id="load-more-btn" class="btn-load-more">Ver mais viagens</button>
-            <p id="all-loaded-msg" style="display: none;">
-                🚛 Isso é tudo pessoal! Todas as viagens foram exibidas.
-            </p>
+        <div class="offers" id="services-content" aria-live="polite">
+          <p class="offers-empty">Carregando ofertas...</p>
         </div>
-    </section>
-    <div id="route-modal" class="modal-overlay">
-        <div class="modal-content"> <div class="modal-header">
-                <div id="modal-details"></div> 
-                <button class="close-button" onclick="fecharModal()">
-                    <i class='bx bx-x'></i>
-                </button>
-            </div>
-            
-            <div class="modal-body">
-                <div id="modal-map"></div>
-            </div>
 
-            <div class="modal-footer">
-                <p><i class='bx bx-info-circle'></i> O trajeto exibido é uma estimativa baseada nas cidades de origem e destino.</p>
-            </div>
+        <div class="offers-more">
+          <button id="load-more-btn" class="btn btn-outline" type="button">Ver mais viagens</button>
+          <p id="all-loaded-msg" class="offers-end" hidden>Isso é tudo! Todas as viagens foram exibidas.</p>
         </div>
-    </div>
-
-    <!-- Reviews - Vantagens -->
-    <section class="reviews" id="reviews">
-    <div class="heading">
-    <span>Vantagens</span>
-    <h1>Eficiência logística na palma da sua mão</h1>
-    </div>
-
-    <div class="reviews-container">
-    <div class="box">
-    <div class="rev-img">
-      <img src="./assets/embarcador/vantagem-1-400.webp" srcset="./assets/embarcador/vantagem-1-400.webp 400w" sizes="90px" alt="Eficiência" width="90" height="90" loading="lazy" decoding="async" />
-    </div>
-    <h2>Agilidade na Contratação</h2>
-    <p>
-      Reduza o tempo de espera. Encontre o veículo ideal para sua carga em minutos, conectando-se diretamente com motoristas prontos para carregar.
-    </p>
-    </div>
-
-    <div class="box">
-    <div class="rev-img">
-      <img src="./assets/embarcador/vantagem-2-400.webp" srcset="./assets/embarcador/vantagem-2-400.webp 400w" sizes="90px" alt="Segurança" width="90" height="90" loading="lazy" decoding="async" />
-    </div>
-    <h2>Segurança Garantida</h2>
-    <p>
-      Sua mercadoria em boas mãos. Todos os transportadores passam por um processo de verificação, garantindo integridade do embarque ao destino.
-    </p>
-    </div>
-
-    <div class="box">
-    <div class="rev-img">
-      <img src="./assets/embarcador/vantagem-3-400.webp" srcset="./assets/embarcador/vantagem-3-400.webp 400w" sizes="90px" alt="Economia" width="90" height="90" loading="lazy" decoding="async" />
-    </div>
-    <h2>Redução de Custos</h2>
-    <p>
-      Elimine intermediários desnecessários. Obtenha cotações competitivas e otimize seu orçamento logístico com o melhor custo-benefício.
-    </p>
-    </div>
-
-    <div class="box">
-    <div class="rev-img">
-      <img src="./assets/embarcador/vantagem-4-400.webp" srcset="./assets/embarcador/vantagem-4-400.webp 400w" sizes="90px" alt="Visibilidade" width="90" height="90" loading="lazy" decoding="async" />
-    </div>
-    <h2>Gestão em Tempo Real</h2>
-    <p>
-      Tenha controle total sobre seus envios. Acompanhe o status do transporte com transparência e autonomia em todas as etapas da operação.
-    </p>
-    </div>
-    </div>
+      </div>
     </section>
 
-    <!-- About - Volta Express-->
-    <section class="about" id="about">
-        <div class="heading">
-            <span>O Volta Express Brasil</span>
-            <h1>Sua Carga no Destino Certo, Sempre</h1>
+    <!-- Modal de trajeto (preenchido pelo script.js) -->
+    <div class="modal" id="route-modal" role="dialog" aria-modal="true" aria-labelledby="route-modal-title" hidden>
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow" id="route-modal-categoria">Veículo</p>
+            <h2 id="route-modal-title">Caminhão</h2>
+            <p class="modal-route" id="route-modal-route"></p>
+          </div>
+          <button class="modal-close" type="button" aria-label="Fechar detalhes do trajeto">&times;</button>
         </div>
-
-        <div class="about-container">
-            <div class="about-img">
-                <img src="./assets/embarcador/buscar-caminhao/caminhao-480.webp" srcset="./assets/embarcador/buscar-caminhao/caminhao-240.webp 240w, ./assets/embarcador/buscar-caminhao/caminhao-480.webp 480w, ./assets/embarcador/buscar-caminhao/caminhao-800.webp 800w" sizes="(max-width: 768px) 90vw, 50vw" alt="Logística Inteligente" width="800" height="447" loading="lazy" decoding="async" />
-                <div class="experience-badge">
-                    <i class='bx bxs-bolt-circle'></i>
-                    <span>Logística 4.0</span>
-                </div>
-            </div>
-
-            <div class="about-text">
-                <span>Inovação no Transporte</span>
-                <h2>Revolucionando a forma como você movimenta o mercado</h2>
-                <p>
-                    No <strong>Volta Express Brasil</strong>, sua carga é a nossa prioridade. Sabemos que a agilidade e a segurança são cruciais para o seu negócio. Criamos uma solução que conecta você de maneira inteligente à frota ideal.
-                </p>
-                
-                <div class="about-features">
-                    <div class="feature-item">
-                        <i class='bx bx-check-shield'></i>
-                        <span>Transportadores Verificados</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class='bx bx-time-five'></i>
-                        <span>Contratação em Minutos</span>
-                    </div>
-                </div>
-
-                <p>
-                    Ganhe controle total sobre seus fretes, acompanhando cada etapa do processo com <strong>transparência e tranquilidade</strong>. Junte-se a nós e experimente a confiança de ter sua logística nas mãos de quem entende de futuro.
-                </p>
-
-                <a href="#services" class="btn-about">Começar agora <i class='bx bx-right-arrow-alt'></i></a>
-            </div>
+        <div class="modal-body">
+          <dl class="modal-data">
+            <div><dt>Data</dt><dd id="route-modal-data"></dd></div>
+            <div><dt>Capacidade</dt><dd id="route-modal-capacidade"></dd></div>
+            <div><dt>Volume</dt><dd id="route-modal-volume"></dd></div>
+            <div><dt>Veículo</dt><dd id="route-modal-veiculo"></dd></div>
+          </dl>
+          <div class="modal-map" id="modal-map"></div>
         </div>
+        <div class="modal-footer">
+          <a href="https://wa.me/5532988367667" class="btn btn-whatsapp btn-lg" id="route-modal-cta" target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> Transportar Agora</a>
+          <p class="modal-note">O trajeto exibido é uma estimativa baseada nas cidades de origem e destino.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Vantagens -->
+    <section class="section section--soft" id="reviews">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Vantagens</p>
+          <h2>Eficiência logística na palma da sua mão</h2>
+        </div>
+        <div class="benefits">
+          <article class="benefit" data-reveal>
+            <img src="./assets/embarcador/vantagem-1-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Agilidade na Contratação</h3>
+            <p>Reduza o tempo de espera. Encontre o veículo ideal para sua carga em minutos, conectando-se diretamente com motoristas prontos para carregar.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <img src="./assets/embarcador/vantagem-2-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Segurança Garantida</h3>
+            <p>Sua mercadoria em boas mãos. Todos os transportadores passam por um processo de verificação, garantindo integridade do embarque ao destino.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <img src="./assets/embarcador/vantagem-3-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Redução de Custos</h3>
+            <p>Elimine intermediários desnecessários. Obtenha cotações competitivas e otimize seu orçamento logístico com o melhor custo-benefício.</p>
+          </article>
+          <article class="benefit" data-reveal>
+            <img src="./assets/embarcador/vantagem-4-400.webp" alt="" width="72" height="72" loading="lazy" decoding="async" />
+            <h3>Gestão em Tempo Real</h3>
+            <p>Tenha controle total sobre seus envios. Acompanhe o status do transporte com transparência e autonomia em todas as etapas da operação.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Depoimentos -->
-     <section class="testimonials-dynamic" id="testimonials">
-      <div class="testimonials-bg-effect">
-        <div class="heading">
-          <span>Depoimentos</span>
-          <h1 style="color: #fff;">Quem usa, confia e recomenda</h1>
+    <!-- 5. Sobre -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">O Volta Express Brasil</p>
+          <h2>Sua Carga no Destino Certo, Sempre</h2>
         </div>
-
-        <div class="testimonials-grid">
-          <div class="testi-card card-large">
-            <div class="quote-mark">“</div>
-            <p>O Volta Express Brasil transformou nossa logística. Encontramos os transportadores certos, com preços justos, sem dor de cabeça. É a eficiência que precisávamos para nossas mercadorias chegarem no prazo.</p>
-            <div class="user-meta">
-              <img src="./assets/embarcador/persona/marcos-viana-160.webp" srcset="./assets/embarcador/persona/marcos-viana-160.webp 160w, ./assets/embarcador/persona/marcos-viana-320.webp 320w" sizes="45px" alt="Marcos Viana" width="45" height="45" loading="lazy" decoding="async" />
+        <div class="about-grid">
+          <div class="about-media" data-reveal>
+            <img src="./assets/embarcador/buscar-caminhao/caminhao-480.webp" srcset="./assets/embarcador/buscar-caminhao/caminhao-240.webp 240w, ./assets/embarcador/buscar-caminhao/caminhao-480.webp 480w, ./assets/embarcador/buscar-caminhao/caminhao-800.webp 800w" sizes="(max-width: 960px) 90vw, 50vw" alt="Logística Inteligente" width="800" height="447" loading="lazy" decoding="async" />
+            <div class="about-badge">
+              <i class="bx bxs-bolt-circle" aria-hidden="true"></i>
               <div>
-                <h4>Marcos Viana</h4>
-                <span>Empresário</span>
+                <strong>Logística 4.0</strong>
               </div>
             </div>
           </div>
 
-          <div class="testi-card">
-            <p>Agilidade! Em minutos consegui um caminhão de confiança para minha carga.</p>
-            <div class="user-meta">
-              <img src="./assets/embarcador/persona/ana-lucia-160.webp" srcset="./assets/embarcador/persona/ana-lucia-160.webp 160w, ./assets/embarcador/persona/ana-lucia-320.webp 320w" sizes="45px" alt="Ana Lúcia" width="45" height="45" loading="lazy" decoding="async" />
-              <div>
-                <h4>Ana Lúcia</h4>
-                <span>Gerente de Logística</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-card card-medium">
-            <p>Para o meu café, preciso de ingredientes frescos. Com o Volta Express, garantir que meu estoque esteja sempre em dia ficou muito mais simples e confiável!</p>
-            <div class="user-meta">
-              <img src="./assets/embarcador/persona/roberto-mattos-160.webp" srcset="./assets/embarcador/persona/roberto-mattos-160.webp 160w, ./assets/embarcador/persona/roberto-mattos-320.webp 320w" sizes="45px" alt="Roberto" width="45" height="45" loading="lazy" decoding="async" />
-              <div>
-                <h4>Roberto Mattos</h4>
-                <span>Barista</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-card">
-            <p>Confiança total! Sei que minhas cargas estão em boas mãos. A plataforma é intuitiva e segura.</p>
-            <div class="user-meta">
-              <img src="./assets/embarcador/persona/sofia-guedes-160.webp" srcset="./assets/embarcador/persona/sofia-guedes-160.webp 160w, ./assets/embarcador/persona/sofia-guedes-320.webp 320w" sizes="45px" alt="Sofia" width="45" height="45" loading="lazy" decoding="async" />
-              <div>
-                <h4>Sofia Guedes</h4>
-                <span>Distribuidora</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-card card-accent">
-            <p>Precisei enviar móveis para outra cidade e foi a solução mais fácil que encontrei. Tudo chegou perfeito!</p>
-            <div class="user-meta">
-              <img src="./assets/embarcador/persona/maria-braga-160.webp" srcset="./assets/embarcador/persona/maria-braga-160.webp 160w, ./assets/embarcador/persona/maria-braga-320.webp 320w" sizes="45px" alt="Maria" width="45" height="45" loading="lazy" decoding="async" />
-              <div>
-                <h4>Maria Braga</h4>
-                <span>Dona de Casa</span>
-              </div>
-            </div>
+          <div class="about-text" data-reveal>
+            <p class="eyebrow">Inovação no Transporte</p>
+            <h3>Revolucionando a forma como você movimenta o mercado</h3>
+            <p>No <strong>Volta Express Brasil</strong>, sua carga é a nossa prioridade. Sabemos que a agilidade e a segurança são cruciais para o seu negócio. Criamos uma solução que conecta você de maneira inteligente à frota ideal.</p>
+            <ul class="features">
+              <li><i class="bx bx-check-shield" aria-hidden="true"></i> Transportadores Verificados</li>
+              <li><i class="bx bx-time-five" aria-hidden="true"></i> Contratação em Minutos</li>
+            </ul>
+            <p>Ganhe controle total sobre seus fretes, acompanhando cada etapa do processo com <strong>transparência e tranquilidade</strong>. Junte-se a nós e experimente a confiança de ter sua logística nas mãos de quem entende de futuro.</p>
+            <a href="#services" class="btn btn-primary">Começar agora <i class="bx bx-right-arrow-alt" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ --> 
-    <section class="faq-section" id="faq">
-      <div class="heading">
-        <span>Dúvidas Frequentes</span>
-        <h1>Use todo o potencial do Volta Express Brasil</h1>
-      </div>
-
-      <div class="faq-section-container">
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Sou Embarcador. Por que o Volta Express Brasil é a solução ideal?</span>
-            <i class='bx bx-chevron-down'></i>
-          </button>
-          <div class="faq-answer">
-            <div class="answer-content">
-              <p>
-                O Volta Express Brasil simplifica sua logística conectando você a uma vasta rede de transportadores qualificados. Você encontra o caminhão certo, compara cotações e otimiza custos em um só lugar, garantindo agilidade e segurança total.
-              </p>
-            </div>
-          </div>
+    <!-- 6. Depoimentos -->
+    <section class="section section--soft" id="testimonials">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Depoimentos</p>
+          <h2>Quem usa, confia e recomenda</h2>
         </div>
+        <div class="testimonials">
+          <figure class="testimonial testimonial--featured" data-reveal>
+            <blockquote>
+              <p>O Volta Express Brasil transformou nossa logística. Encontramos os transportadores certos, com preços justos, sem dor de cabeça. É a eficiência que precisávamos para nossas mercadorias chegarem no prazo.</p>
+            </blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/embarcador/persona/marcos-viana-160.webp" srcset="./assets/embarcador/persona/marcos-viana-160.webp 160w, ./assets/embarcador/persona/marcos-viana-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Marcos Viana</span><br /><span class="testimonial-role">Empresário</span></span>
+            </figcaption>
+          </figure>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Como faço para anunciar uma carga e encontrar um caminhão?</span>
-            <i class='bx bx-chevron-down'></i>
-          </button>
-          <div class="faq-answer">
-            <div class="answer-content">
-              <p>
-                O processo é intuitivo: você cadastra os detalhes da carga (origem, destino, peso e volume). Em poucos cliques, sua demanda é publicada e você começa a receber propostas de transportadores interessados via WhatsApp.
-              </p>
-            </div>
-          </div>
-        </div>
+          <figure class="testimonial" data-reveal>
+            <blockquote><p>Agilidade! Em minutos consegui um caminhão de confiança para minha carga.</p></blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/embarcador/persona/ana-lucia-160.webp" srcset="./assets/embarcador/persona/ana-lucia-160.webp 160w, ./assets/embarcador/persona/ana-lucia-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Ana Lúcia</span><br /><span class="testimonial-role">Gerente de Logística</span></span>
+            </figcaption>
+          </figure>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Posso confiar na segurança dos transportadores?</span>
-            <i class='bx bx-chevron-down'></i>
-          </button>
-          <div class="faq-answer">
-            <div class="answer-content">
-              <p>
-                Sim, a segurança é nossa prioridade. Todos os transportadores passam por um processo de verificação de cadastro. Além disso, incentivamos a transparência nas negociações diretas para sua total tranquilidade.
-              </p>
-            </div>
-          </div>
-        </div>
+          <figure class="testimonial" data-reveal>
+            <blockquote><p>Para o meu café, preciso de ingredientes frescos. Com o Volta Express, garantir que meu estoque esteja sempre em dia ficou muito mais simples e confiável!</p></blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/embarcador/persona/roberto-mattos-160.webp" srcset="./assets/embarcador/persona/roberto-mattos-160.webp 160w, ./assets/embarcador/persona/roberto-mattos-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Roberto Mattos</span><br /><span class="testimonial-role">Barista</span></span>
+            </figcaption>
+          </figure>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Quais os benefícios de preço e agilidade?</span>
-            <i class='bx bx-chevron-down'></i>
-          </button>
-          <div class="faq-answer">
-            <div class="answer-content">
-              <p>
-                Ao conectar-se diretamente com os motoristas, você elimina intermediários e taxas ocultas. Isso resulta em fretes mais justos e rapidez imbatível na busca por veículos disponíveis.
-              </p>
-            </div>
-          </div>
+          <figure class="testimonial" data-reveal>
+            <blockquote><p>Confiança total! Sei que minhas cargas estão em boas mãos. A plataforma é intuitiva e segura.</p></blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/embarcador/persona/sofia-guedes-160.webp" srcset="./assets/embarcador/persona/sofia-guedes-160.webp 160w, ./assets/embarcador/persona/sofia-guedes-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Sofia Guedes</span><br /><span class="testimonial-role">Distribuidora</span></span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial" data-reveal>
+            <blockquote><p>Precisei enviar móveis para outra cidade e foi a solução mais fácil que encontrei. Tudo chegou perfeito!</p></blockquote>
+            <figcaption class="testimonial-author">
+              <img src="./assets/embarcador/persona/maria-braga-160.webp" srcset="./assets/embarcador/persona/maria-braga-160.webp 160w, ./assets/embarcador/persona/maria-braga-320.webp 320w" sizes="52px" alt="" width="52" height="52" loading="lazy" decoding="async" />
+              <span><span class="testimonial-name">Maria Braga</span><br /><span class="testimonial-role">Dona de Casa</span></span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- Copyright - será o footer -->
-    <footer class="footer">
-      <div class="footer-container">
-          <div class="footer-box">
-              <a href="#" class="logo-footer">
-                  <img src="./assets/favicon-png-removebg-64.webp" srcset="./assets/favicon-png-removebg-64.webp 64w, ./assets/favicon-png-removebg-128.webp 128w" sizes="40px" alt="Volta Express" width="40" height="47" loading="lazy" decoding="async" />
-                  <span>Volta Express Brasil</span>
-              </a>
-              <p>Conectando cargas e caminhões com inteligência e segurança. O parceiro estratégico da sua logística nacional.</p>
-              <div class="social">
-                  <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank"><i class="bx bxl-instagram"></i></a>
-                  <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank"><i class="bx bxl-facebook"></i></a>
-                  <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank"><i class="bx bxl-youtube"></i></a>
-              </div>
-          </div>
+    <!-- 7. Perguntas frequentes -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Dúvidas Frequentes</p>
+          <h2>Use todo o potencial do Volta Express Brasil</h2>
+        </div>
+        <div class="faq">
+          <details class="faq-item" name="faq">
+            <summary>Sou Embarcador. Por que o Volta Express Brasil é a solução ideal?</summary>
+            <p>O Volta Express Brasil simplifica sua logística conectando você a uma vasta rede de transportadores qualificados. Você encontra o caminhão certo, compara cotações e otimiza custos em um só lugar, garantindo agilidade e segurança total.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Como faço para anunciar uma carga e encontrar um caminhão?</summary>
+            <p>O processo é intuitivo: você cadastra os detalhes da carga (origem, destino, peso e volume). Em poucos cliques, sua demanda é publicada e você começa a receber propostas de transportadores interessados via WhatsApp.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Posso confiar na segurança dos transportadores?</summary>
+            <p>Sim, a segurança é nossa prioridade. Todos os transportadores passam por um processo de verificação de cadastro. Além disso, incentivamos a transparência nas negociações diretas para sua total tranquilidade.</p>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Quais os benefícios de preço e agilidade?</summary>
+            <p>Ao conectar-se diretamente com os motoristas, você elimina intermediários e taxas ocultas. Isso resulta em fretes mais justos e rapidez imbatível na busca por veículos disponíveis.</p>
+          </details>
+        </div>
+      </div>
+    </section>
 
-          <div class="footer-box">
-              <h3>Links Rápidos</h3>
-              <ul>
-                  <li><a href="#home">Início</a></li>
-                  <li><a href="#about">Quem Somos</a></li>
-                  <li><a href="#reviews">Vantagens</a></li>
-                  <li><a href="#faq">Dúvidas</a></li>
-              </ul>
+    <!-- 8. Chamada final -->
+    <section class="cta-final">
+      <div class="container">
+        <div class="cta-box" data-reveal>
+          <h2>Sua carga no caminhão certo começa aqui</h2>
+          <p>Acesse o Volta Express, anuncie sua carga e receba o contato de motoristas que fazem a sua rota.</p>
+          <div class="hero-actions">
+            <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-lg">Anunciar Carga</a>
+            <a href="https://wa.me/5532988367667" data-wa="Olá! Tenho uma carga e quero saber mais sobre o Volta Express." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
           </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-          <div class="footer-box">
-              <h3>Persona: Embarcador</h3>
-              <ul>
-                  <li><a href="#advertise-cargo">Anunciar Carga</a></li>
-                  <li><a href="#">Buscar Caminhão</a></li>
-                  <li><a href="#">Tabela de Fretes</a></li>
-              </ul>
-          </div>
-
-          <div class="footer-box">
-              <h3>Contato</h3>
-              <p><i class='bx bx-map'></i> Juiz de Fora, MG</p>
-              <p><i class='bx bx-envelope'></i> contato@voltaexpress.com.br</p>
-          </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../assets/logo-volta-express-120.webp" srcset="../assets/logo-volta-express-120.webp 120w, ../assets/logo-volta-express-240.webp 240w" sizes="80px" alt="Volta Express Brasil" width="80" height="53" loading="lazy" decoding="async" />
+        <p>Conectando cargas e caminhões com inteligência, segurança e rentabilidade máxima na estrada. O seu parceiro estratégico.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank" rel="noopener" aria-label="Instagram da Volta Express"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank" rel="noopener" aria-label="Facebook da Volta Express"><i class="bx bxl-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank" rel="noopener" aria-label="YouTube da Volta Express"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+        </div>
       </div>
 
-      <div class="copyright-bar">
-          <p>&#169; 2026 Volta Express Brasil - Todos os direitos reservados.</p>
+      <div>
+        <h2 class="footer-title">Navegação</h2>
+        <ul class="footer-links">
+          <li><a href="../index.html">Início</a></li>
+          <li><a href="../quero-carregar/index.html">Tenho Caminhão</a></li>
+          <li><a href="../quero-transportar/index.html">Tenho Carga</a></li>
+          <li><a href="https://voltaexpress.com.br/">Entrar / Cadastrar</a></li>
+        </ul>
       </div>
-    </footer>
 
-    <a href="https://wa.me/SEUNUMERO" target="_blank" class="fixed-whatsapp-button" title="Fale Conosco">
-        <div class="ping-animation"></div>
-        <img src="./assets/favicon-png-removebg-64.webp" srcset="./assets/favicon-png-removebg-64.webp 64w, ./assets/favicon-png-removebg-128.webp 128w" sizes="45px" alt="WhatsApp" width="45" height="53" loading="lazy" decoding="async" />
-    </a>
+      <div>
+        <h2 class="footer-title">Contato</h2>
+        <ul class="footer-contact">
+          <li><span><i class="bx bxs-map" aria-hidden="true"></i> Juiz de Fora, MG</span></li>
+          <li><a href="mailto:contato@voltaexpress.com.br"><i class="bx bxs-envelope" aria-hidden="true"></i> contato@voltaexpress.com.br</a></li>
+          <li><a href="https://wa.me/5532988367667" data-wa="Olá! Vim pelo site do Volta Express e gostaria de suporte." target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <!-- scrollreveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <div class="footer-bottom">
+      <p>© 2026 Volta Express Brasil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-    <!-- Link to JS -->
-    <script src="./viagens.js"></script>
-    <script src="./script.js"></script>
-  </body>
+  <a href="https://wa.me/5532988367667" data-wa="Olá! Tenho uma carga e vim pela página Quero Transportar do Volta Express." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="bx bxl-whatsapp" aria-hidden="true"></i>
+  </a>
+</body>
 </html>

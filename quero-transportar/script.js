@@ -1,169 +1,114 @@
-/**
- * VOLTA EXPRESS BRASIL - script.js
- * Lógica de Interface, Integração de Dados e UX
- */
+/* ==========================================================================
+   Quero Transportar — mural de exemplos de caminhões (busca, "ver mais" e trajeto)
+   Dados: viagens.js (viagensDisponiveis). Comum às páginas: ../shared/site.js (VEB).
+   Menu, WhatsApp flutuante e animações ficam no shared/site.js.
+   ========================================================================== */
 
-/* --- CONFIGURAÇÕES E ESTADO GLOBAL --- */
-const CONFIG = {
-  apiKey: "AIzaSyBmtlBWyTjYX_C3FfPrKFgL-YHyyA3mfDY",
-  supportNumber: "5532998615190",
-  supportMessage:
-    "Olá, gostaria de conversar com um especialista do Volta Express Brasil.",
-};
+const PRIMEIRA_CARGA = 6; // cards na primeira exibição
+const INCREMENTO = 3;     // cards a cada "Ver mais"
+let listaAtual = [];      // resultado da busca atual (corrige o "Ver mais" que voltava à lista completa)
+let exibidas = 0;
 
-/* --- MENU MOBILE & SCROLL NAVIGATION --- */
-const menu = document.querySelector("#menu-icon");
-const navbar = document.querySelector(".navbar");
+/** Mensagem de WhatsApp que identifica o veículo para o atendimento. */
+const mensagemViagem = (viagem) =>
+  `Olá! Vi no site do Volta Express o veículo "${viagem.nome}" (${viagem.categoria}) de ${viagem.origem} para ${viagem.destino} e quero transportar minha carga.`;
 
-const toggleMenu = (open = null) => {
-  if (open === false) {
-    menu.classList.remove("bx-x");
-    navbar.classList.remove("active");
-  } else {
-    menu.classList.toggle("bx-x");
-    navbar.classList.toggle("active");
-  }
-};
-
-menu.onclick = () => toggleMenu();
-
-window.onscroll = () => {
-  toggleMenu(false);
-  const header = document.querySelector("header");
-  header.classList.toggle("shadow", window.scrollY > 0);
-};
-
-/* --- ANIMAÇÕES (SCROLL REVEAL) --- */
-const sr = ScrollReveal({
-  distance: "40px",
-  duration: 2000,
-  delay: 200,
-  reset: false,
-});
-
-sr.reveal(".home-text", { origin: "left" });
-sr.reveal(".heading", { origin: "top" });
-sr.reveal(".about-container", { origin: "bottom" });
-sr.reveal(".reviews-container", { origin: "top" });
-
-/* * ============================================================
- * FUNCIONALIDADE: ENCONTRAR VIAGEM (DINÂMICO)
- * Gerenciamento de busca, listagem e carregamento progressivo
- * ============================================================
- */
-
-const setupSearch = () => {
-  const searchInput = document.getElementById("search-input");
-  if (!searchInput) return;
-
-  searchInput.addEventListener("input", (e) => {
-    const termo = e.target.value.toLowerCase();
-
-    // viagensDisponiveis vem do arquivo viagens.js
-    const filtrados = viagensDisponiveis.filter(
-      (viagem) =>
-        viagem.origem.toLowerCase().includes(termo) ||
-        viagem.destino.toLowerCase().includes(termo) ||
-        viagem.categoria.toLowerCase().includes(termo) ||
-        viagem.nome.toLowerCase().includes(termo),
-    );
-
-    // Reseta o container e a paginação global para a nova busca
-    document.getElementById("services-content").innerHTML = "";
-    viagensExibidas = 0; // Variável global em viagens.js
-    renderizarCards(filtrados);
-  });
-};
-
-const setupLoadMore = () => {
-  const loadMoreBtn = document.getElementById("load-more-btn");
-  if (loadMoreBtn) {
-    loadMoreBtn.onclick = () => renderizarCards(viagensDisponiveis);
-  }
-};
-
-/* --- LÓGICA DO MODAL DE TRAJETO --- */
-window.abrirModal = function (id) {
-  const modal = document.getElementById("route-modal");
-  const modalDetails = document.getElementById("modal-details");
-  const modalMap = document.getElementById("modal-map");
-
-  const viagem = viagensDisponiveis.find((v) => v.id === id);
-  if (!viagem) return;
-
-  // Injeção com estilos forçados para evitar que fujam do modal
-  modalDetails.innerHTML = `
-        <div style="text-align: left; width: 100%;">
-            <span class="type-badge" style="position: static; display: inline-block; margin-bottom: 5px;">
-                ${viagem.categoria}
-            </span>
-            <h2 style="margin: 0; color: #1e293b; font-size: 1.5rem; line-height: 1.2;">
-                ${viagem.nome}
-            </h2>
-            <p style="margin: 5px 0 0 0; color: #ef4444; font-weight: 600; display: flex; align-items: center; gap: 5px;">
-                <i class='bx bxs-map'></i> ${viagem.origem} <i class='bx bx-right-arrow-alt'></i> ${viagem.destino}
-            </p>
+/* --- Card de veículo (dados escapados; sem onclick inline) --- */
+function createCardHTML(viagem) {
+  const e = VEB.esc;
+  return `
+    <article class="offer-card">
+      <div class="offer-media">
+        <img src="${e(viagem.imagem)}" alt="" width="400" height="300" loading="lazy" decoding="async" />
+        <span class="offer-tag">${e(viagem.categoria)}</span>
+      </div>
+      <div class="offer-body">
+        <h3>${e(viagem.nome)}</h3>
+        <p class="offer-route">
+          <span><i class="bx bxs-circle" aria-hidden="true"></i> De: ${e(viagem.origem)}</span>
+          <span><i class="bx bxs-map" aria-hidden="true"></i> Para: ${e(viagem.destino)}</span>
+        </p>
+        <ul class="offer-specs">
+          <li><i class="bx bx-calendar" aria-hidden="true"></i> ${e(viagem.data)}</li>
+          <li><i class="bx bx-package" aria-hidden="true"></i> ${e(viagem.capacidade)}</li>
+          <li><i class="bx bx-cube" aria-hidden="true"></i> ${e(viagem.volume)}</li>
+          <li><i class="bx bx-check-shield" aria-hidden="true"></i> Verificado</li>
+        </ul>
+        <p class="offer-desc">${e(viagem.descricao)}</p>
+        <div class="offer-actions">
+          <button type="button" class="btn btn-ghost" data-route="${e(viagem.id)}">
+            <i class="bx bx-map-alt" aria-hidden="true"></i> Ver Trajeto
+          </button>
+          <a href="${VEB.waLink(mensagemViagem(viagem))}" target="_blank" rel="noopener" class="btn btn-whatsapp">
+            <i class="bx bxl-whatsapp" aria-hidden="true"></i> Transportar Agora
+          </a>
         </div>
-    `;
+      </div>
+    </article>`;
+}
 
-  const origem = encodeURIComponent(viagem.origem);
-  const destino = encodeURIComponent(viagem.destino);
-  const mapUrl = `https://www.google.com/maps/embed/v1/directions?key=${CONFIG.apiKey}&origin=${origem}&destination=${destino}&mode=driving`;
+/** Renderiza os primeiros N cards da lista atual; `reset` recomeça a contagem (nova busca). */
+function renderizarCards(reset = false) {
+  const container = document.getElementById("services-content");
+  const botao = document.getElementById("load-more-btn");
+  const fim = document.getElementById("all-loaded-msg");
+  if (!container) return;
 
-  modalMap.innerHTML = `<iframe src="${mapUrl}" width="100%" height="100%" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>`;
+  if (reset) exibidas = 0;
+  exibidas = Math.min(exibidas + (exibidas === 0 ? PRIMEIRA_CARGA : INCREMENTO), listaAtual.length);
 
-  modal.style.display = "flex";
-  document.body.style.overflow = "hidden";
-};
+  container.innerHTML = listaAtual.length
+    ? listaAtual.slice(0, exibidas).map(createCardHTML).join("")
+    : '<p class="offers-empty">Nenhum veículo encontrado para essa busca.</p>';
 
-window.fecharModal = function () {
-  const modal = document.getElementById("route-modal");
-  modal.style.display = "none";
-  document.body.style.overflow = "auto";
-  document.getElementById("modal-map").innerHTML = ""; // Limpa para economizar recurso
-};
-// Event Listeners para o Modal
-document.querySelector(".close-button")?.addEventListener("click", fecharModal);
-window.addEventListener("click", (e) => {
-  if (e.target.id === "route-modal") fecharModal();
-});
+  const acabou = exibidas >= listaAtual.length;
+  botao.hidden = acabou;
+  fim.hidden = !(acabou && listaAtual.length > 0);
+}
 
-/* --- SUPORTE & FAQ --- */
-const setupSupport = () => {
-  const whatsappButton = document.getElementById("fixed-whatsapp-button");
-  if (whatsappButton) {
-    whatsappButton.href = `https://wa.me/${CONFIG.supportNumber}?text=${encodeURIComponent(CONFIG.supportMessage)}`;
-  }
-};
-
-const setupFAQ = () => {
-  document.querySelectorAll(".faq-question").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const currentItem = btn.parentElement;
-      const isActive = currentItem.classList.contains("active");
-      document
-        .querySelectorAll(".faq-item")
-        .forEach((item) => item.classList.remove("active"));
-      if (!isActive) currentItem.classList.add("active");
-    });
+/* --- Busca por origem, destino, tipo de veículo ou nome --- */
+function setupSearch() {
+  const input = document.getElementById("search-input");
+  if (!input) return;
+  input.addEventListener("input", (e) => {
+    const termo = e.target.value.trim().toLowerCase();
+    listaAtual = viagensDisponiveis.filter((v) =>
+      [v.origem, v.destino, v.categoria, v.nome].some((campo) => campo.toLowerCase().includes(termo)),
+    );
+    renderizarCards(true);
   });
-};
+}
 
-/* --- INICIALIZAÇÃO CENTRALIZADA --- */
+/* --- Modal de trajeto --- */
+function abrirTrajeto(id, trigger) {
+  const viagem = viagensDisponiveis.find((v) => String(v.id) === String(id));
+  const modal = document.getElementById("route-modal");
+  if (!viagem || !modal) return;
+
+  document.getElementById("route-modal-categoria").textContent = viagem.categoria;
+  document.getElementById("route-modal-title").textContent = viagem.nome;
+  document.getElementById("route-modal-route").textContent = `${viagem.origem} → ${viagem.destino}`;
+  document.getElementById("route-modal-data").textContent = viagem.data;
+  document.getElementById("route-modal-capacidade").textContent = viagem.capacidade;
+  document.getElementById("route-modal-volume").textContent = viagem.volume;
+  document.getElementById("route-modal-veiculo").textContent = viagem.categoria;
+  document.getElementById("route-modal-cta").href = VEB.waLink(mensagemViagem(viagem));
+  document.getElementById("modal-map").innerHTML = VEB.mapEmbed(viagem.origem, viagem.destino);
+
+  VEB.modal.open(modal, trigger);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Inicializa Seção de Viagens (viagens.js deve estar carregado antes)
-  if (typeof renderizarCards === "function") {
-    renderizarCards(viagensDisponiveis);
-    setupSearch();
-    setupLoadMore();
-  }
+  if (typeof viagensDisponiveis === "undefined") return;
+  listaAtual = [...viagensDisponiveis];
+  renderizarCards(true);
+  setupSearch();
 
-  // 2. Inicializa Componentes de UI
-  setupSupport();
-  setupFAQ();
+  document.getElementById("load-more-btn")?.addEventListener("click", () => renderizarCards());
 
-  // 3. Delay para animação de entrada dos cards
-  setTimeout(() => {
-    sr.reveal(".services-container .box", { interval: 100 });
-  }, 500);
+  // Um único listener para todos os botões "Ver Trajeto" (delegação de eventos)
+  document.getElementById("services-content")?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-route]");
+    if (btn) abrirTrajeto(btn.dataset.route, btn);
+  });
 });
