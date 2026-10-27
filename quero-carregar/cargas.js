@@ -1,5 +1,6 @@
 /* =============================================================== 
-    📦 DADOS DOS CARDS (Mercadorias para Transporte)
+    📦 DADOS DOS CARDS (Mercadorias para Transporte) — exemplos ilustrativos
+    O contato de todos os cards usa o número central em ../shared/site.js (VEB.whatsapp).
     =============================================================== */
 
 const allCardsData = [
@@ -14,7 +15,6 @@ const allCardsData = [
         volume: "6 m³",
         unidades: "12",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1-400.webp",
-        whatsapp: "5532998615190"
     },
     {
         id: 2,
@@ -27,7 +27,6 @@ const allCardsData = [
         volume: "4 m³",
         unidades: "10",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-2-400.webp",
-        whatsapp: "5532999999999"
     },
     {
         id: 3,
@@ -40,7 +39,6 @@ const allCardsData = [
         volume: "2.5 m³",
         unidades: "22",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-3-400.webp",
-        whatsapp: "5532888888888"
     },
     {
         id: 4,
@@ -53,7 +51,6 @@ const allCardsData = [
         volume: "3 m³",
         unidades: "9",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-4-400.webp",
-        whatsapp: "5532777777777"
     },
     {
         id: 5,
@@ -66,7 +63,6 @@ const allCardsData = [
         volume: "1.5 m³",
         unidades: "14",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-5-400.webp",
-        whatsapp: "5532666666666"
     },
     {
         id: 6,
@@ -79,7 +75,6 @@ const allCardsData = [
         volume: "5m³",
         unidades: "12",
         imagem: "./assets/transportador/buscar-carga/deposito-1-400.webp",
-        whatsapp: "5532555555555"
     },
     {
         id: 7,
@@ -92,7 +87,6 @@ const allCardsData = [
         volume: "4m³",
         unidades: "32",
         imagem: "./assets/transportador/buscar-carga/deposito-2-400.webp",
-        whatsapp: "5532444444444"
     },
     {
         id: 8,
@@ -105,7 +99,6 @@ const allCardsData = [
         volume: "12m³",
         unidades: "34",
         imagem: "./assets/transportador/buscar-carga/deposito-3-400.webp",
-        whatsapp: "5532333333333"
     },
     {
         id: 9,
@@ -118,7 +111,6 @@ const allCardsData = [
         volume: "3m³",
         unidades: "7",
         imagem: "./assets/transportador/buscar-carga/deposito-4-400.webp",
-        whatsapp: "5532222222222"
     },
     {
         id: 10,
@@ -131,6 +123,5 @@ const allCardsData = [
         volume: "20 m³",
         unidades: "50",
         imagem: "./assets/transportador/buscar-carga/caminhao-caixas-1-400.webp",
-        whatsapp: "5532222222222"
     },
 ];

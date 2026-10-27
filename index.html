@@ -1,134 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Volta Express Brasil | Logística e Transporte Inteligente</title>
-  <meta name="description" content="Soluções eficientes em transporte e logística. Conectamos sua carga ao destino com tecnologia e agilidade.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="./style.css?v=1.0.0" />
+  <meta name="description" content="Soluções eficientes em transporte e logística. Conectamos sua carga ao destino com tecnologia e agilidade." />
+  <meta name="theme-color" content="#104ac8" />
+
+  <!-- Marca a página como "JS ativo" antes da pintura: habilita as animações de entrada -->
+  <script>document.documentElement.classList.add("js");</script>
+
+  <!-- Uma família de fonte (Poppins 400/600/700), sem @import em cadeia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" />
+
+  <!-- Ícones com versão fixa, carregados sem bloquear a primeira pintura -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" /></noscript>
+
+  <link rel="stylesheet" href="./shared/tokens.css?v=7.0.0" />
+  <link rel="stylesheet" href="./shared/components.css?v=7.0.0" />
+  <link rel="stylesheet" href="./style.css?v=7.0.0" />
 
   <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png" />
   <link rel="manifest" href="./public/site.webmanifest" />
-  <link rel="preload" as="image" href="./assets/banner-caixas-caminhao-1536.webp" type="image/webp" fetchpriority="high" />
-</head>
-  <body>
 
-    <header>
-      <a href="#" class="logo">
-        <img src="./assets/logo-volta-express-120.webp" srcset="./assets/logo-volta-express-120.webp 120w, ./assets/logo-volta-express-240.webp 240w" sizes="60px" alt="Logo Volta Express Brasil" width="60" height="40" decoding="async" />
+  <script src="./shared/site.js?v=7.0.0" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="Volta Express Brasil — início">
+        <img src="./assets/logo-volta-express-120.webp" srcset="./assets/logo-volta-express-120.webp 120w, ./assets/logo-volta-express-240.webp 240w" sizes="60px" alt="Volta Express Brasil" width="60" height="40" decoding="async" />
       </a>
-      
-      <div class="bx bx-menu" id="menu-icon"></div>
-      
-      <nav>
-        <ul class="navbar">
+
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <ul>
           <li><a href="./quero-carregar/index.html">Tenho Caminhão</a></li>
           <li><a href="./quero-transportar/index.html">Tenho Carga</a></li>
         </ul>
       </nav>
 
-      <div class="header-btn">
-        <a href="https://www.voltaexpress.com.br" class="btn-login">Entrar / Cadastrar</a>
+      <div class="header-actions">
+        <a href="https://voltaexpress.com.br/" class="btn btn-primary btn-sm">Entrar / Cadastrar</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="home" id="home">
-        <div class="hero-content">
-          <div class="text">
-            <h1>
-              No <span>Volta Express</span> temos <br />
-              a <span>sua solução!</span>
-            </h1>
-            <p>Conectamos motoristas a fretes de retorno com agilidade e segurança.</p>
-          </div>
+  <main id="conteudo">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>No <span class="hl">Volta Express</span> temos a <span class="hl">sua solução!</span></h1>
+          <p class="lead">Conectamos motoristas a fretes de retorno com agilidade e segurança.</p>
 
-          <div class="selection-container">
-            <div class="persona-grid">
-              <a href="./quero-carregar/index.html" class="persona-card" aria-label="Sou motorista e busco carga">
-                <div class="card-icon"><i class='bx bxs-truck'></i></div>
-                <div class="card-info">
-                  <span class="card-subtitle">Sou Motorista</span>
-                  <span class="card-title">Quero Carregar</span>
-                </div>
-                <i class='bx bx-chevron-right'></i>
-              </a>
+          <div class="persona-grid">
+            <a href="./quero-carregar/index.html" class="persona-card">
+              <span class="persona-icon"><i class="bx bxs-truck" aria-hidden="true"></i></span>
+              <span class="persona-info">
+                <span class="persona-subtitle">Sou Motorista</span>
+                <span class="persona-title">Quero Carregar</span>
+              </span>
+              <i class="bx bx-chevron-right persona-arrow" aria-hidden="true"></i>
+            </a>
 
-              <a href="./quero-transportar/index.html" class="persona-card" aria-label="Sou embarcador e busco caminhão">
-                <div class="card-icon"><i class='bx bxs-package'></i></div>
-                <div class="card-info">
-                  <span class="card-subtitle">Sou Embarcador</span>
-                  <span class="card-title">Quero Transportar</span>
-                </div>
-                <i class='bx bx-chevron-right'></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-   <footer>
-      <div class="footer-container">
-        <div class="footer-column branding">
-          <img src="./assets/logo-volta-express-120.webp" srcset="./assets/logo-volta-express-120.webp 120w, ./assets/logo-volta-express-240.webp 240w" sizes="80px" alt="Volta Express Brasil" class="footer-logo" width="80" height="53" loading="lazy" decoding="async" />
-          <p>Conectando cargas e caminhões com inteligência, segurança e rentabilidade máxima na estrada. O seu parceiro estratégico.</p>
-          <div class="social">
-            <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank" aria-label="YouTube"><i class="bx bxl-youtube"></i></a>
+            <a href="./quero-transportar/index.html" class="persona-card">
+              <span class="persona-icon"><i class="bx bxs-package" aria-hidden="true"></i></span>
+              <span class="persona-info">
+                <span class="persona-subtitle">Sou Embarcador</span>
+                <span class="persona-title">Quero Transportar</span>
+              </span>
+              <i class="bx bx-chevron-right persona-arrow" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
 
-        <div class="footer-column">
-          <h3>Links Úteis</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#">Sobre Nós</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Depoimentos</a></li>
-          </ul>
+        <div class="hero-media">
+          <img src="./assets/banner-caixas-caminhao-800.webp" srcset="./assets/banner-caixas-caminhao-800.webp 800w, ./assets/banner-caixas-caminhao-1536.webp 1536w" sizes="(max-width: 960px) 92vw, 46vw" alt="Caminhão da Volta Express com caixas prontas para o frete" width="1536" height="1024" fetchpriority="high" decoding="async" />
         </div>
+      </div>
+    </section>
+  </main>
 
-        <div class="footer-column">
-          <h3>Legal</h3>
-          <ul>
-            <li><a href="#">Privacidade</a></li>
-            <li><a href="#">Termos de Uso</a></li>
-            <li><a href="#">CNAE / MEI</a></li>
-            <li><a href="#">Dúvidas Frequentes</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h3>Contato</h3>
-          <ul class="contact-info">
-            <li><i class='bx bxs-map'></i> Juiz de Fora, MG</li>
-            <li><i class='bx bxs-envelope'></i> contato@voltaexpress.com.br</li>
-            <li><i class='bx bxs-phone'></i> (32) 9XXXX-XXXX</li>
-          </ul>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="./assets/logo-volta-express-120.webp" srcset="./assets/logo-volta-express-120.webp 120w, ./assets/logo-volta-express-240.webp 240w" sizes="80px" alt="Volta Express Brasil" width="80" height="53" loading="lazy" decoding="async" />
+        <p>Conectando cargas e caminhões com inteligência, segurança e rentabilidade máxima na estrada. O seu parceiro estratégico.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/voltaexpressbrasil/" target="_blank" rel="noopener" aria-label="Instagram da Volta Express"><i class="bx bxl-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/voltaexpressbrasil" target="_blank" rel="noopener" aria-label="Facebook da Volta Express"><i class="bx bxl-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/@voltaexpressbrasil" target="_blank" rel="noopener" aria-label="YouTube da Volta Express"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 Volta Express Brasil | learnTECH Ecosystem - Todos os direitos reservados.</p>
+      <div>
+        <h2 class="footer-title">Navegação</h2>
+        <ul class="footer-links">
+          <li><a href="./index.html">Início</a></li>
+          <li><a href="./quero-carregar/index.html">Tenho Caminhão</a></li>
+          <li><a href="./quero-transportar/index.html">Tenho Carga</a></li>
+          <li><a href="https://voltaexpress.com.br/">Entrar / Cadastrar</a></li>
+        </ul>
       </div>
-    </footer>
 
-    <a href="#" id="fixed-whatsapp-button" target="_blank" class="whatsapp-float" title="Fale com nosso suporte">
-      <img src="./assets/favicon-png-removebg-64.webp" srcset="./assets/favicon-png-removebg-64.webp 64w, ./assets/favicon-png-removebg-128.webp 128w" sizes="35px" alt="Ícone WhatsApp" width="35" height="41" decoding="async" />
-    </a>
+      <div>
+        <h2 class="footer-title">Contato</h2>
+        <ul class="footer-contact">
+          <li><span><i class="bx bxs-map" aria-hidden="true"></i> Juiz de Fora, MG</span></li>
+          <li><a href="mailto:contato@voltaexpress.com.br"><i class="bx bxs-envelope" aria-hidden="true"></i> contato@voltaexpress.com.br</a></li>
+          <li><a href="https://wa.me/5532988367667" data-wa="Olá! Vim pelo site do Volta Express e gostaria de suporte." target="_blank" rel="noopener"><i class="bx bxl-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="./script.js"></script>
-  </body>
+    <div class="footer-bottom">
+      <p>© 2026 Volta Express Brasil. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5532988367667" data-wa="Olá! Vim pelo site do Volta Express e gostaria de suporte." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar com o suporte no WhatsApp">
+    <i class="bx bxl-whatsapp" aria-hidden="true"></i>
+  </a>
+</body>
 </html>
