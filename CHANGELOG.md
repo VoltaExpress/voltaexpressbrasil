@@ -2,6 +2,10 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [7.0.1] — 2026-10-28
+- Contato oficial unificado com a plataforma e o Hub: e-mail `voltaexpressbrasil@gmail.com` (antes `contato@voltaexpress.com.br`); WhatsApp `5532988367667` mantido.
+- Redes sociais: entram X e TikTok (`voltaexpressbrasil`), além de Instagram, Facebook e YouTube, nas 3 páginas.
+
 ## [7.0.0] — 2026-10-26 · branch `v6.3-incubacao`
 
 Foco: performance, UX, responsividade e design. Detalhes em `docs/RELATORIO.md` e decisões em `docs/DECISOES.md` (D6–D13).
