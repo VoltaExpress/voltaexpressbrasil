@@ -24,6 +24,25 @@ Neste repositório, mantemos a **Landing Page oficial** da startup. O objetivo p
 
 ---
 
+## 📍 Status e próximos passos (06/11/2026)
+
+- **Versão atual:** 7.0.1 em `main`, publicada no GitHub Pages em `voltaexpressbrasil.com.br` (ver [CHANGELOG.md](CHANGELOG.md)).
+- **Feito:** design system em `shared/`, performance, acessibilidade (AA, alvos de 44 px), 3 páginas por persona e contato e redes oficiais unificados.
+- **Falta para o MVP:** HTTPS forçado, CTAs levando à persona certa no cadastro da plataforma, links de Privacidade e Termos, depoimentos ilustrativos sinalizados, medição do funil e o teste manual da v7.
+- Detalhes, critérios de pronto e a lista de issues em [docs/STATUS-MVP.md](docs/STATUS-MVP.md).
+
+**Issues do MVP (criadas em 09/11/2026):**
+- [#21](https://github.com/VoltaExpress/voltaexpressbrasil/issues/21) Hospedagem: forçar HTTPS no GitHub Pages
+- [#22](https://github.com/VoltaExpress/voltaexpressbrasil/issues/22) Conversão: CTAs com `/cadastro?perfil=` da plataforma
+- [#23](https://github.com/VoltaExpress/voltaexpressbrasil/issues/23) LGPD: links de Privacidade e Termos no rodapé
+- [#24](https://github.com/VoltaExpress/voltaexpressbrasil/issues/24) Conteúdo: marcar depoimentos como ilustrativos ou trocar por reais
+- [#25](https://github.com/VoltaExpress/voltaexpressbrasil/issues/25) Medição: analytics do funil com consentimento
+- [#26](https://github.com/VoltaExpress/voltaexpressbrasil/issues/26) QA: teste manual T1–T11 e PageSpeed da v7
+- [#27](https://github.com/VoltaExpress/voltaexpressbrasil/issues/27) Limpeza: remover imagens órfãs
+- [#28](https://github.com/VoltaExpress/voltaexpressbrasil/issues/28) Organização: revisar issues antigas #5, #11, #13 e #18
+
+---
+
 ## ✅ Features Concluídas (v6.1)
 
 ### 🌐 Core & Institucional (Home)
