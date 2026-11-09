@@ -2,6 +2,11 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [7.1.0] — 2026-11-09
+- CTAs das páginas Quero Carregar e Quero Transportar ("Entrar / Cadastrar", "Encontrar…", "Anunciar…") abrem o cadastro da plataforma com a persona marcada: `/cadastro?perfil=caminhao` e `/cadastro?perfil=carga`. "Ver ofertas na plataforma" e a Home continuam na página inicial da plataforma (#22).
+- Rodapé das 3 páginas com link para a Política de Privacidade da plataforma; o link dos Termos de Uso entra quando a página existir (#23).
+- `components.css?v=7.1.0` para o navegador baixar o estilo novo do rodapé.
+
 ## [7.0.1] — 2026-10-28
 - Contato oficial unificado com a plataforma e o Hub: e-mail `voltaexpressbrasil@gmail.com` (antes `contato@voltaexpress.com.br`); WhatsApp `5532988367667` mantido.
 - Redes sociais: entram X e TikTok (`voltaexpressbrasil`), além de Instagram, Facebook e YouTube, nas 3 páginas.
