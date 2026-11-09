@@ -2,6 +2,10 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · versões em [SemVer](https://semver.org/lang/pt-BR/).
 
+## [7.1.1] — 2026-11-09
+- Removidas 43 imagens e arquivos órfãos (~33 MB) da lista `docs/imagens-orfas.txt`, incluindo cópias de logos em `quero-transportar/assets/` e o `script.js` antigo da raiz; nenhuma página referenciava esses arquivos (#27).
+- Teste manual T1–T11 da v7.1 registrado em `docs/PLANO-DE-ACAO.md` (#26).
+
 ## [7.1.0] — 2026-11-09
 - CTAs das páginas Quero Carregar e Quero Transportar ("Entrar / Cadastrar", "Encontrar…", "Anunciar…") abrem o cadastro da plataforma com a persona marcada: `/cadastro?perfil=caminhao` e `/cadastro?perfil=carga`. "Ver ofertas na plataforma" e a Home continuam na página inicial da plataforma (#22).
 - Rodapé das 3 páginas com link para a Política de Privacidade da plataforma; o link dos Termos de Uso entra quando a página existir (#23).
