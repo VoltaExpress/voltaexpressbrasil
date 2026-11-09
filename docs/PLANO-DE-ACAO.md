@@ -12,8 +12,8 @@ Legenda: ✅ feito · 🔄 com você · ⬜ a fazer
 | 3 Design system | ✅ | `shared/` com tokens, componentes e JS comum; header, rodapé, botões e WhatsApp iguais nas 3 páginas; contraste AA |
 | 4 UX e responsividade | ✅ | Hero com 2 ações, um `<h1>`, 5 passos sem card sobrando, alvos ≥ 44 px, FAQ nativo, modal acessível, 5 larguras |
 | 5 Medição e documentação | ✅ | RELATORIO, DECISOES (D6–D13), DESIGN-SYSTEM, CHANGELOG, lista de órfãs |
-| 6 Teste manual e commit | 🔄 | Roteiro abaixo |
-| 7 Exclusão das imagens órfãs | 🔄 | Passo a passo abaixo |
+| 6 Teste manual e commit | ✅ / 🔄 | Roteiro abaixo; T1–T11 executados em 09/11/2026 (resultado abaixo). Faltam T12–T15 |
+| 7 Exclusão das imagens órfãs | ✅ | 09/11/2026: 43 arquivos (~33 MB) removidos; 40 itens da lista já não existiam; nenhum 404 nas 3 páginas (#27) |
 
 ## Roteiro de teste manual (antes do commit)
 
@@ -42,6 +42,23 @@ python -m http.server 8080
 | T13 | Teclado | Tab desde o topo | Primeiro item "Pular para o conteúdo"; foco sempre visível |
 | T14 | Celular real | Abrir pelo IP do computador na mesma rede ou após o deploy | Igual ao modo celular |
 | T15 | PageSpeed | Depois do deploy, [pagespeed.web.dev](https://pagespeed.web.dev) nas 3 URLs, mobile | Comparar com a linha de base (etapa 0) |
+
+### Resultado — 09/11/2026 (v7.1, servidor local, Chrome)
+| # | Resultado | Observação |
+|---|---|---|
+| T1 | ✅ | Home: "Entrar / Cadastrar" abre a plataforma. Quero Carregar e Quero Transportar: abrem `/cadastro?perfil=caminhao` e `?perfil=carga` |
+| T2 | ✅ | "Encontrar Carga", "Anunciar Caminhão", "Encontrar Caminhão" e "Anunciar Carga" abrem o cadastro com a persona |
+| T3 | ✅ | 11 links por página com `5532988367667` e mensagem da página; o do modal de trajeto recebe a mensagem ao abrir |
+| T4 | ✅ | A mensagem cita a carga ou o veículo do card (ex.: "Caixas de Livros", "Caminhão do João") |
+| T5 | ✅ | Nas 3 páginas, em 360 px: abre, fecha ao clicar num item e fecha com Esc |
+| T6 | ✅ | Busca "São Paulo": só cards de São Paulo (1 em Quero Carregar, 3 em Quero Transportar); "Ver mais" fica oculto durante a busca e sem busca vai de 6 para 9 |
+| T7 | ✅ | Modal abre com o mapa e fecha com Esc, com o X e clicando fora |
+| T8 | ✅ | `name="faq"`: abre uma pergunta por vez |
+| T9 | ✅ | 360, 390, 768, 1024 e 1440 px nas 3 páginas: sem rolagem lateral |
+| T10 | ✅ por análise do código | Ícones com `media="print"` (não bloqueiam) e botão do menu com rótulo; o bloqueio real de CDN não foi feito |
+| T11 | ✅ por análise do código | O HTML sem script tem o título, o texto das seções, o FAQ e "Carregando ofertas..."; o JavaScript não foi desligado no navegador |
+| T12–T14 | ⬜ | Não executados |
+| T15 | ⬜ | PageSpeed indisponível em 09/11/2026: cota diária da API pública esgotada. Refazer pelo site |
 
 Commit sugerido (Conventional Commits), depois de os testes passarem:
 
