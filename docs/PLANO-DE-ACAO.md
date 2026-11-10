@@ -123,7 +123,7 @@ O histórico do Git continua com as imagens (~254 MB). Limpar o histórico exige
 | B1 | Variante de ~1080 px dos 3 banners do hero com `scripts/otimizar_imagens.py` (reduz o LCP da home no celular) | Medição v7 |
 | B2 | Revisar textos e números não verificáveis ("+10k cargas", "24h", "100% Seguro", "Verificado", depoimentos) | D2, D12 |
 | B3 | Título da home com a proposta de valor (frete de retorno) | Relatório 26/10 |
-| B4 | Open Graph, canonical, `sitemap.xml`, `robots.txt` | A3.1, A3.2 |
+| B4 | ~~Open Graph, canonical, `sitemap.xml`, `robots.txt`~~ feito em 10/11/2026 (#38) | A3.1, A3.2 |
 | B5 | Páginas de Privacidade e Termos (LGPD) no rodapé | A5.1, D13 |
 | B6 | Medição de cliques sem cookies (persona, plataforma, WhatsApp) e UTM nos CTAs | A5.3, D7 |
 | B7 | Testes automáticos (Playwright) e Lighthouse CI no GitHub Actions | A6.1 |

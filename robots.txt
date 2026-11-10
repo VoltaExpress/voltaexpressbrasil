@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://voltaexpressbrasil.com.br/sitemap.xml
