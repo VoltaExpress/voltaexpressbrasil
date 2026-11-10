@@ -1,0 +1,46 @@
+# Verificação da landing em cada PR e em cada push na main.
+# Só lê o repositório: o deploy do GitHub Pages continua como está.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Links e arquivos locais
+        run: npm run check:links
+
+      - name: Chromium do Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Testes de ponta a ponta
+        run: npm run test:e2e
+
+      - name: Relatório do Playwright
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
