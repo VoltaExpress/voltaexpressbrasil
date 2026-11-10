@@ -108,7 +108,27 @@ VEB.modal = (() => {
     modal.querySelector(".modal-close")?.focus();
   };
 
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  /* Foco preso no diálogo: Tab no último volta ao primeiro, Shift+Tab no primeiro vai ao último */
+  const FOCAVEIS = 'a[href], button:not([disabled]), input:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
+  const prenderFoco = (e) => {
+    const focaveis = [...current.querySelectorAll(FOCAVEIS)].filter((el) => el.getClientRects().length > 0);
+    if (!focaveis.length) return;
+    const primeiro = focaveis[0];
+    const ultimo = focaveis[focaveis.length - 1];
+    const ativo = document.activeElement;
+    if (e.shiftKey && (ativo === primeiro || !current.contains(ativo))) {
+      e.preventDefault();
+      ultimo.focus();
+    } else if (!e.shiftKey && (ativo === ultimo || !current.contains(ativo))) {
+      e.preventDefault();
+      primeiro.focus();
+    }
+  };
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+    else if (e.key === "Tab" && current) prenderFoco(e);
+  });
   document.addEventListener("click", (e) => {
     if (!current) return;
     if (e.target === current || e.target.closest(".modal-close")) close();
