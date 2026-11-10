@@ -1,0 +1,19 @@
+{
+  "name": "voltaexpressbrasil-landing",
+  "private": true,
+  "description": "Ferramentas de desenvolvimento da landing. O site publicado continua sem etapa de build.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "start": "node scripts/servidor.mjs",
+    "check:links": "node scripts/verificar-links.mjs",
+    "test:e2e": "playwright test",
+    "test": "npm run check:links && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0"
+  }
+}
