@@ -128,7 +128,7 @@ O histórico do Git continua com as imagens (~254 MB). Limpar o histórico exige
 | B6 | Medição de cliques sem cookies (persona, plataforma, WhatsApp) e UTM nos CTAs | A5.3, D7 |
 | B7 | Testes automáticos (Playwright) e Lighthouse CI no GitHub Actions | A6.1 |
 | B8 | Foco preso dentro do modal (Tab não sai do diálogo) | Etapa 4 |
-| B9 | Excluir `docs/` e `scripts/` da publicação do Pages | A6.2 |
+| B9 | ~~Excluir `docs/` e `scripts/` da publicação do Pages~~ feito em 10/11/2026 com o `_config.yml` (#29) | A6.2 |
 | B10 | Limpar o histórico do Git das imagens antigas | Etapa 7 |
 | B11 | Apagar os originais de `docs/imagens-originais.txt` depois do B1 | Etapa 7 |
 

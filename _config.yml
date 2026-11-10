@@ -1,0 +1,21 @@
+# Configuração do Jekyll do GitHub Pages.
+# As páginas da landing (HTML, CSS, JS e imagens) são publicadas como estão.
+# A lista abaixo tira da publicação o que é só do repositório: documentos internos,
+# scripts e ferramentas de desenvolvimento (B9 em docs/PLANO-DE-ACAO.md).
+# Atenção: "exclude" substitui a lista padrão do Jekyll, por isso ela repete
+# node_modules e os arquivos do Ruby.
+exclude:
+  - docs/
+  - scripts/
+  - tests/
+  - README.md
+  - CHANGELOG.md
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - node_modules/
+  - test-results/
+  - playwright-report/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
