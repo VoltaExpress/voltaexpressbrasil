@@ -9,6 +9,10 @@
   "scripts": {
     "start": "node scripts/servidor.mjs",
     "check:links": "node scripts/verificar-links.mjs",
-    "test": "npm run check:links"
+    "test:e2e": "playwright test",
+    "test": "npm run check:links && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0"
   }
 }
