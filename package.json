@@ -1,0 +1,14 @@
+{
+  "name": "voltaexpressbrasil-landing",
+  "private": true,
+  "description": "Ferramentas de desenvolvimento da landing. O site publicado continua sem etapa de build.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "start": "node scripts/servidor.mjs",
+    "check:links": "node scripts/verificar-links.mjs",
+    "test": "npm run check:links"
+  }
+}
