@@ -24,22 +24,42 @@ Neste repositório, mantemos a **Landing Page oficial** da startup. O objetivo p
 
 ---
 
-## 📍 Status e próximos passos (06/11/2026)
+## 📍 Status e próximos passos (10/11/2026)
 
-- **Versão atual:** 7.0.1 em `main`, publicada no GitHub Pages em `voltaexpressbrasil.com.br` (ver [CHANGELOG.md](CHANGELOG.md)).
-- **Feito:** design system em `shared/`, performance, acessibilidade (AA, alvos de 44 px), 3 páginas por persona e contato e redes oficiais unificados.
-- **Falta para o MVP:** HTTPS forçado, CTAs levando à persona certa no cadastro da plataforma, links de Privacidade e Termos, depoimentos ilustrativos sinalizados, medição do funil e o teste manual da v7.
+- **Versão atual:** 7.1.1 em `main`, publicada no GitHub Pages em `voltaexpressbrasil.com.br` (ver [CHANGELOG.md](CHANGELOG.md)).
+- **Feito:** design system em `shared/`, performance, acessibilidade (AA, alvos de 44 px), 3 páginas por persona, contato e redes oficiais unificados, CTAs com a persona no cadastro da plataforma (7.1.0) e link da Política de Privacidade no rodapé.
+- **Falta para o MVP:** HTTPS forçado, link dos Termos de Uso, medição do funil e o PageSpeed da v7.
 - Detalhes, critérios de pronto e a lista de issues em [docs/STATUS-MVP.md](docs/STATUS-MVP.md).
 
 **Issues do MVP (criadas em 09/11/2026):**
-- [#21](https://github.com/VoltaExpress/voltaexpressbrasil/issues/21) Hospedagem: forçar HTTPS no GitHub Pages
-- [#22](https://github.com/VoltaExpress/voltaexpressbrasil/issues/22) Conversão: CTAs com `/cadastro?perfil=` da plataforma
-- [#23](https://github.com/VoltaExpress/voltaexpressbrasil/issues/23) LGPD: links de Privacidade e Termos no rodapé
-- [#24](https://github.com/VoltaExpress/voltaexpressbrasil/issues/24) Conteúdo: marcar depoimentos como ilustrativos ou trocar por reais
-- [#25](https://github.com/VoltaExpress/voltaexpressbrasil/issues/25) Medição: analytics do funil com consentimento
-- [#26](https://github.com/VoltaExpress/voltaexpressbrasil/issues/26) QA: teste manual T1–T11 e PageSpeed da v7
-- [#27](https://github.com/VoltaExpress/voltaexpressbrasil/issues/27) Limpeza: remover imagens órfãs
-- [#28](https://github.com/VoltaExpress/voltaexpressbrasil/issues/28) Organização: revisar issues antigas #5, #11, #13 e #18
+- [ ] [#21](https://github.com/VoltaExpress/voltaexpressbrasil/issues/21) Hospedagem: forçar HTTPS no GitHub Pages
+- [x] [#22](https://github.com/VoltaExpress/voltaexpressbrasil/issues/22) Conversão: CTAs com `/cadastro?perfil=` da plataforma
+- [ ] [#23](https://github.com/VoltaExpress/voltaexpressbrasil/issues/23) LGPD: links de Privacidade e Termos no rodapé (Privacidade feita; falta Termos)
+- [x] [#24](https://github.com/VoltaExpress/voltaexpressbrasil/issues/24) Conteúdo: marcar depoimentos como ilustrativos ou trocar por reais
+- [ ] [#25](https://github.com/VoltaExpress/voltaexpressbrasil/issues/25) Medição: analytics do funil com consentimento
+- [ ] [#26](https://github.com/VoltaExpress/voltaexpressbrasil/issues/26) QA: teste manual T1–T11 e PageSpeed da v7 (T1–T11 feitos; falta PageSpeed)
+- [x] [#27](https://github.com/VoltaExpress/voltaexpressbrasil/issues/27) Limpeza: remover imagens órfãs
+- [x] [#28](https://github.com/VoltaExpress/voltaexpressbrasil/issues/28) Organização: revisar issues antigas #5, #11, #13 e #18
+
+**Qualidade, segurança e SEO (criadas em 10/11/2026):** [#29](https://github.com/VoltaExpress/voltaexpressbrasil/issues/29) a [#39](https://github.com/VoltaExpress/voltaexpressbrasil/issues/39): publicação sem `docs/`, integridade do Boxicons, restrição da chave do Maps, testes automáticos e CI, acessibilidade, Open Graph e banners de 1080 px.
+
+---
+
+## 🧪 Como rodar e testar
+
+Pré-requisito: [Node.js](https://nodejs.org/) 20.11 ou mais recente. O site publicado não tem etapa de build: as páginas são servidas como estão.
+
+```bash
+npm ci                          # instala as ferramentas de teste
+npm start                       # landing em http://localhost:5501/
+npm run check:links             # confere se todo arquivo citado pelas páginas existe
+npx playwright install chromium # uma vez, baixa o navegador dos testes
+npm test                        # links + testes de ponta a ponta de tests/
+```
+
+- Os testes ficam em `tests/` e rodam no desktop (1440 px) e no celular (Pixel 7), com a rede externa cortada: não acessam WhatsApp, Google Maps nem a plataforma.
+- O GitHub Actions (`.github/workflows/ci.yml`) roda `check:links` e os testes em cada PR e em cada push na `main`.
+- O roteiro de teste manual (T1–T15) continua em [docs/PLANO-DE-ACAO.md](docs/PLANO-DE-ACAO.md).
 
 ---
 
@@ -172,47 +192,29 @@ Features e evoluções planejadas para otimização de conversão e experiência
 
 ```plaintext
 voltaexpressbrasil/
-├── .git/
-├── .github/
-├── assets/
-│   ├── banner-caixas-caminhao.png
-│   ├── favicon-ICO.ico
-│   ├── favicon-PNG.png
-│   ├── favicon-PNG-removebg.png
-│   ├── logo-volta-express.png
-│   ├── logo-volta-express-caminhao.png
-│   └── logo-volta-express-cargas.png
-├── public/
-│   ├── android-chrome-192x192.png
-│   ├── android-chrome-512x512.png
-│   ├── apple-touch-icon.png
-│   ├── favicon.ico
-│   ├── favicon.png
-│   ├── favicon-16x16.png
-│   ├── favicon-32x32.png
-│   └── site.webmanifest
-├── quero-carregar/
-│   ├── assets/
-│   │   └── transportador/
-│   │       ├── anunciar-caminhao/
-│   │       ├── buscar-carga/
-│   │       ├── persona/
-│   │       ├── volta-express/
-│   │       ├── vantagem-1.png (ou jpg/webp)
-│   │       ├── vantagem-2.png
-│   │       ├── vantagem-3.png
-│   │       └── vantagem-4.png
-│   └── public/
-└── quero-transportar/
-    ├── assets/
-    │   └── embarcador/
-    │       ├── anunciar-carga/
-    │       ├── buscar-caminhao/
-    │       ├── persona/
-    │       └── volta-express/
-    └── public/
+├── index.html · style.css        Home (escolha entre as 2 personas)
+├── CNAME                         domínio do GitHub Pages (não alterar sem o dono)
+├── _config.yml                   o que o Pages não publica (docs, scripts, testes)
+├── shared/                       base comum às 3 páginas
+│   ├── tokens.css                cores, fonte, espaçamento
+│   ├── components.css            componentes (header, rodapé, botões, modal)
+│   └── site.js                   configuração (WhatsApp, plataforma, mapa), menu, animação, modal
+├── assets/                       logos e banner da home (WebP)
+├── public/                       favicons e site.webmanifest
+├── quero-carregar/               persona caminhoneiro: index.html · style.css · script.js · cargas.js · assets/
+├── quero-transportar/            persona embarcador: index.html · style.css · script.js · viagens.js · assets/
+├── docs/                         relatório, plano de ação, decisões, design system, status do MVP
+├── scripts/                      otimizar_imagens.py, servidor.mjs, verificar-links.mjs
+├── tests/                        testes Playwright
+├── .github/                      capturas de tela do README e workflow de CI
+├── CHANGELOG.md
+└── package.json                  scripts de desenvolvimento e testes
 ```
 ---
+
+# 🗂️ Histórico
+
+> Registros das versões 2 a 5, mantidos como estavam. A versão atual está descrita acima. As capturas das versões 3 e 4 saíram do repositório na v6 (commit `559bb81`); os links abaixo apontam para elas no commit anterior.
 
 - Anunciar viagem:
 
@@ -261,37 +263,37 @@ Um preview das últimas versões, 3 e 4, do projeto pois são importantes fluxos
 
 ## versão 4.0 - Volta Express
 
-- ![Home 1 - instruções](./.github/v4-home-1.jpg)
+- ![Home 1 - instruções](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-home-1.jpg)
 
-- ![Home 2 - mapa](./.github/v4-home-2.jpg)
+- ![Home 2 - mapa](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-home-2.jpg)
 
-- ![Home 3 - mapa](./.github/v4-home-3.jpg)
+- ![Home 3 - mapa](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-home-3.jpg)
 
-- ![Depoimento 1](./.github/v4-depoimento-1.jpg)
+- ![Depoimento 1](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-depoimento-1.jpg)
 
-- ![Anunciantes 1](./.github/v4-anunciantes-1.jpg)
+- ![Anunciantes 1](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-anunciantes-1.jpg)
 
-- ![Transportadores 1](./.github/v4-transportadores-1.jpg)
+- ![Transportadores 1](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-transportadores-1.jpg)
 
-- ![FAQ e Footer 1](./.github/v4-faq-1.jpg)
+- ![FAQ e Footer 1](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v4-faq-1.jpg)
 
 ## versão 3.0 - Volta Express
 
-- ![Home 1](./.github/v3-home-1.jpg)
+- ![Home 1](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-home-1.jpg)
 
-- ![Anunciantes 2](./.github/v3-anunciantes-1.jpg)
+- ![Anunciantes 2](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-anunciantes-1.jpg)
 
-- ![Transportadores 3](./.github/v3-transportadores-1.jpg)
+- ![Transportadores 3](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-transportadores-1.jpg)
 
-- ![Anunciar 4](./.github/v3-anunciar-1.jpg)
+- ![Anunciar 4](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-anunciar-1.jpg)
 
-- ![Mapas 5](./.github/v3-instrucoes-1.jpg)
+- ![Mapas 5](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-instrucoes-1.jpg)
 
-- ![Mapas 6](./.github/v3-mapas-1.jpg)
+- ![Mapas 6](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-mapas-1.jpg)
 
-- ![Mapas 7](./.github/v3-mapas-2.jpg)
+- ![Mapas 7](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-mapas-2.jpg)
 
-- ![Footer 8](./.github/v3-footer-1.jpg)
+- ![Footer 8](https://raw.githubusercontent.com/VoltaExpress/voltaexpressbrasil/a6a29d0996b0ba6ce510693d68cc410b55de3d5e/.github/v3-footer-1.jpg)
 
 ### Detalhes de Projetos
 
