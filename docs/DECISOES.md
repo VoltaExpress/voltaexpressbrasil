@@ -55,3 +55,10 @@ Cada decisão tem contexto, escolha e consequência. Mudou de ideia? Acrescente 
 ## D13 — Rodapé único, sem links mortos
 - **Decisão:** mesmo rodapé nas 3 páginas: navegação, contato (e-mail e WhatsApp) e redes. Saem os links `#` (Privacidade, Termos, CNAE/MEI), o telefone de exemplo e a menção "learnTECH Ecosystem".
 - **Consequência:** as páginas de Privacidade e Termos voltam ao rodapé quando existirem (backlog).
+
+## D14 — Boxicons com Subresource Integrity (nov/2026)
+- **Contexto:** o CSS de ícones vem do jsDelivr com versão fixa (`boxicons@2.1.4`), mas sem `integrity`. O navegador aplicaria qualquer conteúdo devolvido pela CDN.
+- **Decisão:** as 6 tags do Boxicons (3 páginas, `<link>` e `<noscript>`) levam `integrity="sha384-..."` e `crossorigin="anonymous"`. O SHA-256 do arquivo foi conferido contra o publicado pela API do jsDelivr em 10/11/2026.
+- **Recalcular ao trocar de versão:** `curl -s https://cdn.jsdelivr.net/npm/boxicons@<versão>/css/boxicons.min.css | openssl dgst -sha384 -binary | openssl base64 -A` e trocar o valor nas 3 páginas.
+- **Fora:** o CSS do Google Fonts muda conforme o navegador e não aceita hash fixo; fica sem `integrity`.
+- **Consequência:** se a CDN servir outro arquivo, os ícones não aparecem (a página continua legível, como no teste T10).
