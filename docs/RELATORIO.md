@@ -59,8 +59,22 @@ voltaexpressbrasil/
 
 Detalhes dos componentes e das cores: [DESIGN-SYSTEM.md](DESIGN-SYSTEM.md). Decisões: [DECISOES.md](DECISOES.md) (D6 a D13).
 
-## 3. Pendências de medição (com você)
-- Rodar o [PageSpeed Insights](https://pagespeed.web.dev) nas 3 URLs (mobile) depois do deploy e registrar aqui, ao lado da linha de base anotada antes da v7.
+## 3. Medição no site publicado
+
+### Lighthouse móvel — 10/11/2026 (v7.1.1)
+- **Como:** Lighthouse 13.6.0 pela linha de comando, contra `https://voltaexpressbrasil.com.br`, perfil móvel padrão (412×823, densidade 1,75, rede e CPU simuladas), Chrome do sistema sem interface. 3 execuções válidas por página; vale a mediana.
+- **Limite:** o computador da medição estava carregado (outros processos), o que infla o TBT e varia de uma execução para outra. O LCP simulado oscilou pouco (até 0,3 s). Uma execução da home falhou (`NO_FCP`) e foi descartada.
+
+| Página | LCP (3 execuções) | LCP mediana | TBT mediana | FCP mediana | CLS | Elemento do LCP |
+|---|---|---|---|---|---|---|
+| Home | 2,95 / 2,87 / 2,88 s | **2,88 s** | 1.225 ms | 1,74 s | 0 a 0,085 | `img` do hero (`.hero-media > img`) |
+| Quero Carregar | 3,19 / 3,13 / 3,04 s | **3,13 s** | 1.189 ms | 1,86 s | 0 a 0,010 | `img` do hero |
+| Quero Transportar | 3,18 / 3,17 / 3,03 s | **3,17 s** | 2.000 ms | 1,84 s | 0 | `img` do hero |
+
+- **Meta do Google (LCP até 2,5 s): não atingida** nas 3 páginas nesta medição.
+- **Onde está o tempo** (decomposição do LCP do próprio Lighthouse, uma execução por página): o maior pedaço é o atraso de renderização do elemento (480 a 690 ms), e não o download da imagem (30 a 220 ms). O Lighthouse aponta como bloqueantes o CSS do Google Fonts e os 3 CSS do site (`tokens.css`, `components.css` e o `style.css` da página).
+- **Próximos passos possíveis** (não feitos aqui): carregar a fonte sem bloquear (como já é feito com o Boxicons) ou hospedá-la no site; juntar os 3 CSS em um nas páginas. Cada um muda o visual na primeira pintura e merece revisão.
+- **Pendente:** a medição pelo [PageSpeed Insights](https://pagespeed.web.dev) (servidores do Google, sem a carga local), para comparar com esta.
 
 ## 4. Diagnóstico de set/2026 (histórico)
 
